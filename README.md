@@ -25,7 +25,9 @@ Prebuilt binaries for macOS and Linux (amd64/arm64) are on the
 - **Forms** — just the places where the root actually changes: 3rd person singular,
   preterite, perfect with its auxiliary. Plus the rection: which cases and
   prepositions the verb governs.
-- **Meanings** — the official meaning, the colloquial or idiomatic one, and an example.
+- **Meanings** — the official meaning, the colloquial or idiomatic one, and an example
+  sentence with its English translation. German phrases quoted in the colloquial
+  note carry their translation too.
 
 The forms pane also generates a subordinate clause for every verb — the one place
 where a separable prefix rejoins its stem: main clause `ruft … an`, Nebensatz
@@ -76,7 +78,7 @@ Everything lives in `verbs.txt`, one verb per line, pipe-delimited:
 
 ```
 =stem|gloss|present 3sg|preterite|participle|aux
-verb|separable t/f|official|colloquial|example|use|aux override
+verb|separable t/f|official|colloquial|example|use|example in English|aux override
 ```
 
 90 stems, ~790 verbs, chosen from the high-frequency verbs where a prefix

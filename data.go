@@ -9,7 +9,7 @@ import (
 // group and carry its principal parts; the lines under it are prefixed verbs.
 //
 //	=stem|gloss|präsens 3.sg|präteritum|partizip II|aux
-//	verb|t or f (separable)|official|colloquial|example|use (case/preposition)|aux override
+//	verb|t or f (separable)|official|colloquial|example|use|example in English|aux override
 //
 // ponytail: a text file and a Split, not JSON with a schema. Hand-editable.
 //
@@ -30,6 +30,7 @@ type Verb struct {
 	Colloquial string
 	Example    string
 	Use        string // rection: cases and prepositions the verb takes
+	English    string // the example sentence in English
 	Aux        string
 	Stem       *Stem
 }
@@ -117,9 +118,10 @@ func load() []*Stem {
 			continue
 		}
 		s := stems[len(stems)-1]
-		v := Verb{Name: f[0], Sep: f[1] == "t", Official: f[2], Colloquial: f[3], Example: f[4], Use: f[5], Stem: s}
-		if len(f) > 6 {
-			v.Aux = f[6]
+		v := Verb{Name: f[0], Sep: f[1] == "t", Official: f[2], Colloquial: f[3], Example: f[4],
+			Use: f[5], English: f[6], Stem: s}
+		if len(f) > 7 {
+			v.Aux = f[7]
 		}
 		s.Verbs = append(s.Verbs, v)
 	}

@@ -532,6 +532,7 @@ func (m model) answer(v *Verb) string {
 	rows = append(rows, block("offiziell", bodyStyle.Render(v.Official))...)
 	rows = append(rows, block("umgangssprachlich", bodyStyle.Render(v.Colloquial))...)
 	rows = append(rows, block("beispiel", exampleStyle.Render(v.Example))...)
+	rows = append(rows, "  "+metaStyle.Render(v.English), "")
 
 	// Left-aligned inside a block of known width, so the card as a whole can be
 	// centred without the text going ragged.
@@ -762,6 +763,7 @@ func (m model) footer() string {
 // touchscreen, where nobody is going to press ^d.
 type chip struct {
 	label, key string
+	drop       int // the higher, the sooner it goes when the row is too wide
 	x0, x1     int // filled in by chips(), for hit testing
 }
 
@@ -778,13 +780,21 @@ func (m model) chips() []chip {
 		{label: "◀▶ h/l", key: "tab"},
 		{label: "▲ k", key: "k"},
 		{label: "▼ j", key: "j"},
-		{label: "« ^b", key: "ctrl+b"},
-		{label: "» ^f", key: "ctrl+f"},
-		{label: "/ search", key: "/"},
-		{label: "space random", key: " "},
-		{label: "f " + m.filterLabel(), key: "f"},
+		{label: "« ^b", key: "ctrl+b", drop: 9},
+		{label: "» ^f", key: "ctrl+f", drop: 9},
+		{label: "/ search", key: "/", drop: 3},
+		{label: "space random", key: " ", drop: 4},
+		{label: "f " + m.filterLabel(), key: "f", drop: 6},
 		{label: "t test", key: "t"},
 		{label: "q quit", key: "q"},
+	}
+	if m.w < mediumWidth {
+		// No keyboard behind a screen this narrow: the keys they stand for are
+		// noise, and the buttons that only exist for keys can go first.
+		short := []string{"◀▶", "▲", "▼", "«", "»", "search", "random", "pairs", "test", "quit"}
+		for i := range cs {
+			cs[i].label = short[i]
+		}
 	}
 	return measure(cs, m.w)
 }
@@ -800,7 +810,7 @@ func measure(cs []chip, w int) []chip {
 			cs[i].x1 = x - 1
 			x += 1 // the gap between chips
 		}
-		if x-1 <= w || len(cs) <= 4 {
+		if x-1 <= w || len(cs) <= 3 {
 			// Centre the row in whatever space is left, hit boxes included.
 			if pad := (w - (x - 1)) / 2; pad > 0 {
 				for i := range cs {
@@ -810,7 +820,15 @@ func measure(cs []chip, w int) []chip {
 			}
 			return cs
 		}
-		cs = append(cs[:3], cs[4:]...)
+		// Drop the least essential chip, not simply the fourth one: on a phone
+		// the buttons are the only way in, and ^b is worth less than "test".
+		worst := 0
+		for i, c := range cs {
+			if c.drop > cs[worst].drop {
+				worst = i
+			}
+		}
+		cs = append(cs[:worst], cs[worst+1:]...)
 	}
 }
 
@@ -998,6 +1016,7 @@ func (m model) meanings(w int) string {
 			"",
 			headingStyle.Render("beispiel"),
 			exampleStyle.Render(v.Example),
+			metaStyle.Render(v.English),
 			"",
 		)
 	}
