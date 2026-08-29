@@ -57,6 +57,7 @@ var (
 	exampleStyle = lipgloss.NewStyle().Foreground(muted).Italic(true)
 	footerStyle  = lipgloss.NewStyle().Foreground(muted)
 	keyStyle     = lipgloss.NewStyle().Foreground(secondary).Bold(true)
+	chipStyle    = lipgloss.NewStyle().Foreground(bright).Background(lipgloss.Color("236")).Padding(0, 1)
 	badgeStyle   = lipgloss.NewStyle().Foreground(ink).Background(green).Bold(true)
 	linkStyle    = lipgloss.NewStyle().Foreground(green).Underline(true)
 	thumbStyle   = lipgloss.NewStyle().Foreground(accent)
@@ -351,11 +352,21 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		if m.searching {
 			return m.updateSearch(msg)
 		}
+		return m.press(msg.String())
+	case tea.MouseMsg:
+		return m.click(msg)
+	}
+	return m, nil
+}
+
+// press handles one key, or one tap on the button that stands for it.
+func (m model) press(key string) (tea.Model, tea.Cmd) {
+	{
 		cur, n, set := m.si(), len(m.stemList()), (*model).setSI
 		if m.focus == 0 {
 			cur, n, set = m.pi(), len(m.prefixList()), (*model).setPI
 		}
-		switch msg.String() {
+		switch key {
 		case "q", "ctrl+c", "esc":
 			return m, tea.Quit
 		case "j", "down":
@@ -478,6 +489,7 @@ func (m model) testView() string {
 			wordStyle.Render(v.Name)+"   "+kindOf(*v),
 			formStyle.Render(present+"  ·  "+past+"  ·  "+perfect),
 			useStyle.Render(v.Use),
+			bodyStyle.Render(v.Nebensatz()),
 			"",
 			wrap.Render(headingStyle.Render("offiziell   ")+bodyStyle.Render(v.Official)),
 			wrap.Render(headingStyle.Render("umgangssprachlich   ")+bodyStyle.Render(v.Colloquial)),
@@ -488,6 +500,88 @@ func (m model) testView() string {
 	}
 	return lipgloss.Place(m.w, m.h, lipgloss.Center, lipgloss.Center,
 		lipgloss.JoinVertical(lipgloss.Center, card...))
+}
+
+// geometry mirrors what View draws, so a tap can be turned back into a row.
+type geometry struct {
+	reelY    int // screen row of the first reel item
+	pX0, pX1 int // columns covered by the prefix pane
+	sX0, sX1 int
+	footerY  int
+}
+
+func (m model) geometry() geometry {
+	rh := m.reelHeight()
+	g := geometry{reelY: 2, footerY: 1 + rh + 2}
+	switch {
+	case m.w >= mediumWidth:
+		g.pX0, g.pX1 = 0, prefixWidth+border-1
+		g.sX0, g.sX1 = g.pX1+1, g.pX1+stemWidth+border
+	default:
+		half := (m.w - 2*border) / 2
+		g.pX0, g.pX1 = 0, half+border-1
+		g.sX0, g.sX1 = g.pX1+1, m.w-1
+		dh := max(1, m.h-chromeH-rh-2*box.GetVerticalFrameSize())
+		g.footerY += dh + 2
+	}
+	return g
+}
+
+func (m model) click(msg tea.MouseMsg) (tea.Model, tea.Cmd) {
+	if m.testing {
+		if msg.Action == tea.MouseActionPress && msg.Button == tea.MouseButtonLeft {
+			return m.updateTest(tea.KeyMsg{Type: tea.KeySpace, Runes: []rune(" ")})
+		}
+		return m, nil
+	}
+	g := m.geometry()
+	onPrefix := msg.X >= g.pX0 && msg.X <= g.pX1
+	onStem := msg.X >= g.sX0 && msg.X <= g.sX1
+
+	switch msg.Button {
+	case tea.MouseButtonWheelUp, tea.MouseButtonWheelDown:
+		if m.searching || !(onPrefix || onStem) {
+			return m, nil
+		}
+		m.focus = 1
+		if onPrefix {
+			m.focus = 0
+		}
+		if msg.Button == tea.MouseButtonWheelUp {
+			return m.press("k")
+		}
+		return m.press("j")
+	case tea.MouseButtonLeft:
+		if msg.Action != tea.MouseActionPress {
+			return m, nil
+		}
+		if msg.Y == g.footerY {
+			for _, c := range m.chips() {
+				if msg.X >= c.x0 && msg.X <= c.x1 {
+					if m.searching {
+						m.searching = false
+					}
+					return m.press(c.key)
+				}
+			}
+			return m, nil
+		}
+		if m.searching {
+			return m, nil
+		}
+		if i := msg.Y - g.reelY; i >= 0 {
+			switch {
+			case onPrefix && m.ptop+i < len(m.prefixList()):
+				m.focus = 0
+				m.setPI(m.ptop + i)
+			case onStem && m.st+i < len(m.stemList()):
+				m.focus = 1
+				m.setSI(m.st + i)
+			}
+			m.rescroll()
+		}
+	}
+	return m, nil
 }
 
 func (m model) View() string {
@@ -598,17 +692,47 @@ func (m model) footer() string {
 		}
 		return trunc(line, m.w)
 	}
-	k := func(key, what string) string { return keyStyle.Render(key) + footerStyle.Render(" "+what) }
-	keys := []string{k("j/k", "spin"), k("h/l", "reel"), k("^d/^u", "half"), k("^f/^b", "page"),
-		k("g/G", "ends"), k("/", "search"), k("f", m.filterLabel()), k("␣", "random"), k("t", "test"), k("q", "quit")}
-	sep := footerStyle.Render("  ·  ")
-	for len(keys) > 2 {
-		if line := strings.Join(keys, sep); lipgloss.Width(line) <= m.w {
-			return line
-		}
-		keys = append(keys[:2], keys[3:]...) // drop the least essential hint first
+	var parts []string
+	for _, c := range m.chips() {
+		parts = append(parts, chipStyle.Render(c.label))
 	}
-	return trunc(strings.Join(keys, sep), m.w)
+	return trunc(strings.Join(parts, " "), m.w)
+}
+
+// A chip is one footer button: a hint for the keyboard and a tap target for a
+// touchscreen, where nobody is going to press ^d.
+type chip struct {
+	label, key string
+	x0, x1     int // filled in by chips(), for hit testing
+}
+
+func (m model) chips() []chip {
+	cs := []chip{
+		{label: "⇄ h/l", key: "tab"},
+		{label: "▲ k", key: "k"},
+		{label: "▼ j", key: "j"},
+		{label: "⇞ ^b", key: "ctrl+b"},
+		{label: "⇟ ^f", key: "ctrl+f"},
+		{label: "/ search", key: "/"},
+		{label: "⚄ random", key: " "},
+		{label: "f " + m.filterLabel(), key: "f"},
+		{label: "t test", key: "t"},
+		{label: "q quit", key: "q"},
+	}
+	// Drop the least essential buttons until the row fits.
+	for {
+		x := 0
+		for i := range cs {
+			cs[i].x0 = x
+			x += lipgloss.Width(cs[i].label) + 2 // the chip's own padding
+			cs[i].x1 = x - 1
+			x++ // the gap between chips
+		}
+		if x-1 <= m.w || len(cs) <= 4 {
+			return cs
+		}
+		cs = append(cs[:3], cs[4:]...)
+	}
 }
 
 // hyperlink wraps text in OSC 8, which terminals that support it render as a
@@ -681,6 +805,17 @@ func scrollbarRow(i, h, total, top int) string {
 	return " " + trackStyle.Render("│")
 }
 
+// separability spells out in words what the trennbar/untrennbar badge shows.
+func separability(v Verb) string {
+	switch {
+	case v.Prefix() == "":
+		return "kein Präfix zu trennen"
+	case v.Sep:
+		return "trennbar: im Hauptsatz hinten, im Nebensatz wieder am Stamm"
+	}
+	return "untrennbar: bleibt immer am Stamm, kein ge- im Partizip"
+}
+
 func kindOf(v Verb) string {
 	switch {
 	case v.Prefix() == "":
@@ -725,6 +860,10 @@ func (m model) forms(w int) string {
 			headingStyle.Render("rektion"),
 			useStyle.Render(v.Use),
 			"",
+			headingStyle.Render("im nebensatz"),
+			bodyStyle.Render(v.Nebensatz()),
+			metaStyle.Render(separability(*v)),
+			"",
 		)
 	}
 	rows = append(rows,
@@ -748,6 +887,7 @@ func (m model) compact(w int) string {
 		head,
 		formStyle.Render(present + " · " + past + " · " + perfect),
 		useStyle.Render(v.Use),
+		bodyStyle.Render(v.Nebensatz()),
 		"",
 	}
 	return wrapAll(rows, w) + "\n" + m.meanings(w)
@@ -817,7 +957,7 @@ func trunc(s string, w int) string {
 
 func main() {
 	m := newModel()
-	if _, err := tea.NewProgram(m, tea.WithAltScreen()).Run(); err != nil {
+	if _, err := tea.NewProgram(m, tea.WithAltScreen(), tea.WithMouseCellMotion()).Run(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}

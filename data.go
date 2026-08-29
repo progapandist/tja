@@ -57,6 +57,43 @@ func (v Verb) Forms() (present, past, perfect string) {
 	return present, past, v.aux() + " " + perfect
 }
 
+// object picks a stand-in object from the rection, so the generated clause is
+// something you could actually say.
+func (v Verb) object() string {
+	// Only the first alternative in the rection counts: it is the main pattern.
+	u := strings.TrimSpace(strings.Split(v.Use, "·")[0])
+	prep := map[string]string{"an": "daran", "auf": "darauf", "mit": "damit", "von": "davon",
+		"zu": "dazu", "über": "darüber", "für": "dafür", "bei": "dabei", "in": "darin",
+		"nach": "danach", "gegen": "dagegen", "aus": "daraus", "um": "darum", "vor": "davor"}
+	switch {
+	case strings.Contains(u, "sich+A"):
+		return "sich "
+	case strings.Contains(u, "sich+D"):
+		return "sich das "
+	case strings.Contains(u, "jdm etw+A"):
+		return "mir das "
+	case strings.Contains(u, "jdm"):
+		return "mir "
+	case strings.Contains(u, "jdn"):
+		return "mich "
+	case strings.Contains(u, "etw+A"):
+		return "es "
+	}
+	if i := strings.IndexByte(u, ' '); i > 0 {
+		if da, ok := prep[u[:i]]; ok {
+			return da + " "
+		}
+	}
+	return ""
+}
+
+// Nebensatz shows the one thing a main clause hides: in a subordinate clause
+// the verb goes last and a separable prefix rejoins its stem — "ruft … an"
+// becomes "anruft". Built from the verb, not stored.
+func (v Verb) Nebensatz() string {
+	return "…, weil sie " + v.object() + v.Prefix() + v.Stem.Present + "."
+}
+
 func (v Verb) aux() string {
 	if v.Aux != "" {
 		return v.Aux

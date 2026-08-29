@@ -35,3 +35,30 @@ func TestForms(t *testing.T) {
 		t.Errorf("checked %d verbs, expected %d", found, len(want))
 	}
 }
+
+// The clause is generated, so the interesting part is that the prefix rejoins
+// the stem and the object matches the rection.
+func TestNebensatz(t *testing.T) {
+	want := map[string]string{
+		"anrufen":    "…, weil sie mich anruft.",
+		"aufstehen":  "…, weil sie aufsteht.",
+		"teilnehmen": "…, weil sie daran teilnimmt.",
+		"benehmen":   "…, weil sie sich benimmt.",
+		"übernehmen": "…, weil sie es übernimmt.",
+		"vorwerfen":  "…, weil sie mir das vorwirft.",
+	}
+	seen := 0
+	for _, s := range load() {
+		for _, v := range s.Verbs {
+			if w, ok := want[v.Name]; ok {
+				seen++
+				if got := v.Nebensatz(); got != w {
+					t.Errorf("%s: got %q, want %q", v.Name, got, w)
+				}
+			}
+		}
+	}
+	if seen != len(want) {
+		t.Errorf("checked %d, expected %d", seen, len(want))
+	}
+}
