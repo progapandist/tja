@@ -518,7 +518,7 @@ func (m model) testView() string {
 func (m model) buttonRow(cs []chip) string {
 	var b strings.Builder
 	for _, c := range cs {
-		for b.Len() > 0 && lipgloss.Width(b.String()) < c.x0 {
+		for lipgloss.Width(b.String()) < c.x0 {
 			b.WriteString(" ")
 		}
 		b.WriteString(chipStyle.Render(c.label))
@@ -773,6 +773,13 @@ func measure(cs []chip, w int) []chip {
 			x += 1 // the gap between chips
 		}
 		if x-1 <= w || len(cs) <= 4 {
+			// Centre the row in whatever space is left, hit boxes included.
+			if pad := (w - (x - 1)) / 2; pad > 0 {
+				for i := range cs {
+					cs[i].x0 += pad
+					cs[i].x1 += pad
+				}
+			}
 			return cs
 		}
 		cs = append(cs[:3], cs[4:]...)
