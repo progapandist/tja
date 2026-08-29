@@ -17,7 +17,8 @@ const (
 	centerWidth = 38
 	wideWidth   = 100 // four panes fit
 	mediumWidth = 64  // reels plus one combined detail pane
-	chromeH     = 3   // header line, footer line, and the gap between them
+	chromeH     = 4   // header, the gap, the key hints, and the contribute line
+	repoURL     = "https://github.com/progapandist/tja"
 	// lipgloss Width() counts padding but not the border, so a pane of width w
 	// occupies w+border columns and has w-padding columns of content.
 	border  = 2
@@ -54,6 +55,8 @@ var (
 	exampleStyle = lipgloss.NewStyle().Foreground(muted).Italic(true)
 	footerStyle  = lipgloss.NewStyle().Foreground(muted)
 	keyStyle     = lipgloss.NewStyle().Foreground(secondary).Bold(true)
+	badgeStyle   = lipgloss.NewStyle().Foreground(ink).Background(green).Bold(true)
+	linkStyle    = lipgloss.NewStyle().Foreground(green).Underline(true)
 	thumbStyle   = lipgloss.NewStyle().Foreground(accent)
 	trackStyle   = lipgloss.NewStyle().Foreground(subtle)
 )
@@ -64,6 +67,7 @@ var (
 // reels are the vocabulary list.
 type model struct {
 	stems    []*Stem
+	count    int             // verbs in the whole file, for the header
 	sepOf    map[string]bool // separability, inferred from the verbs we have
 	pfx      string          // where the prefix reel is resting ("" = bare stem)
 	stem     *Stem           // where the stem reel is resting
@@ -85,7 +89,9 @@ type model struct {
 func newModel() model {
 	stems := load()
 	votes := map[string]int{}
+	count := 0
 	for _, s := range stems {
+		count += len(s.Verbs)
 		for _, v := range s.Verbs {
 			if p := v.Prefix(); p != "" {
 				if v.Sep {
@@ -100,7 +106,7 @@ func newModel() model {
 	sort.SliceStable(stems, func(i, j int) bool {
 		return folds.Replace(stems[i].Name) < folds.Replace(stems[j].Name)
 	})
-	m := model{stems: stems, sepOf: map[string]bool{}, stem: stems[0]}
+	m := model{stems: stems, count: count, sepOf: map[string]bool{}, stem: stems[0]}
 	for p, n := range votes {
 		m.sepOf[p] = n >= 0
 	}
@@ -484,7 +490,7 @@ func (m model) View() string {
 		dw := m.w - border
 		body = reels + "\n" + pane(false, dw, dh, m.compact(dw))
 	}
-	return m.header() + "\n" + body + "\n" + m.footer()
+	return m.header() + "\n" + body + "\n" + m.footer() + "\n" + m.ribbon()
 }
 
 // clamp keeps a pane from pushing the layout around when the content is taller
@@ -502,9 +508,10 @@ func clamp(s string, h int) string {
 
 func (m model) header() string {
 	left := wordStyle.Render(m.pfx + m.stem.Name)
-	right := kickerStyle.Render("Präfix + Stamm") + metaStyle.Render("  tja")
+	right := kickerStyle.Render(fmt.Sprintf("%d Verben", m.count)) +
+		metaStyle.Render(fmt.Sprintf(" aus %d Stämmen", len(m.stems)))
 	if m.w < mediumWidth {
-		right = metaStyle.Render("tja")
+		right = kickerStyle.Render(fmt.Sprintf("%d Verben", m.count))
 	}
 	gap := m.w - lipgloss.Width(left) - lipgloss.Width(right)
 	if gap < 1 {
@@ -537,6 +544,23 @@ func (m model) footer() string {
 		keys = append(keys[:2], keys[3:]...) // drop the least essential hint first
 	}
 	return trunc(strings.Join(keys, sep), m.w)
+}
+
+// hyperlink wraps text in OSC 8, which terminals that support it render as a
+// clickable link. Terminals that do not simply ignore the escape.
+func hyperlink(text, url string) string {
+	return "\x1b]8;;" + url + "\x1b\\" + text + "\x1b]8;;\x1b\\"
+}
+
+// ribbon is the bottom line: a badge and the repo, set apart from the key hints.
+func (m model) ribbon() string {
+	url := "github.com/progapandist/tja"
+	if m.w < mediumWidth {
+		return hyperlink(linkStyle.Render(trunc(url, m.w)), repoURL)
+	}
+	return badgeStyle.Render(" contribute ") + " " +
+		hyperlink(linkStyle.Render(url), repoURL) +
+		metaStyle.Render("  ·  patches and verbs welcome")
 }
 
 // prefixLabel marks separable prefixes with the hyphen dictionaries use.
