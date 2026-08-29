@@ -23,7 +23,12 @@ columns or more, reels plus one combined pane down to 64, and reels above a
 detail pane below that.
 
 `j/k` spin · `h/l` switch reel · `^d/^u` half page · `^f/^b` page · `g/G` ends ·
-`/` search · `space` random combination · `t` flash cards · `q` quit
+`/` search · `f` filtering on/off · `space` random combination · `t` flash cards · `q` quit
+
+`f` turns the mutual filtering off: both reels then list everything, prefixes
+that make no word with the stem showing (and vice versa) are dimmed rather than
+hidden, and landing between two words shows the form the rules *would* build,
+marked as not attested. `f` again snaps back to a real word.
 
 ## Search
 

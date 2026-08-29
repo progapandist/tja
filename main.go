@@ -43,6 +43,8 @@ var (
 	kickerStyle  = lipgloss.NewStyle().Foreground(secondary)
 	metaStyle    = lipgloss.NewStyle().Foreground(muted)
 	reelStyle    = lipgloss.NewStyle().Foreground(bright)
+	deadStyle    = lipgloss.NewStyle().Foreground(subtle)
+	ghostStyle   = lipgloss.NewStyle().Foreground(subtle)
 	pickedStyle  = lipgloss.NewStyle().Foreground(ink).Background(accent).Bold(true)
 	restingStyle = lipgloss.NewStyle().Foreground(ink).Background(subtle)
 	headingStyle = lipgloss.NewStyle().Foreground(secondary).Bold(true)
@@ -67,6 +69,8 @@ var (
 // reels are the vocabulary list.
 type model struct {
 	stems    []*Stem
+	all      []string        // every prefix in the file, for the unfiltered reel
+	filtered bool            // reels show only combinations that are real words
 	count    int             // verbs in the whole file, for the header
 	sepOf    map[string]bool // separability, inferred from the verbs we have
 	pfx      string          // where the prefix reel is resting ("" = bare stem)
@@ -106,10 +110,13 @@ func newModel() model {
 	sort.SliceStable(stems, func(i, j int) bool {
 		return folds.Replace(stems[i].Name) < folds.Replace(stems[j].Name)
 	})
-	m := model{stems: stems, count: count, sepOf: map[string]bool{}, stem: stems[0]}
+	m := model{stems: stems, count: count, sepOf: map[string]bool{}, stem: stems[0], filtered: true}
 	for p, n := range votes {
 		m.sepOf[p] = n >= 0
+		m.all = append(m.all, p)
 	}
+	m.all = append(m.all, "")
+	sortFolded(m.all)
 	return m
 }
 
@@ -123,6 +130,9 @@ func (m model) Init() tea.Cmd { return nil }
 // prefixList is the prefix reel: the prefixes that make a word with the stem
 // currently showing. stemList is the mirror image.
 func (m model) prefixList() []string {
+	if !m.filtered {
+		return m.all
+	}
 	seen := map[string]bool{}
 	var out []string
 	for _, v := range m.stem.Verbs {
@@ -131,11 +141,18 @@ func (m model) prefixList() []string {
 			out = append(out, p)
 		}
 	}
-	sort.SliceStable(out, func(i, j int) bool { return folds.Replace(out[i]) < folds.Replace(out[j]) })
+	sortFolded(out)
 	return out
 }
 
+func sortFolded(xs []string) {
+	sort.SliceStable(xs, func(i, j int) bool { return folds.Replace(xs[i]) < folds.Replace(xs[j]) })
+}
+
 func (m model) stemList() []*Stem {
+	if !m.filtered {
+		return m.stems
+	}
 	var out []*Stem
 	for _, s := range m.stems {
 		for _, v := range s.Verbs {
@@ -170,6 +187,38 @@ func (m *model) setPI(i int) {
 func (m *model) setSI(i int) {
 	l := m.stemList()
 	m.stem = l[min(max(i, 0), len(l)-1)]
+}
+
+// exists reports whether the prefix and stem make a word.
+func (m model) exists(p string, s *Stem) bool {
+	for _, v := range s.Verbs {
+		if v.Name == p+s.Name {
+			return true
+		}
+	}
+	return false
+}
+
+// current is the verb the reels are resting on. In unfiltered mode the reels
+// can land between words, and then it is a ghost: the word the rules would
+// build, marked as not attested.
+func (m model) current() (Verb, bool) {
+	if hits := m.matches(); len(hits) > 0 {
+		return *hits[0], true
+	}
+	return Verb{Name: m.pfx + m.stem.Name, Sep: m.sepOf[m.pfx], Stem: m.stem}, false
+}
+
+// snap pulls the prefix reel back onto a real word, for when filtering is
+// switched on while the reels sit on a ghost.
+func (m *model) snap() {
+	if m.exists(m.pfx, m.stem) {
+		return
+	}
+	for _, v := range m.stem.Verbs {
+		m.pfx = v.Prefix()
+		return
+	}
 }
 
 // matches returns the verbs for the current combination — usually one, but a
@@ -329,6 +378,9 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.focus = 1 - m.focus
 		case " ", "s":
 			m.spin()
+		case "f":
+			m.filtered = !m.filtered
+			m.snap()
 		case "t":
 			m.testing = true
 			m.deal()
@@ -463,11 +515,20 @@ func (m model) View() string {
 	for _, s := range m.stemList() {
 		stems = append(stems, s.Name)
 	}
+	pl, sl := m.prefixList(), m.stemList()
+	alive := func(ok func(int) bool) func(int) bool {
+		if m.filtered {
+			return nil // everything on screen is a real word already
+		}
+		return ok
+	}
 	prefixPane := func(w int) string {
-		return pane(m.focus == 0, w, rh, reel(prefixes, m.pi(), m.ptop, w, rh, m.focus == 0))
+		live := alive(func(i int) bool { return m.exists(pl[i], m.stem) })
+		return pane(m.focus == 0, w, rh, reel(prefixes, m.pi(), m.ptop, w, rh, m.focus == 0, live))
 	}
 	stemPane := func(w int) string {
-		return pane(m.focus == 1, w, rh, reel(stems, m.si(), m.st, w, rh, m.focus == 1))
+		live := alive(func(i int) bool { return m.exists(m.pfx, sl[i]) })
+		return pane(m.focus == 1, w, rh, reel(stems, m.si(), m.st, w, rh, m.focus == 1, live))
 	}
 
 	var body string
@@ -507,7 +568,11 @@ func clamp(s string, h int) string {
 }
 
 func (m model) header() string {
-	left := wordStyle.Render(m.pfx + m.stem.Name)
+	word := m.pfx + m.stem.Name
+	left := wordStyle.Render(word)
+	if _, real := m.current(); !real {
+		left = ghostStyle.Render(word + "  (kein Wort)")
+	}
 	right := kickerStyle.Render(fmt.Sprintf("%d Verben", m.count)) +
 		metaStyle.Render(fmt.Sprintf(" aus %d Stämmen", len(m.stems)))
 	if m.w < mediumWidth {
@@ -535,7 +600,7 @@ func (m model) footer() string {
 	}
 	k := func(key, what string) string { return keyStyle.Render(key) + footerStyle.Render(" "+what) }
 	keys := []string{k("j/k", "spin"), k("h/l", "reel"), k("^d/^u", "half"), k("^f/^b", "page"),
-		k("g/G", "ends"), k("/", "search"), k("␣", "random"), k("t", "test"), k("q", "quit")}
+		k("g/G", "ends"), k("/", "search"), k("f", m.filterLabel()), k("␣", "random"), k("t", "test"), k("q", "quit")}
 	sep := footerStyle.Render("  ·  ")
 	for len(keys) > 2 {
 		if line := strings.Join(keys, sep); lipgloss.Width(line) <= m.w {
@@ -563,6 +628,13 @@ func (m model) ribbon() string {
 		metaStyle.Render("  ·  patches and verbs welcome")
 }
 
+func (m model) filterLabel() string {
+	if m.filtered {
+		return "all pairs"
+	}
+	return "real only"
+}
+
 // prefixLabel marks separable prefixes with the hyphen dictionaries use.
 func (m model) prefixLabel(p string) string {
 	switch {
@@ -575,11 +647,14 @@ func (m model) prefixLabel(p string) string {
 }
 
 // reel renders one column of the slot machine plus its scrollbar.
-func reel(items []string, cur, top, w, h int, focused bool) string {
+func reel(items []string, cur, top, w, h int, focused bool, alive func(int) bool) string {
 	lw := max(1, w-padding-2) // the bar takes a gap column and the bar itself
 	var b strings.Builder
 	for i := top; i < len(items) && i < top+h; i++ {
 		style := reelStyle
+		if alive != nil && !alive(i) {
+			style = deadStyle
+		}
 		if i == cur {
 			style = restingStyle
 			if focused {
@@ -620,6 +695,20 @@ func kindOf(v Verb) string {
 func (m model) forms(w int) string {
 	s := m.stem
 	var rows []string
+	if v, real := m.current(); !real {
+		present, past, perfect := v.Forms()
+		rows = append(rows,
+			ghostStyle.Render(v.Name),
+			metaStyle.Render("kein belegtes Wort — so ginge es aber"),
+			"",
+			ghostStyle.Render("er/sie/es   "+present),
+			ghostStyle.Render("präteritum  "+past),
+			ghostStyle.Render("perfekt     "+perfect),
+			"",
+			metaStyle.Render("f zeigt nur echte Kombinationen"),
+			"",
+		)
+	}
 	for _, v := range m.matches() {
 		present, past, perfect := v.Forms()
 		line := func(label, val string) string {
@@ -650,10 +739,14 @@ func (m model) forms(w int) string {
 // compact is the narrow-screen detail pane: the forms squeezed onto one line
 // so the meanings still fit underneath.
 func (m model) compact(w int) string {
-	v := m.matches()[0]
+	v, real := m.current()
 	present, past, perfect := v.Forms()
+	head := wordStyle.Render(v.Name) + "   " + kindOf(v)
+	if !real {
+		head = ghostStyle.Render(v.Name) + "   " + metaStyle.Render("kein belegtes Wort")
+	}
 	rows := []string{
-		wordStyle.Render(v.Name) + "   " + kindOf(*v),
+		head,
 		formStyle.Render(present + " · " + past + " · " + perfect),
 		useStyle.Render(v.Use),
 		"",
@@ -663,6 +756,16 @@ func (m model) compact(w int) string {
 
 func (m model) meanings(w int) string {
 	hits := m.matches()
+	if len(hits) == 0 {
+		var real []string
+		for _, v := range m.stem.Verbs {
+			real = append(real, dash(v.Prefix()))
+		}
+		return wrapAll([]string{
+			headingStyle.Render("es gibt stattdessen"),
+			bodyStyle.Render(strings.Join(real, ", ") + " + " + m.stem.Name),
+		}, w)
+	}
 	var rows []string
 	for _, v := range hits {
 		if len(hits) > 1 {

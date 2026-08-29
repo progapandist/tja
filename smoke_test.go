@@ -21,6 +21,12 @@ func TestSmoke(t *testing.T) {
 		key("h")
 		key("j")
 		key("j")
+		if sz[0] == 120 {
+			key("f") // unfiltered: all prefixes, incompatible ones dimmed
+			for i := 0; i < 4; i++ {
+				key("j")
+			}
+		}
 		v := mm.View()
 		fmt.Printf("=== %dx%d ===\n%s\n", sz[0], sz[1], v)
 		for i, line := range strings.Split(v, "\n") {
