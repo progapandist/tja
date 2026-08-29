@@ -551,7 +551,7 @@ func (m model) View() string {
 		dw := m.w - border
 		body = reels + "\n" + pane(false, dw, dh, m.compact(dw))
 	}
-	return m.header() + "\n" + body + "\n\n" + m.footer() + "\n" + m.ribbon()
+	return m.header() + "\n" + body + "\n" + m.footer() + "\n\n" + m.ribbon()
 }
 
 // clamp keeps a pane from pushing the layout around when the content is taller
@@ -617,15 +617,20 @@ func hyperlink(text, url string) string {
 	return "\x1b]8;;" + url + "\x1b\\" + text + "\x1b]8;;\x1b\\"
 }
 
-// ribbon is the bottom line: a badge and the repo, set apart from the key hints.
+// ribbon is the bottom line: a badge and the repo, right-aligned and set a
+// blank line apart from the key hints.
 func (m model) ribbon() string {
 	url := "github.com/progapandist/tja"
-	if m.w < mediumWidth {
-		return hyperlink(linkStyle.Render(trunc(url, m.w)), repoURL)
+	line := hyperlink(linkStyle.Render(url), repoURL)
+	width := lipgloss.Width(url)
+	if m.w >= mediumWidth {
+		line = badgeStyle.Render(" contribute ") + " " + line
+		width += len(" contribute ") + 1
 	}
-	return badgeStyle.Render(" contribute ") + " " +
-		hyperlink(linkStyle.Render(url), repoURL) +
-		metaStyle.Render("  ·  patches and verbs welcome")
+	if gap := m.w - width; gap > 0 {
+		return strings.Repeat(" ", gap) + line
+	}
+	return line
 }
 
 func (m model) filterLabel() string {
