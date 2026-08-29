@@ -5,8 +5,12 @@ filter each other. Whatever they land on is always a real word — spinning the
 reels *is* the vocabulary list.
 
 ```
+go install github.com/progapandist/tja@latest   # or, in a clone:
 go run .
 ```
+
+Prebuilt binaries for macOS and Linux (amd64/arm64) are on the
+[releases page](https://github.com/progapandist/tja/releases).
 
 ## The panes
 
@@ -17,6 +21,11 @@ go run .
   preterite, perfect with its auxiliary. Plus the rection: which cases and
   prepositions the verb governs.
 - **Meanings** — the official meaning, the colloquial or idiomatic one, and an example.
+
+The forms pane also generates a subordinate clause for every verb — the one place
+where a separable prefix rejoins its stem: main clause `ruft … an`, Nebensatz
+`…, weil sie mich anruft.` The object comes from the rection, so the clause is
+something you could actually say.
 
 The header carries the verb count and a clickable repo link (OSC 8). Both reels carry a scrollbar. The layout has three shapes: four panes at 100
 columns or more, reels plus one combined pane down to 64, and reels above a
@@ -29,6 +38,13 @@ detail pane below that.
 that make no word with the stem showing (and vice versa) are dimmed rather than
 hidden, and landing between two words shows the form the rules *would* build,
 marked as not attested. `f` again snaps back to a real word.
+
+## Mouse and touch
+
+The reels scroll with the wheel and select on click or tap. The footer is a row
+of buttons — `⇄` switches reel, `▲ ▼` spin, `⇞ ⇟` page, and the rest mirror the
+keys — so the whole thing is usable on a phone without a keyboard. In test mode
+a tap anywhere reveals the card or deals the next one.
 
 ## Search
 
