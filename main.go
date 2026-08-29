@@ -485,32 +485,60 @@ func (m model) testView() string {
 	reel := func(s string) string {
 		return box.Width(18).Align(lipgloss.Center).Render("\n" + wordStyle.Render(s) + "\n")
 	}
-	card := []string{
-		lipgloss.JoinHorizontal(lipgloss.Top, reel(m.prefixLabel(v.Prefix())), reel(v.Stem.Name)),
-		"",
-	}
+	reels := lipgloss.JoinHorizontal(lipgloss.Top, reel(m.prefixLabel(v.Prefix())), reel(v.Stem.Name))
+
+	card := []string{reels, ""}
 	if !m.revealed {
-		card = append(card,
-			metaStyle.Render("What does it mean? What are the forms?"))
+		card = append(card, "", metaStyle.Render("What does it mean? What are the forms?"))
 	} else {
-		present, past, perfect := v.Forms()
-		wrap := lipgloss.NewStyle().Width(min(66, max(20, m.w-4)))
-		card = append(card,
-			wordStyle.Render(v.Name)+"   "+kindOf(*v),
-			formStyle.Render(present+"  ·  "+past+"  ·  "+perfect),
-			useStyle.Render(v.Use),
-			bodyStyle.Render(v.Nebensatz()),
-			"",
-			wrap.Render(headingStyle.Render("offiziell   ")+bodyStyle.Render(v.Official)),
-			wrap.Render(headingStyle.Render("umgangssprachlich   ")+bodyStyle.Render(v.Colloquial)),
-			"",
-			wrap.Render(exampleStyle.Render(v.Example)))
+		card = append(card, m.answer(v))
 	}
-	// The buttons sit on their own row at the bottom, where a thumb expects
-	// them and where a tap can be mapped back to one without guessing.
 	body := lipgloss.Place(m.w, m.h-2, lipgloss.Center, lipgloss.Center,
 		lipgloss.JoinVertical(lipgloss.Center, card...))
 	return body + "\n" + m.buttonRow(m.chips())
+}
+
+// answer is the back of the card: one fixed-width block, everything ranged
+// left on a label column, with air between the four things being said.
+func (m model) answer(v *Verb) string {
+	cw := min(64, max(28, m.w-8))
+	label := lipgloss.NewStyle().Foreground(muted).Width(13)
+	wrap := lipgloss.NewStyle().Width(cw - 2)
+
+	row := func(name, value string) string {
+		return label.Render(name) + value
+	}
+	block := func(heading, text string) []string {
+		return []string{headingStyle.Render(heading), wrap.Render("  " + text), ""}
+	}
+
+	present, past, perfect := v.Forms()
+	head := wordStyle.Render(v.Name)
+	if k := kindOf(*v); true {
+		head = pad(head, cw-lipgloss.Width(k)) + k
+	}
+	rows := []string{
+		head,
+		trackStyle.Render(strings.Repeat("─", cw)),
+		"",
+		row("er/sie/es", formStyle.Render(present)),
+		row("präteritum", formStyle.Render(past)),
+		row("perfekt", formStyle.Render(perfect)),
+		"",
+		row("rektion", useStyle.Render(v.Use)),
+		row("nebensatz", bodyStyle.Render(v.Nebensatz())),
+		"",
+	}
+	rows = append(rows, block("offiziell", bodyStyle.Render(v.Official))...)
+	rows = append(rows, block("umgangssprachlich", bodyStyle.Render(v.Colloquial))...)
+	rows = append(rows, block("beispiel", exampleStyle.Render(v.Example))...)
+
+	// Left-aligned inside a block of known width, so the card as a whole can be
+	// centred without the text going ragged.
+	for i, r := range rows {
+		rows[i] = pad(r, cw)
+	}
+	return strings.Join(rows, "\n")
 }
 
 // buttonRow lays the chips out with the gaps chips() already measured, so a
