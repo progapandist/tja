@@ -17,7 +17,7 @@ const (
 	centerWidth = 38
 	wideWidth   = 100 // four panes fit
 	mediumWidth = 64  // reels plus one combined detail pane
-	chromeH     = 5   // header, a blank line each side of the panes, hints, ribbon
+	chromeH     = 3   // the header line, the key hints, and a spare row
 	repoURL     = "https://github.com/progapandist/tja"
 	// lipgloss Width() counts padding but not the border, so a pane of width w
 	// occupies w+border columns and has w-padding columns of content.
@@ -551,7 +551,7 @@ func (m model) View() string {
 		dw := m.w - border
 		body = reels + "\n" + pane(false, dw, dh, m.compact(dw))
 	}
-	return m.header() + "\n" + body + "\n" + m.footer() + "\n\n" + m.ribbon()
+	return m.header() + "\n" + body + "\n" + m.footer()
 }
 
 // clamp keeps a pane from pushing the layout around when the content is taller
@@ -573,10 +573,10 @@ func (m model) header() string {
 	if _, real := m.current(); !real {
 		left = ghostStyle.Render(word + "  (kein Wort)")
 	}
-	right := kickerStyle.Render(fmt.Sprintf("%d Verben", m.count)) +
-		metaStyle.Render(fmt.Sprintf(" aus %d Stämmen", len(m.stems)))
-	if m.w < mediumWidth {
-		right = kickerStyle.Render(fmt.Sprintf("%d Verben", m.count))
+	right := kickerStyle.Render(fmt.Sprintf("%d Verben", m.count))
+	if m.w >= mediumWidth {
+		right += metaStyle.Render(fmt.Sprintf(" aus %d Stämmen", len(m.stems))) +
+			metaStyle.Render("  ·  ") + m.ribbon()
 	}
 	gap := m.w - lipgloss.Width(left) - lipgloss.Width(right)
 	if gap < 1 {
@@ -617,20 +617,14 @@ func hyperlink(text, url string) string {
 	return "\x1b]8;;" + url + "\x1b\\" + text + "\x1b]8;;\x1b\\"
 }
 
-// ribbon is the bottom line: a badge and the repo, right-aligned and set a
-// blank line apart from the key hints.
+// ribbon is the contribute link that sits at the top right, beside the counts.
+// The badge only appears when there is room for it.
 func (m model) ribbon() string {
-	url := "github.com/progapandist/tja"
-	line := hyperlink(linkStyle.Render(url), repoURL)
-	width := lipgloss.Width(url)
-	if m.w >= mediumWidth {
-		line = badgeStyle.Render(" contribute ") + " " + line
-		width += len(" contribute ") + 1
+	link := hyperlink(linkStyle.Render("github.com/progapandist/tja"), repoURL)
+	if m.w >= wideWidth {
+		return badgeStyle.Render(" contribute ") + " " + link
 	}
-	if gap := m.w - width; gap > 0 {
-		return strings.Repeat(" ", gap) + line
-	}
-	return line
+	return link
 }
 
 func (m model) filterLabel() string {

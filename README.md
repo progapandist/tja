@@ -18,7 +18,7 @@ go run .
   prepositions the verb governs.
 - **Meanings** — the official meaning, the colloquial or idiomatic one, and an example.
 
-Both reels carry a scrollbar. The layout has three shapes: four panes at 100
+The header carries the verb count and a clickable repo link (OSC 8). Both reels carry a scrollbar. The layout has three shapes: four panes at 100
 columns or more, reels plus one combined pane down to 64, and reels above a
 detail pane below that.
 
