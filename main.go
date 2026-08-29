@@ -17,7 +17,7 @@ const (
 	centerWidth = 38
 	wideWidth   = 100 // four panes fit
 	mediumWidth = 64  // reels plus one combined detail pane
-	chromeH     = 4   // header, the gap, the key hints, and the contribute line
+	chromeH     = 5   // header, a blank line each side of the panes, hints, ribbon
 	repoURL     = "https://github.com/progapandist/tja"
 	// lipgloss Width() counts padding but not the border, so a pane of width w
 	// occupies w+border columns and has w-padding columns of content.
@@ -490,7 +490,7 @@ func (m model) View() string {
 		dw := m.w - border
 		body = reels + "\n" + pane(false, dw, dh, m.compact(dw))
 	}
-	return m.header() + "\n" + body + "\n" + m.footer() + "\n" + m.ribbon()
+	return m.header() + "\n" + body + "\n\n" + m.footer() + "\n" + m.ribbon()
 }
 
 // clamp keeps a pane from pushing the layout around when the content is taller
