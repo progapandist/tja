@@ -540,12 +540,15 @@ func (m model) click(msg tea.MouseMsg) (tea.Model, tea.Cmd) {
 
 	switch msg.Button {
 	case tea.MouseButtonWheelUp, tea.MouseButtonWheelDown:
-		if m.searching || !(onPrefix || onStem) {
+		if m.searching {
 			return m, nil
 		}
-		m.focus = 1
+		// A swipe on a phone arrives as a wheel event wherever the finger was,
+		// so a wheel away from the reels still spins the focused one.
 		if onPrefix {
 			m.focus = 0
+		} else if onStem {
+			m.focus = 1
 		}
 		if msg.Button == tea.MouseButtonWheelUp {
 			return m.press("k")
