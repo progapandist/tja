@@ -448,6 +448,18 @@ func (m *model) deal() {
 	m.revealed = false
 }
 
+// keyOf builds the KeyMsg a button stands for, so taps and keys take the same
+// path through updateTest.
+func keyOf(key string) tea.KeyMsg {
+	switch key {
+	case " ":
+		return tea.KeyMsg{Type: tea.KeySpace, Runes: []rune(" ")}
+	case "esc":
+		return tea.KeyMsg{Type: tea.KeyEsc}
+	}
+	return tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune(key)}
+}
+
 func (m model) updateTest(msg tea.KeyMsg) (tea.Model, tea.Cmd) {
 	switch msg.String() {
 	case "q", "ctrl+c":
@@ -479,9 +491,7 @@ func (m model) testView() string {
 	}
 	if !m.revealed {
 		card = append(card,
-			metaStyle.Render("What does it mean? What are the forms?"),
-			"",
-			footerStyle.Render("␣ reveal  ·  n next  ·  esc back"))
+			metaStyle.Render("What does it mean? What are the forms?"))
 	} else {
 		present, past, perfect := v.Forms()
 		wrap := lipgloss.NewStyle().Width(min(66, max(20, m.w-4)))
@@ -494,12 +504,26 @@ func (m model) testView() string {
 			wrap.Render(headingStyle.Render("offiziell   ")+bodyStyle.Render(v.Official)),
 			wrap.Render(headingStyle.Render("umgangssprachlich   ")+bodyStyle.Render(v.Colloquial)),
 			"",
-			wrap.Render(exampleStyle.Render(v.Example)),
-			"",
-			footerStyle.Render("␣/n next card  ·  esc back"))
+			wrap.Render(exampleStyle.Render(v.Example)))
 	}
-	return lipgloss.Place(m.w, m.h, lipgloss.Center, lipgloss.Center,
+	// The buttons sit on their own row at the bottom, where a thumb expects
+	// them and where a tap can be mapped back to one without guessing.
+	body := lipgloss.Place(m.w, m.h-2, lipgloss.Center, lipgloss.Center,
 		lipgloss.JoinVertical(lipgloss.Center, card...))
+	return body + "\n" + m.buttonRow(m.chips())
+}
+
+// buttonRow lays the chips out with the gaps chips() already measured, so a
+// tap lands on the button it looks like it lands on.
+func (m model) buttonRow(cs []chip) string {
+	var b strings.Builder
+	for _, c := range cs {
+		for b.Len() > 0 && lipgloss.Width(b.String()) < c.x0 {
+			b.WriteString(" ")
+		}
+		b.WriteString(chipStyle.Render(c.label))
+	}
+	return trunc(b.String(), m.w)
 }
 
 // geometry mirrors what View draws, so a tap can be turned back into a row.
@@ -529,10 +553,18 @@ func (m model) geometry() geometry {
 
 func (m model) click(msg tea.MouseMsg) (tea.Model, tea.Cmd) {
 	if m.testing {
-		if msg.Action == tea.MouseActionPress && msg.Button == tea.MouseButtonLeft {
-			return m.updateTest(tea.KeyMsg{Type: tea.KeySpace, Runes: []rune(" ")})
+		if msg.Action != tea.MouseActionPress || msg.Button != tea.MouseButtonLeft {
+			return m, nil
 		}
-		return m, nil
+		if msg.Y == m.h-1 {
+			for _, c := range m.chips() {
+				if msg.X >= c.x0 && msg.X <= c.x1 {
+					return m.updateTest(keyOf(c.key))
+				}
+			}
+			return m, nil
+		}
+		return m.updateTest(keyOf(" ")) // a tap on the card itself flips it
 	}
 	g := m.geometry()
 	onPrefix := msg.X >= g.pX0 && msg.X <= g.pX1
@@ -695,11 +727,7 @@ func (m model) footer() string {
 		}
 		return trunc(line, m.w)
 	}
-	var parts []string
-	for _, c := range m.chips() {
-		parts = append(parts, chipStyle.Render(c.label))
-	}
-	return trunc(strings.Join(parts, " "), m.w)
+	return m.buttonRow(m.chips())
 }
 
 // A chip is one footer button: a hint for the keyboard and a tap target for a
@@ -710,28 +738,41 @@ type chip struct {
 }
 
 func (m model) chips() []chip {
+	if m.testing {
+		cs := []chip{{label: "  space reveal  ", key: " "}, {label: "  n next  ", key: "n"},
+			{label: "  esc back  ", key: "esc"}, {label: "  q quit  ", key: "q"}}
+		if m.revealed {
+			cs[0].label = "  space next card  "
+		}
+		return measure(cs, m.w)
+	}
 	cs := []chip{
-		{label: "⇄ h/l", key: "tab"},
+		{label: "◀▶ h/l", key: "tab"},
 		{label: "▲ k", key: "k"},
 		{label: "▼ j", key: "j"},
-		{label: "⇞ ^b", key: "ctrl+b"},
-		{label: "⇟ ^f", key: "ctrl+f"},
+		{label: "« ^b", key: "ctrl+b"},
+		{label: "» ^f", key: "ctrl+f"},
 		{label: "/ search", key: "/"},
-		{label: "⚄ random", key: " "},
+		{label: "★ random", key: " "},
 		{label: "f " + m.filterLabel(), key: "f"},
 		{label: "t test", key: "t"},
 		{label: "q quit", key: "q"},
 	}
-	// Drop the least essential buttons until the row fits.
+	return measure(cs, m.w)
+}
+
+// measure assigns each chip its columns, dropping the least essential ones
+// until the row fits.
+func measure(cs []chip, w int) []chip {
 	for {
 		x := 0
 		for i := range cs {
 			cs[i].x0 = x
 			x += lipgloss.Width(cs[i].label) + 2 // the chip's own padding
 			cs[i].x1 = x - 1
-			x++ // the gap between chips
+			x += 1 // the gap between chips
 		}
-		if x-1 <= m.w || len(cs) <= 4 {
+		if x-1 <= w || len(cs) <= 4 {
 			return cs
 		}
 		cs = append(cs[:3], cs[4:]...)

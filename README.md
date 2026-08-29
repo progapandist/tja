@@ -4,6 +4,11 @@ A one-armed-bandit TUI for German verbs: two reels, prefixes and stems, that
 filter each other. Whatever they land on is always a real word — spinning the
 reels *is* the vocabulary list.
 
+**[Try it in your browser → progapanda.org/tja](https://progapanda.org/tja)**
+— a real one, in a container, no install.
+
+![browse mode](docs/browse.png)
+
 ```
 go install github.com/progapandist/tja@latest   # or, in a clone:
 go run .
@@ -56,9 +61,14 @@ reels back.
 
 ## Test mode
 
+![test mode](docs/test.png)
+
 `t` deals a random real combination as a card: one prefix, one stem, nothing else.
 `space` reveals forms, rection and meanings, `space`/`n` deals the next one,
-`esc` returns to the reels — parked on the card you just saw.
+`esc` returns to the reels — parked on the card you just saw. The buttons along
+the bottom do the same, for thumbs.
+
+Screenshots are generated: `go build -o /tmp/tjabin . && vhs docs/demo.tape`.
 
 ## Data
 
