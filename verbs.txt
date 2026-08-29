@@ -1,368 +1,974 @@
 # =stem|gloss|präsens 3.sg|präteritum|partizip II|aux
-# verb|separable t/f|official|colloquial|example|aux override
+# verb|separable t/f|official|colloquial|example|use|aux override
 
 =nehmen|to take|nimmt|nahm|genommen|hat
-nehmen|f|to take, to grasp, to receive|"nimm's leicht" – take it easy; also "sich Zeit nehmen"|Er nimmt den Bus zur Arbeit.
-annehmen|t|to accept; to assume, to suppose|the everyday word for "I assume" – "ich nehm mal an, …"|Ich nehme an, du kommst später.
-abnehmen|t|to take off, to remove; to lose weight; to pick up the phone|"nimmst du mir das ab?" = do you believe me? Also "jemandem Arbeit abnehmen" – take a load off someone|Sie hat zehn Kilo abgenommen.
-aufnehmen|t|to pick up; to record; to admit, to take in|the word for recording audio/video, and for a group accepting a new member|Wir nehmen das Album im Studio auf.
-mitnehmen|t|to take along, to give a lift|"das nimmt mich mit" = that really gets to me, wears me out|Kannst du mich mitnehmen?
-teilnehmen|t|to take part, to participate (an +D)|formal register; casual speech prefers "mitmachen"|Sie nimmt am Wettbewerb teil.
-übernehmen|f|to take over, to assume (a role, costs, responsibility)|"sich übernehmen" = to bite off more than you can chew|Er übernimmt die Firma seines Vaters.
-unternehmen|f|to undertake, to do something about it|"was unternehmen" = to go out and do something fun|Lass uns heute etwas unternehmen!
-benehmen|f|to behave oneself (always reflexive)|what parents say to kids: "benimm dich!"|Benimm dich, wir sind nicht allein.
-zunehmen|t|to increase; to put on weight|the polite counterpart to abnehmen – also "der Wind nimmt zu"|Die Kritik nimmt zu.
-vornehmen|t|to carry out, to undertake (formal); to resolve to do|"sich etwas vornehmen" = to make a plan or resolution|Ich habe mir vorgenommen, früher aufzustehen.
-wahrnehmen|t|to perceive; to exercise (a right), to keep (an appointment)|bureaucratic favourite: "einen Termin wahrnehmen"|Er nimmt die Geräusche kaum wahr.
-festnehmen|t|to arrest, to take into custody|police and news register only|Die Polizei nahm den Täter fest.
-einnehmen|t|to take (medicine); to occupy (a position); to bring in (money)|"jemanden für sich einnehmen" = to win someone over|Nehmen Sie die Tabletten dreimal täglich ein.
-ausnehmen|t|to gut (a fish); to exempt|"jemanden ausnehmen" = to fleece someone, take them for all they have|Von dieser Regel ist niemand ausgenommen.
+nehmen|f|to take, to grasp, to receive|"nimm's leicht" – take it easy; also "sich Zeit nehmen"|Er nimmt den Bus zur Arbeit.|etw+A
+annehmen|t|to accept; to assume, to suppose|the everyday word for "I assume" – "ich nehm mal an, …"|Ich nehme an, du kommst später.|etw+A · dass-Satz
+abnehmen|t|to take off, to remove; to lose weight; to pick up the phone|"nimmst du mir das ab?" = do you believe me? Also "jemandem Arbeit abnehmen" – take a load off someone|Sie hat zehn Kilo abgenommen.|etw+A · jdm etw+A
+aufnehmen|t|to pick up; to record; to admit, to take in|the word for recording audio/video, and for a group accepting a new member|Wir nehmen das Album im Studio auf.|jdn/etw+A · in etw+A
+mitnehmen|t|to take along, to give a lift|"das nimmt mich mit" = that really gets to me, wears me out|Kannst du mich mitnehmen?|jdn/etw+A
+teilnehmen|t|to take part, to participate (an +D)|formal register; casual speech prefers "mitmachen"|Sie nimmt am Wettbewerb teil.|an etw+D
+übernehmen|f|to take over, to assume (a role, costs, responsibility)|"sich übernehmen" = to bite off more than you can chew|Er übernimmt die Firma seines Vaters.|etw+A · sich+A (übernehmen)
+unternehmen|f|to undertake, to do something about it|"was unternehmen" = to go out and do something fun|Lass uns heute etwas unternehmen!|etw+A · gegen etw+A
+benehmen|f|to behave oneself (always reflexive)|what parents say to kids: "benimm dich!"|Benimm dich, wir sind nicht allein.|sich+A
+zunehmen|t|to increase; to put on weight|the polite counterpart to abnehmen – also "der Wind nimmt zu"|Die Kritik nimmt zu.|kein Obj. · um etw+A
+vornehmen|t|to carry out, to undertake (formal); to resolve to do|"sich etwas vornehmen" = to make a plan or resolution|Ich habe mir vorgenommen, früher aufzustehen.|sich+D etw+A
+wahrnehmen|t|to perceive; to exercise (a right), to keep (an appointment)|bureaucratic favourite: "einen Termin wahrnehmen"|Er nimmt die Geräusche kaum wahr.|etw+A
+festnehmen|t|to arrest, to take into custody|police and news register only|Die Polizei nahm den Täter fest.|jdn+A
+einnehmen|t|to take (medicine); to occupy (a position); to bring in (money)|"jemanden für sich einnehmen" = to win someone over|Nehmen Sie die Tabletten dreimal täglich ein.|etw+A
+ausnehmen|t|to gut (a fish); to exempt|"jemanden ausnehmen" = to fleece someone, take them for all they have|Von dieser Regel ist niemand ausgenommen.|jdn/etw+A · von etw+D
 
 =kommen|to come|kommt|kam|gekommen|ist
-kommen|f|to come, to arrive|"wie kommst du darauf?" = what makes you think that?|Sie kommt morgen an.
-ankommen|t|to arrive; to matter (auf +A)|"es kommt darauf an" is the German shrug for "it depends"|Der Zug kommt um acht an.
-bekommen|f|to get, to receive|NOT "to become" – the classic false friend. Also "das bekommt mir nicht" = that doesn't agree with me|Ich habe einen Brief bekommen.|hat
-mitkommen|t|to come along; to keep up (in class)|"kommst du mit?" is the standard invitation|Kommst du mit ins Kino?
-vorkommen|t|to occur, to happen; to seem (jemandem)|"das kommt mir bekannt vor" = that rings a bell|So etwas kommt selten vor.
-umkommen|t|to perish, to die (in an accident or disaster)|hyperbole: "ich komme um vor Hitze" = I'm dying of heat|Bei dem Unglück kamen drei Menschen um.
-entkommen|f|to escape, to get away|neutral register, used for prisoners and animals alike|Der Dieb ist der Polizei entkommen.
-auskommen|t|to get by (mit +D); to get along (mit jemandem)|"mit wenig auskommen" – the frugality word|Ich komme mit dem Geld gut aus.
-durchkommen|t|to get through, to pass; to pull through (an illness)|also "am Telefon nicht durchkommen" – can't get through|Er ist durch die Prüfung durchgekommen.
-nachkommen|t|to follow later; to comply with (einer Pflicht)|"ich komme gleich nach" – go ahead, I'll follow|Ich komme in einer Stunde nach.
-wegkommen|t|to get away; to go missing|"gut wegkommen" = to come off well in a comparison|Meine Schlüssel sind weggekommen.
-zurechtkommen|t|to cope, to manage (mit +D)|the standard way to ask if someone is managing|Kommst du damit zurecht?
-zukommen|t|to approach; to be due to someone|"auf jemanden zukommen" = to get in touch with someone about something|Ich komme später auf Sie zu.
+kommen|f|to come, to arrive|"wie kommst du darauf?" = what makes you think that?|Sie kommt morgen an.|kein Obj. · zu/nach/aus +D
+ankommen|t|to arrive; to matter (auf +A)|"es kommt darauf an" is the German shrug for "it depends"|Der Zug kommt um acht an.|in/an +D · es kommt auf etw+A an
+bekommen|f|to get, to receive|NOT "to become" – the classic false friend. Also "das bekommt mir nicht" = that doesn't agree with me|Ich habe einen Brief bekommen.|etw+A|hat
+mitkommen|t|to come along; to keep up (in class)|"kommst du mit?" is the standard invitation|Kommst du mit ins Kino?|mit jdm+D
+vorkommen|t|to occur, to happen; to seem (jemandem)|"das kommt mir bekannt vor" = that rings a bell|So etwas kommt selten vor.|kein Obj. · jdm+D (scheinen)
+umkommen|t|to perish, to die (in an accident or disaster)|hyperbole: "ich komme um vor Hitze" = I'm dying of heat|Bei dem Unglück kamen drei Menschen um.|bei etw+D
+entkommen|f|to escape, to get away|neutral register, used for prisoners and animals alike|Der Dieb ist der Polizei entkommen.|jdm/etw+D
+auskommen|t|to get by (mit +D); to get along (mit jemandem)|"mit wenig auskommen" – the frugality word|Ich komme mit dem Geld gut aus.|mit etw/jdm+D
+durchkommen|t|to get through, to pass; to pull through (an illness)|also "am Telefon nicht durchkommen" – can't get through|Er ist durch die Prüfung durchgekommen.|durch etw+A · mit etw+D
+nachkommen|t|to follow later; to comply with (einer Pflicht)|"ich komme gleich nach" – go ahead, I'll follow|Ich komme in einer Stunde nach.|kein Obj. · einer Pflicht+D
+wegkommen|t|to get away; to go missing|"gut wegkommen" = to come off well in a comparison|Meine Schlüssel sind weggekommen.|kein Obj.
+zurechtkommen|t|to cope, to manage (mit +D)|the standard way to ask if someone is managing|Kommst du damit zurecht?|mit etw/jdm+D
+zukommen|t|to approach; to be due to someone|"auf jemanden zukommen" = to get in touch with someone about something|Ich komme später auf Sie zu.|auf jdn+A · jdm+D
 
 =gehen|to go|geht|ging|gegangen|ist
-gehen|f|to go, to walk; to work, to function|"es geht" = it's okay-ish, the national answer to "how are you?"|Wie geht es dir?
-ausgehen|t|to go out; to run out; to assume (davon ausgehen)|"ich gehe davon aus, dass…" is office-speak for "I assume"|Uns geht das Geld aus.
-angehen|t|to concern someone; to tackle (a problem)|"das geht dich nichts an" = none of your business|Das Problem müssen wir angehen.
-aufgehen|t|to rise (sun); to open; to work out (a calculation)|"mir geht ein Licht auf" = it dawns on me|Die Rechnung geht nicht auf.
-eingehen|t|to enter into (a contract); to go into detail (auf +A); to die (plant)|"darauf gehe ich nicht ein" = I won't get into that|Er geht auf meine Frage nicht ein.
-übergehen|f|to skip, to pass over, to ignore someone|used about being passed over for a promotion|Man hat ihn bei der Beförderung übergangen.|hat
-umgehen|f|to circumvent, to get around (a rule)|the tax-and-loopholes word|Er umgeht die Vorschriften.|hat
-umgehen|t|to deal with, to handle (mit +D)|"mit Menschen umgehen können" = to be good with people|Sie kann gut mit Kindern umgehen.
-vergehen|f|to pass (of time); to fade|"mir ist der Appetit vergangen" = I lost my appetite|Die Zeit vergeht schnell.
-begehen|f|to commit (a crime, a mistake); to mark (an occasion)|almost only in "einen Fehler begehen" and crime reports|Er hat einen Fehler begangen.|hat
-entgehen|f|to escape, to elude; to miss out on|"sich etwas entgehen lassen" = to let an opportunity slip|Das ist mir entgangen.
-zugehen|t|to approach (auf +A); to close; to go on (of events)|"es geht dort laut zu" = things are loud over there|Auf der Party ging es wild zu.
-losgehen|t|to set off; to start, to kick off|"jetzt geht's los!" = here we go!|Wann geht der Film los?
-untergehen|t|to sink; to set (sun); to be drowned out|"die Welt geht nicht unter" = it's not the end of the world|Die Sonne geht unter.
-durchgehen|t|to go through, to review; to bolt (horse)|"jemandem etwas durchgehen lassen" = to let someone get away with it|Gehen wir die Liste noch mal durch.
+gehen|f|to go, to walk; to work, to function|"es geht" = it's okay-ish, the national answer to "how are you?"|Wie geht es dir?|kein Obj. · zu/in +D/A
+ausgehen|t|to go out; to run out; to assume (davon ausgehen)|"ich gehe davon aus, dass…" is office-speak for "I assume"|Uns geht das Geld aus.|kein Obj. · von etw+D (annehmen)
+angehen|t|to concern someone; to tackle (a problem)|"das geht dich nichts an" = none of your business|Das Problem müssen wir angehen.|jdn+A (betreffen) · etw+A (anpacken)
+aufgehen|t|to rise (sun); to open; to work out (a calculation)|"mir geht ein Licht auf" = it dawns on me|Die Rechnung geht nicht auf.|kein Obj. · jdm+D (klar werden)
+eingehen|t|to enter into (a contract); to go into detail (auf +A); to die (plant)|"darauf gehe ich nicht ein" = I won't get into that|Er geht auf meine Frage nicht ein.|auf etw+A · etw+A (Vertrag)
+übergehen|f|to skip, to pass over, to ignore someone|used about being passed over for a promotion|Man hat ihn bei der Beförderung übergangen.|jdn+A (übergehen)|hat
+umgehen|f|to circumvent, to get around (a rule)|the tax-and-loopholes word|Er umgeht die Vorschriften.|etw+A (Regel)|hat
+umgehen|t|to deal with, to handle (mit +D)|"mit Menschen umgehen können" = to be good with people|Sie kann gut mit Kindern umgehen.|mit jdm/etw+D
+vergehen|f|to pass (of time); to fade|"mir ist der Appetit vergangen" = I lost my appetite|Die Zeit vergeht schnell.|kein Obj. · jdm+D (Appetit)
+begehen|f|to commit (a crime, a mistake); to mark (an occasion)|almost only in "einen Fehler begehen" and crime reports|Er hat einen Fehler begangen.|etw+A (Fehler, Tat)|hat
+entgehen|f|to escape, to elude; to miss out on|"sich etwas entgehen lassen" = to let an opportunity slip|Das ist mir entgangen.|jdm+D · etw+D
+zugehen|t|to approach (auf +A); to close; to go on (of events)|"es geht dort laut zu" = things are loud over there|Auf der Party ging es wild zu.|auf jdn+A · es geht … zu
+losgehen|t|to set off; to start, to kick off|"jetzt geht's los!" = here we go!|Wann geht der Film los?|kein Obj.
+untergehen|t|to sink; to set (sun); to be drowned out|"die Welt geht nicht unter" = it's not the end of the world|Die Sonne geht unter.|kein Obj.
+durchgehen|t|to go through, to review; to bolt (horse)|"jemandem etwas durchgehen lassen" = to let someone get away with it|Gehen wir die Liste noch mal durch.|etw+A · jdm etw+A durchgehen lassen
 
 =stehen|to stand|steht|stand|gestanden|hat
-stehen|f|to stand; to be located; to suit someone|"das steht dir gut" = that looks good on you|Das Buch steht im Regal.
-verstehen|f|to understand|"verstehst du?" tag question; "sich verstehen" = to get along|Ich verstehe kein Wort.
-bestehen|f|to pass (an exam); to exist; to consist of (aus +D); to insist (auf +D)|four quite different meanings, all common|Sie hat die Prüfung bestanden.
-entstehen|f|to arise, to come into being, to be created|the word for how costs, problems and buildings come about|Dabei entstehen hohe Kosten.|ist
-aufstehen|t|to get up, to stand up|"früh aufstehen" – the morning-person word|Ich stehe um sechs auf.|ist
-ausstehen|t|to be outstanding, still pending; to endure|"ich kann ihn nicht ausstehen" = I can't stand him|Die Antwort steht noch aus.
-anstehen|t|to queue, to line up; to be on the agenda|"was steht heute an?" = what's on today?|Wir standen eine Stunde an.
-gestehen|f|to confess, to admit|"ich muss gestehen…" softens an admission|Er hat den Diebstahl gestanden.
-widerstehen|f|to resist (+D)|almost always about temptation or chocolate|Ich konnte der Versuchung nicht widerstehen.
-überstehen|f|to survive, to get through something|"das haben wir überstanden!" after anything unpleasant|Wir haben den Winter gut überstanden.
-zustehen|t|to be due to someone, to be someone's right|legal and HR register: "mir steht Urlaub zu"|Ihnen steht eine Entschädigung zu.
-feststehen|t|to be certain, to be settled|"eins steht fest" = one thing is certain|Der Termin steht fest.
+stehen|f|to stand; to be located; to suit someone|"das steht dir gut" = that looks good on you|Das Buch steht im Regal.|kein Obj. · jdm+D (kleiden)
+verstehen|f|to understand|"verstehst du?" tag question; "sich verstehen" = to get along|Ich verstehe kein Wort.|etw/jdn+A · sich+A mit jdm+D
+bestehen|f|to pass (an exam); to exist; to consist of (aus +D); to insist (auf +D)|four quite different meanings, all common|Sie hat die Prüfung bestanden.|etw+A (Prüfung) · aus etw+D · auf etw+D
+entstehen|f|to arise, to come into being, to be created|the word for how costs, problems and buildings come about|Dabei entstehen hohe Kosten.|kein Obj. · aus etw+D|ist
+aufstehen|t|to get up, to stand up|"früh aufstehen" – the morning-person word|Ich stehe um sechs auf.|kein Obj.|ist
+ausstehen|t|to be outstanding, still pending; to endure|"ich kann ihn nicht ausstehen" = I can't stand him|Die Antwort steht noch aus.|kein Obj. · jdn+A nicht ausstehen können
+anstehen|t|to queue, to line up; to be on the agenda|"was steht heute an?" = what's on today?|Wir standen eine Stunde an.|kein Obj. · für etw+A
+gestehen|f|to confess, to admit|"ich muss gestehen…" softens an admission|Er hat den Diebstahl gestanden.|etw+A · jdm etw+A
+widerstehen|f|to resist (+D)|almost always about temptation or chocolate|Ich konnte der Versuchung nicht widerstehen.|jdm/etw+D
+überstehen|f|to survive, to get through something|"das haben wir überstanden!" after anything unpleasant|Wir haben den Winter gut überstanden.|etw+A
+zustehen|t|to be due to someone, to be someone's right|legal and HR register: "mir steht Urlaub zu"|Ihnen steht eine Entschädigung zu.|jdm+D
+feststehen|t|to be certain, to be settled|"eins steht fest" = one thing is certain|Der Termin steht fest.|kein Obj. · dass-Satz
 
 =halten|to hold|hält|hielt|gehalten|hat
-halten|f|to hold; to stop; to keep (a promise); to give (a talk)|"was hältst du davon?" = what do you think of it?|Der Bus hält hier nicht.
-behalten|f|to keep; to remember, to retain|"behalt es für dich" = keep it to yourself|Das Geschenk darfst du behalten.
-erhalten|f|to receive; to preserve, to maintain|formal for "bekommen"; also "gut erhalten" = in good condition|Wir haben Ihre Anfrage erhalten.
-verhalten|f|to behave (always reflexive: sich verhalten)|the neutral, observational word – no praise or blame like "benehmen"|Wie verhält sich das Programm bei Fehlern?
-anhalten|t|to stop, to bring to a halt; to last, to persist|"die Luft anhalten" = hold your breath|Das gute Wetter hält an.
-aufhalten|t|to hold up, to delay; to stay (sich aufhalten)|"halt dich nicht damit auf" = don't waste your time on it|Ich will Sie nicht lange aufhalten.
-enthalten|f|to contain; to abstain (sich enthalten)|the label word: "enthält Nüsse"|Der Preis enthält die Mehrwertsteuer.
-unterhalten|f|to entertain; to maintain (a business); to talk (sich unterhalten)|"sich unterhalten" is the everyday word for having a conversation|Wir haben uns lange unterhalten.
-aushalten|t|to bear, to endure, to put up with|"nicht auszuhalten!" = unbearable!|Diese Hitze halte ich nicht aus.
-abhalten|t|to hold (an event); to keep someone from doing something|"lass dich nicht abhalten" = don't let me stop you|Die Konferenz wird online abgehalten.
-einhalten|t|to keep to, to comply with (a deadline, a rule)|contract and deadline vocabulary|Bitte halten Sie die Frist ein.
-festhalten|t|to hold on to; to record, to note down; to cling (an +D)|"halt dich fest!" = brace yourself, literally and figuratively|Wir halten das Ergebnis schriftlich fest.
-zurückhalten|t|to hold back, to restrain; to be reserved|"sich zurückhalten" = to keep a low profile|Er konnte sich kaum zurückhalten.
-durchhalten|t|to hold out, to stick it out|the gym and deadline word: "durchhalten!"|Nur noch zwei Wochen – durchhalten!
+halten|f|to hold; to stop; to keep (a promise); to give (a talk)|"was hältst du davon?" = what do you think of it?|Der Bus hält hier nicht.|etw/jdn+A · von etw+D (Meinung) · für etw+A
+behalten|f|to keep; to remember, to retain|"behalt es für dich" = keep it to yourself|Das Geschenk darfst du behalten.|etw+A · etw+A für sich
+erhalten|f|to receive; to preserve, to maintain|formal for "bekommen"; also "gut erhalten" = in good condition|Wir haben Ihre Anfrage erhalten.|etw+A
+verhalten|f|to behave (always reflexive: sich verhalten)|the neutral, observational word – no praise or blame like "benehmen"|Wie verhält sich das Programm bei Fehlern?|sich+A
+anhalten|t|to stop, to bring to a halt; to last, to persist|"die Luft anhalten" = hold your breath|Das gute Wetter hält an.|kein Obj. · etw+A (anhalten)
+aufhalten|t|to hold up, to delay; to stay (sich aufhalten)|"halt dich nicht damit auf" = don't waste your time on it|Ich will Sie nicht lange aufhalten.|jdn/etw+A · sich+A (irgendwo)
+enthalten|f|to contain; to abstain (sich enthalten)|the label word: "enthält Nüsse"|Der Preis enthält die Mehrwertsteuer.|etw+A · sich+A einer Sache+G
+unterhalten|f|to entertain; to maintain (a business); to talk (sich unterhalten)|"sich unterhalten" is the everyday word for having a conversation|Wir haben uns lange unterhalten.|jdn+A · sich+A mit jdm+D über etw+A
+aushalten|t|to bear, to endure, to put up with|"nicht auszuhalten!" = unbearable!|Diese Hitze halte ich nicht aus.|etw/jdn+A
+abhalten|t|to hold (an event); to keep someone from doing something|"lass dich nicht abhalten" = don't let me stop you|Die Konferenz wird online abgehalten.|etw+A · jdn+A von etw+D
+einhalten|t|to keep to, to comply with (a deadline, a rule)|contract and deadline vocabulary|Bitte halten Sie die Frist ein.|etw+A (Frist, Regel)
+festhalten|t|to hold on to; to record, to note down; to cling (an +D)|"halt dich fest!" = brace yourself, literally and figuratively|Wir halten das Ergebnis schriftlich fest.|etw+A · an etw+D · sich+A an etw+D
+zurückhalten|t|to hold back, to restrain; to be reserved|"sich zurückhalten" = to keep a low profile|Er konnte sich kaum zurückhalten.|etw/jdn+A · sich+A mit etw+D
+durchhalten|t|to hold out, to stick it out|the gym and deadline word: "durchhalten!"|Nur noch zwei Wochen – durchhalten!|kein Obj. · etw+A
 
 =fallen|to fall|fällt|fiel|gefallen|ist
-fallen|f|to fall, to drop|"es fällt mir schwer" = I find it hard|Die Preise fallen.
-gefallen|f|to please, to be liked by someone|German says "it pleases me", not "I like it": "es gefällt mir"|Das Bild gefällt mir sehr.|hat
-auffallen|t|to stand out, to be noticeable|"mir ist aufgefallen, dass…" = I noticed that…|Ist dir etwas aufgefallen?
-ausfallen|t|to be cancelled; to break down; to turn out (a certain way)|the school and train word: "der Unterricht fällt aus"|Der Zug fällt heute aus.
-einfallen|t|to occur to someone (an idea); to invade|"mir fällt nichts ein" = I can't think of anything|Mir fällt sein Name nicht ein.
-überfallen|f|to attack, to mug, to raid|also figurative: "jemanden mit Fragen überfallen"|Die Bank wurde überfallen.|hat
-zerfallen|f|to disintegrate, to crumble, to decay|used for empires, buildings and atoms alike|Das Gebäude zerfällt.
-entfallen|f|to be cancelled, to not apply; to slip one's mind|bureaucratic: "der Punkt entfällt"|Der Name ist mir entfallen.
-umfallen|t|to fall over, to topple|"umfallen" also = to cave in, to change your position under pressure|Die Vase ist umgefallen.
-befallen|f|to afflict, to infest (illness, pests, fear)|slightly literary; common in gardening and medicine|Angst befiel ihn.|hat
-anfallen|t|to accrue, to arise (costs, work)|invoice vocabulary: "es fallen Gebühren an"|Dabei fallen keine Kosten an.
-hinfallen|t|to fall down, to take a tumble|what you say about kids and ice: "ich bin hingefallen"|Pass auf, dass du nicht hinfällst!
+fallen|f|to fall, to drop|"es fällt mir schwer" = I find it hard|Die Preise fallen.|kein Obj. · jdm+D schwer/leicht
+gefallen|f|to please, to be liked by someone|German says "it pleases me", not "I like it": "es gefällt mir"|Das Bild gefällt mir sehr.|jdm+D|hat
+auffallen|t|to stand out, to be noticeable|"mir ist aufgefallen, dass…" = I noticed that…|Ist dir etwas aufgefallen?|jdm+D
+ausfallen|t|to be cancelled; to break down; to turn out (a certain way)|the school and train word: "der Unterricht fällt aus"|Der Zug fällt heute aus.|kein Obj.
+einfallen|t|to occur to someone (an idea); to invade|"mir fällt nichts ein" = I can't think of anything|Mir fällt sein Name nicht ein.|jdm+D
+überfallen|f|to attack, to mug, to raid|also figurative: "jemanden mit Fragen überfallen"|Die Bank wurde überfallen.|jdn/etw+A|hat
+zerfallen|f|to disintegrate, to crumble, to decay|used for empires, buildings and atoms alike|Das Gebäude zerfällt.|kein Obj. · in etw+A
+entfallen|f|to be cancelled, to not apply; to slip one's mind|bureaucratic: "der Punkt entfällt"|Der Name ist mir entfallen.|kein Obj. · jdm+D (vergessen)
+umfallen|t|to fall over, to topple|"umfallen" also = to cave in, to change your position under pressure|Die Vase ist umgefallen.|kein Obj.
+befallen|f|to afflict, to infest (illness, pests, fear)|slightly literary; common in gardening and medicine|Angst befiel ihn.|jdn/etw+A|hat
+anfallen|t|to accrue, to arise (costs, work)|invoice vocabulary: "es fallen Gebühren an"|Dabei fallen keine Kosten an.|kein Obj. (Kosten)
+hinfallen|t|to fall down, to take a tumble|what you say about kids and ice: "ich bin hingefallen"|Pass auf, dass du nicht hinfällst!|kein Obj.
 
 =ziehen|to pull|zieht|zog|gezogen|hat
-ziehen|f|to pull, to draw; to move house (with sein)|"es zieht" = there's a draught – a national obsession|Er zieht die Tür zu.
-anziehen|t|to put on (clothes); to attract; to pick up (prices)|"sich anziehen" = to get dressed|Zieh dir eine Jacke an!
-ausziehen|t|to take off (clothes); to move out|the flatshare word: "ich ziehe zum Ersten aus"|Sie zieht nächsten Monat aus.
-umziehen|t|to move house; to change clothes (sich umziehen)|two very different everyday meanings, told apart by the reflexive|Wir ziehen nach Berlin um.|ist
-beziehen|f|to obtain, to draw (a salary); to move into; to refer to (sich beziehen auf)|"ich beziehe mich auf Ihre E-Mail" – standard business opener|Er bezieht Arbeitslosengeld.
-erziehen|f|to raise, to bring up, to educate (morally)|about upbringing, not schooling – that is "ausbilden"|Sie erzieht ihre Kinder streng.
-einziehen|t|to move in; to collect (fees); to retract|"einziehen" is the counterpart to "ausziehen"|Wir ziehen am Samstag ein.|ist
-abziehen|t|to subtract, to deduct; to withdraw (troops); to peel off|"Steuern abziehen" and "eine Show abziehen" = to put on a spectacle|Zieh die Kosten vom Gewinn ab.
-vorziehen|t|to prefer; to bring forward (a date)|"ich ziehe es vor, zu Hause zu bleiben" – slightly formal "I'd rather"|Wir ziehen den Termin vor.
-zurückziehen|t|to withdraw, to retract; to retire (sich zurückziehen)|"einen Antrag zurückziehen" and "sich zurückziehen" = to withdraw socially|Er hat seine Bewerbung zurückgezogen.
-überziehen|f|to overdraw (an account); to overrun (time)|"das Konto überziehen" – the bank word|Sie hat ihr Konto überzogen.
-entziehen|f|to withdraw, to revoke, to deprive of|"den Führerschein entziehen" – licences and privileges|Man hat ihm die Lizenz entzogen.
-aufziehen|t|to raise (a child, an animal); to wind up; to tease|"jemanden aufziehen" = to pull someone's leg|Sie hat drei Kinder allein aufgezogen.
+ziehen|f|to pull, to draw; to move house (with sein)|"es zieht" = there's a draught – a national obsession|Er zieht die Tür zu.|etw+A · an etw+D · nach +D (umziehen)
+anziehen|t|to put on (clothes); to attract; to pick up (prices)|"sich anziehen" = to get dressed|Zieh dir eine Jacke an!|etw+A · sich+D etw+A · jdn+A
+ausziehen|t|to take off (clothes); to move out|the flatshare word: "ich ziehe zum Ersten aus"|Sie zieht nächsten Monat aus.|etw+A · sich+A · aus etw+D
+umziehen|t|to move house; to change clothes (sich umziehen)|two very different everyday meanings, told apart by the reflexive|Wir ziehen nach Berlin um.|kein Obj. · nach +D · sich+A|ist
+beziehen|f|to obtain, to draw (a salary); to move into; to refer to (sich beziehen auf)|"ich beziehe mich auf Ihre E-Mail" – standard business opener|Er bezieht Arbeitslosengeld.|etw+A · sich+A auf etw+A
+erziehen|f|to raise, to bring up, to educate (morally)|about upbringing, not schooling – that is "ausbilden"|Sie erzieht ihre Kinder streng.|jdn+A · zu etw+D
+einziehen|t|to move in; to collect (fees); to retract|"einziehen" is the counterpart to "ausziehen"|Wir ziehen am Samstag ein.|kein Obj. · in etw+A · etw+A|ist
+abziehen|t|to subtract, to deduct; to withdraw (troops); to peel off|"Steuern abziehen" and "eine Show abziehen" = to put on a spectacle|Zieh die Kosten vom Gewinn ab.|etw+A · von etw+D
+vorziehen|t|to prefer; to bring forward (a date)|"ich ziehe es vor, zu Hause zu bleiben" – slightly formal "I'd rather"|Wir ziehen den Termin vor.|etw+A · etw+A vor etw+D
+zurückziehen|t|to withdraw, to retract; to retire (sich zurückziehen)|"einen Antrag zurückziehen" and "sich zurückziehen" = to withdraw socially|Er hat seine Bewerbung zurückgezogen.|etw+A · sich+A aus etw+D
+überziehen|f|to overdraw (an account); to overrun (time)|"das Konto überziehen" – the bank word|Sie hat ihr Konto überzogen.|etw+A (Konto, Zeit)
+entziehen|f|to withdraw, to revoke, to deprive of|"den Führerschein entziehen" – licences and privileges|Man hat ihm die Lizenz entzogen.|jdm etw+A · sich+A einer Sache+D
+aufziehen|t|to raise (a child, an animal); to wind up; to tease|"jemanden aufziehen" = to pull someone's leg|Sie hat drei Kinder allein aufgezogen.|jdn/etw+A
 
 =geben|to give|gibt|gab|gegeben|hat
-geben|f|to give; there is/are (es gibt)|"es gibt" is the single most used construction in German|Was gibt es zum Essen?
-angeben|t|to state, to declare; to show off, to brag|"gib nicht so an!" = stop bragging – very common with teenagers|Bitte geben Sie Ihre Adresse an.
-aufgeben|t|to give up, to quit; to post (a letter); to set (homework)|"gib nicht auf!" = don't give up|Ich gebe nicht so schnell auf.
-ausgeben|t|to spend (money); to issue; to buy a round|"ich geb einen aus" = the drinks are on me|Er gibt zu viel Geld aus.
-ergeben|f|to result in, to yield; to surrender (sich ergeben)|"das ergibt Sinn" = that makes sense (a modern loan-translation)|Die Prüfung ergab keine Mängel.
-vergeben|f|to forgive; to award, to hand out (a contract, a place)|"schon vergeben" = already taken, of jobs and people|Der Auftrag wurde vergeben.
-zugeben|t|to admit, to confess; to add (an ingredient)|"ich muss zugeben…" softens an admission|Er gab seinen Fehler zu.
-abgeben|t|to hand in, to drop off; to give away part of something|the school and post office word: "die Arbeit abgeben"|Ich muss die Hausarbeit morgen abgeben.
-eingeben|t|to enter, to input (data)|IT vocabulary: "das Passwort eingeben"|Geben Sie den Code ein.
-begeben|f|to proceed, to make one's way (sich begeben)|distinctly formal, announcements and literature|Bitte begeben Sie sich zum Ausgang.
-nachgeben|t|to give in, to yield|"ich gebe nach" ends the argument|Am Ende hat er nachgegeben.
-weitergeben|t|to pass on, to forward|"gib es bitte weiter" – of information and objects|Ich gebe die Info weiter.
-herausgeben|t|to publish, to edit; to hand over; to give change|"können Sie herausgeben?" = can you break a note?|Der Verlag gibt das Buch heraus.
+geben|f|to give; there is/are (es gibt)|"es gibt" is the single most used construction in German|Was gibt es zum Essen?|jdm etw+A · es gibt etw+A
+angeben|t|to state, to declare; to show off, to brag|"gib nicht so an!" = stop bragging – very common with teenagers|Bitte geben Sie Ihre Adresse an.|etw+A · kein Obj. (prahlen)
+aufgeben|t|to give up, to quit; to post (a letter); to set (homework)|"gib nicht auf!" = don't give up|Ich gebe nicht so schnell auf.|etw+A · kein Obj.
+ausgeben|t|to spend (money); to issue; to buy a round|"ich geb einen aus" = the drinks are on me|Er gibt zu viel Geld aus.|etw+A für etw+A · jdm etw+A
+ergeben|f|to result in, to yield; to surrender (sich ergeben)|"das ergibt Sinn" = that makes sense (a modern loan-translation)|Die Prüfung ergab keine Mängel.|etw+A (Ergebnis) · sich+A (aus etw+D)
+vergeben|f|to forgive; to award, to hand out (a contract, a place)|"schon vergeben" = already taken, of jobs and people|Der Auftrag wurde vergeben.|jdm+D · jdm etw+A · etw+A (Auftrag)
+zugeben|t|to admit, to confess; to add (an ingredient)|"ich muss zugeben…" softens an admission|Er gab seinen Fehler zu.|etw+A · dass-Satz
+abgeben|t|to hand in, to drop off; to give away part of something|the school and post office word: "die Arbeit abgeben"|Ich muss die Hausarbeit morgen abgeben.|etw+A · bei jdm+D
+eingeben|t|to enter, to input (data)|IT vocabulary: "das Passwort eingeben"|Geben Sie den Code ein.|etw+A (Daten)
+begeben|f|to proceed, to make one's way (sich begeben)|distinctly formal, announcements and literature|Bitte begeben Sie sich zum Ausgang.|sich+A zu/nach +D
+nachgeben|t|to give in, to yield|"ich gebe nach" ends the argument|Am Ende hat er nachgegeben.|jdm+D · kein Obj.
+weitergeben|t|to pass on, to forward|"gib es bitte weiter" – of information and objects|Ich gebe die Info weiter.|etw+A an jdn+A
+herausgeben|t|to publish, to edit; to hand over; to give change|"können Sie herausgeben?" = can you break a note?|Der Verlag gibt das Buch heraus.|etw+A · jdm etw+A
 
 =fahren|to drive|fährt|fuhr|gefahren|ist
-fahren|f|to drive, to ride, to travel|the default verb for going anywhere not on foot|Ich fahre mit dem Rad.
-erfahren|f|to find out, to learn (news); to experience|"ich habe erfahren, dass…" = I heard that…|Wann hast du davon erfahren?|hat
-abfahren|t|to depart, to leave; to drive off|"der Zug fährt ab" – timetable vocabulary|Der Zug fährt um zehn ab.
-anfahren|t|to pull away; to hit someone with a vehicle; to snap at someone|"jemanden anfahren" = to bark at someone|Sie hat mich unnötig angefahren.|hat
-auffahren|t|to drive into the car ahead; to sit up with a start|the insurance word: "aufgefahren"|Er ist auf mein Auto aufgefahren.
-verfahren|f|to proceed, to act (in a certain way); to get lost driving (sich verfahren)|"sich verfahren" is the driving twin of "sich verlaufen"|Wir haben uns verfahren.|hat
-überfahren|f|to run over; to jump (a red light)|drivers' bad news vocabulary|Er hat die rote Ampel überfahren.|hat
-durchfahren|t|to drive through without stopping|"wir fahren durch" = we're not stopping|Wir sind die Nacht durchgefahren.
-mitfahren|t|to ride along, to get a lift|"Mitfahrgelegenheit" – the ride-share noun comes from this|Kann ich bei dir mitfahren?
-losfahren|t|to set off, to get going|"wann fahren wir los?" – the trip-starting question|Wir fahren um sechs los.
-einfahren|t|to pull in (a train); to bring in (a harvest, profits)|"der Zug fährt ein" – station announcements|Der Zug fährt auf Gleis drei ein.
-zusammenfahren|t|to flinch, to start (with fright); to collide|"ich bin zusammengefahren" = it made me jump|Bei dem Knall bin ich zusammengefahren.
+fahren|f|to drive, to ride, to travel|the default verb for going anywhere not on foot|Ich fahre mit dem Rad.|kein Obj. · mit etw+D · etw+A (Auto)
+erfahren|f|to find out, to learn (news); to experience|"ich habe erfahren, dass…" = I heard that…|Wann hast du davon erfahren?|etw+A · von etw+D|hat
+abfahren|t|to depart, to leave; to drive off|"der Zug fährt ab" – timetable vocabulary|Der Zug fährt um zehn ab.|kein Obj. · etw+A (Strecke)
+anfahren|t|to pull away; to hit someone with a vehicle; to snap at someone|"jemanden anfahren" = to bark at someone|Sie hat mich unnötig angefahren.|jdn+A · kein Obj.|hat
+auffahren|t|to drive into the car ahead; to sit up with a start|the insurance word: "aufgefahren"|Er ist auf mein Auto aufgefahren.|auf etw+A
+verfahren|f|to proceed, to act (in a certain way); to get lost driving (sich verfahren)|"sich verfahren" is the driving twin of "sich verlaufen"|Wir haben uns verfahren.|kein Obj. (vorgehen) · sich+A|hat
+überfahren|f|to run over; to jump (a red light)|drivers' bad news vocabulary|Er hat die rote Ampel überfahren.|jdn/etw+A|hat
+durchfahren|t|to drive through without stopping|"wir fahren durch" = we're not stopping|Wir sind die Nacht durchgefahren.|kein Obj. · etw+A
+mitfahren|t|to ride along, to get a lift|"Mitfahrgelegenheit" – the ride-share noun comes from this|Kann ich bei dir mitfahren?|mit jdm+D · bei jdm+D
+losfahren|t|to set off, to get going|"wann fahren wir los?" – the trip-starting question|Wir fahren um sechs los.|kein Obj.
+einfahren|t|to pull in (a train); to bring in (a harvest, profits)|"der Zug fährt ein" – station announcements|Der Zug fährt auf Gleis drei ein.|kein Obj. · etw+A
+zusammenfahren|t|to flinch, to start (with fright); to collide|"ich bin zusammengefahren" = it made me jump|Bei dem Knall bin ich zusammengefahren.|kein Obj. · mit etw+D
 
 =sprechen|to speak|spricht|sprach|gesprochen|hat
-sprechen|f|to speak, to talk|"sprechen" is a touch more formal than "reden"|Sprichst du Deutsch?
-besprechen|f|to discuss, to talk something over|"das besprechen wir morgen" – the meeting word|Wir müssen das noch besprechen.
-versprechen|f|to promise; to misspeak (sich versprechen)|"ich verspreche es" and "ich habe mich versprochen" = slip of the tongue|Du hast es mir versprochen!
-entsprechen|f|to correspond to, to match (+D)|form-filling German: "entspricht den Anforderungen"|Das entspricht nicht der Wahrheit.
-aussprechen|t|to pronounce; to say out loud, to voice|"aussprechen lassen" = to let someone finish speaking|Lass mich bitte aussprechen.
-ansprechen|t|to address, to approach someone; to appeal to someone|"das spricht mich an" = that appeals to me|Er hat mich auf der Straße angesprochen.
-absprechen|t|to agree on, to coordinate; to deny someone a quality|"das sprechen wir noch ab" = we'll sort out the details|Wir müssen den Termin absprechen.
-widersprechen|f|to contradict, to object (+D)|"da muss ich widersprechen" – polite disagreement|Ich widerspreche dir ungern.
-freisprechen|t|to acquit|courtroom register only|Das Gericht sprach ihn frei.
-nachsprechen|t|to repeat after someone|language classroom vocabulary|Sprechen Sie mir bitte nach.
+sprechen|f|to speak, to talk|"sprechen" is a touch more formal than "reden"|Sprichst du Deutsch?|mit jdm+D über etw+A · etw+A (Sprache)
+besprechen|f|to discuss, to talk something over|"das besprechen wir morgen" – the meeting word|Wir müssen das noch besprechen.|etw+A mit jdm+D
+versprechen|f|to promise; to misspeak (sich versprechen)|"ich verspreche es" and "ich habe mich versprochen" = slip of the tongue|Du hast es mir versprochen!|jdm etw+A · sich+A (versprechen)
+entsprechen|f|to correspond to, to match (+D)|form-filling German: "entspricht den Anforderungen"|Das entspricht nicht der Wahrheit.|etw+D
+aussprechen|t|to pronounce; to say out loud, to voice|"aussprechen lassen" = to let someone finish speaking|Lass mich bitte aussprechen.|etw+A · sich+A für/gegen etw+A
+ansprechen|t|to address, to approach someone; to appeal to someone|"das spricht mich an" = that appeals to me|Er hat mich auf der Straße angesprochen.|jdn+A auf etw+A
+absprechen|t|to agree on, to coordinate; to deny someone a quality|"das sprechen wir noch ab" = we'll sort out the details|Wir müssen den Termin absprechen.|etw+A mit jdm+D · jdm etw+A
+widersprechen|f|to contradict, to object (+D)|"da muss ich widersprechen" – polite disagreement|Ich widerspreche dir ungern.|jdm/etw+D
+freisprechen|t|to acquit|courtroom register only|Das Gericht sprach ihn frei.|jdn+A von etw+D
+nachsprechen|t|to repeat after someone|language classroom vocabulary|Sprechen Sie mir bitte nach.|jdm+D · etw+A
 
 =setzen|to set, to put|setzt|setzte|gesetzt|hat
-setzen|f|to put, to place (sitting); to sit down (sich setzen)|"setz dich!" = have a seat|Setz dich zu uns!
-einsetzen|t|to deploy, to use; to start, to set in; to stand up for (sich einsetzen für)|"sich für jemanden einsetzen" = to go to bat for someone|Der Regen setzte plötzlich ein.
-umsetzen|t|to implement, to put into practice; to convert|business German for making a plan real|Wir setzen die Idee jetzt um.
-aussetzen|t|to suspend, to pause; to abandon; to expose to something|"da setzt bei mir der Verstand aus" = my brain gives out|Er setzt eine Runde aus.
-absetzen|t|to drop off; to deduct (from tax); to remove from office; to sell|"kann ich das absetzen?" – the tax-return question|Ich setze dich am Bahnhof ab.
-ansetzen|t|to schedule, to set (a date); to apply, to start doing|"zum Sprung ansetzen" = to get ready to jump|Der Termin ist für Montag angesetzt.
-besetzen|f|to occupy; to fill (a position); to cast (a role)|"besetzt" is the word on a toilet door and a phone line|Der Platz ist besetzt.
-ersetzen|f|to replace; to reimburse|"nicht zu ersetzen" = irreplaceable|Wir müssen das Teil ersetzen.
-versetzen|f|to transfer (an employee); to move someone up a grade; to stand someone up|"jemanden versetzen" = to leave someone waiting on a date|Er hat mich versetzt.
-durchsetzen|t|to push through, to get one's way (sich durchsetzen)|"sich durchsetzen" = to assert yourself|Sie hat ihre Idee durchgesetzt.
-fortsetzen|t|to continue, to carry on|written register; speech prefers "weitermachen"|Wir setzen die Arbeit morgen fort.
-übersetzen|f|to translate|the everyday meaning – inseparable, stress on "setz"|Kannst du das übersetzen?
-übersetzen|t|to ferry across, to cross over (by boat)|rare and literal – separable, stress on "über"|Die Fähre setzt nach Rügen über.
+setzen|f|to put, to place (sitting); to sit down (sich setzen)|"setz dich!" = have a seat|Setz dich zu uns!|etw+A (irgendwohin) · sich+A · auf etw+A (wetten)
+einsetzen|t|to deploy, to use; to start, to set in; to stand up for (sich einsetzen für)|"sich für jemanden einsetzen" = to go to bat for someone|Der Regen setzte plötzlich ein.|etw/jdn+A · sich+A für jdn/etw+A · kein Obj. (beginnen)
+umsetzen|t|to implement, to put into practice; to convert|business German for making a plan real|Wir setzen die Idee jetzt um.|etw+A · etw+A in etw+A
+aussetzen|t|to suspend, to pause; to abandon; to expose to something|"da setzt bei mir der Verstand aus" = my brain gives out|Er setzt eine Runde aus.|etw+A · jdn+A etw+D · kein Obj.
+absetzen|t|to drop off; to deduct (from tax); to remove from office; to sell|"kann ich das absetzen?" – the tax-return question|Ich setze dich am Bahnhof ab.|jdn/etw+A · etw+A von etw+D
+ansetzen|t|to schedule, to set (a date); to apply, to start doing|"zum Sprung ansetzen" = to get ready to jump|Der Termin ist für Montag angesetzt.|etw+A (Termin) · zu etw+D
+besetzen|f|to occupy; to fill (a position); to cast (a role)|"besetzt" is the word on a toilet door and a phone line|Der Platz ist besetzt.|etw+A · etw+A mit jdm+D
+ersetzen|f|to replace; to reimburse|"nicht zu ersetzen" = irreplaceable|Wir müssen das Teil ersetzen.|etw/jdn+A · jdm etw+A
+versetzen|f|to transfer (an employee); to move someone up a grade; to stand someone up|"jemanden versetzen" = to leave someone waiting on a date|Er hat mich versetzt.|jdn+A · jdn+A in etw+A
+durchsetzen|t|to push through, to get one's way (sich durchsetzen)|"sich durchsetzen" = to assert yourself|Sie hat ihre Idee durchgesetzt.|etw+A · sich+A gegen jdn+A
+fortsetzen|t|to continue, to carry on|written register; speech prefers "weitermachen"|Wir setzen die Arbeit morgen fort.|etw+A
+übersetzen|f|to translate|the everyday meaning – inseparable, stress on "setz"|Kannst du das übersetzen?|etw+A aus/in etw+A
+übersetzen|t|to ferry across, to cross over (by boat)|rare and literal – separable, stress on "über"|Die Fähre setzt nach Rügen über.|kein Obj. · nach +D
 
 =stellen|to place, to put|stellt|stellte|gestellt|hat
-stellen|f|to put, to place (standing); to ask (a question); to set (a clock)|"eine Frage stellen" – you place a question in German|Stell die Vase auf den Tisch.
-vorstellen|t|to introduce; to imagine (sich vorstellen)|"stell dir vor!" = imagine that! – a story opener|Darf ich mich vorstellen?
-herstellen|t|to manufacture, to produce; to establish (a connection)|factory and product-label German|Das Gerät wird in Polen hergestellt.
-darstellen|t|to depict, to represent; to constitute|"das stellt ein Problem dar" – formal writing|Die Grafik stellt die Kosten dar.
-einstellen|t|to hire; to adjust, to set; to stop, to discontinue|three meanings that share a page in every job ad|Die Firma stellt zehn Leute ein.
-anstellen|t|to hire; to queue (sich anstellen); to get up to (mischief)|"was hast du angestellt?" = what have you done now?|Was hast du wieder angestellt?
-aufstellen|t|to set up, to erect; to put forward (a claim, a candidate)|"einen Rekord aufstellen" = to set a record|Wir stellen das Zelt auf.
-bestellen|f|to order; to summon someone|the restaurant and online-shopping word|Ich habe schon bestellt.
-feststellen|t|to determine, to establish, to notice|"ich stelle fest, dass…" – slightly official "I note that"|Der Arzt stellte eine Grippe fest.
-umstellen|t|to rearrange; to switch over, to convert|"auf Sommerzeit umstellen" – clocks and habits|Wir haben auf Ökostrom umgestellt.
-abstellen|t|to park, to put down; to switch off; to stop (a nuisance)|"stell das Radio ab" = turn the radio off|Wo kann ich das Fahrrad abstellen?
-zustellen|t|to deliver (post); to block (an exit)|postal service register|Das Paket wurde gestern zugestellt.
-erstellen|f|to create, to draw up (a document, a report)|IT and office German: "einen Account erstellen"|Ich erstelle die Rechnung heute.
-verstellen|f|to adjust; to block; to disguise (sich verstellen)|"sich verstellen" = to put on an act|Verstell dich nicht, ich kenne dich.
+stellen|f|to put, to place (standing); to ask (a question); to set (a clock)|"eine Frage stellen" – you place a question in German|Stell die Vase auf den Tisch.|etw+A (irgendwohin) · jdm etw+A (Frage)
+vorstellen|t|to introduce; to imagine (sich vorstellen)|"stell dir vor!" = imagine that! – a story opener|Darf ich mich vorstellen?|jdn+A jdm+D · sich+D etw+A
+herstellen|t|to manufacture, to produce; to establish (a connection)|factory and product-label German|Das Gerät wird in Polen hergestellt.|etw+A
+darstellen|t|to depict, to represent; to constitute|"das stellt ein Problem dar" – formal writing|Die Grafik stellt die Kosten dar.|etw+A
+einstellen|t|to hire; to adjust, to set; to stop, to discontinue|three meanings that share a page in every job ad|Die Firma stellt zehn Leute ein.|jdn+A · etw+A (Gerät) · etw+A (beenden)
+anstellen|t|to hire; to queue (sich anstellen); to get up to (mischief)|"was hast du angestellt?" = what have you done now?|Was hast du wieder angestellt?|jdn+A · etw+A · sich+A (Schlange)
+aufstellen|t|to set up, to erect; to put forward (a claim, a candidate)|"einen Rekord aufstellen" = to set a record|Wir stellen das Zelt auf.|etw+A · jdn+A (Kandidat)
+bestellen|f|to order; to summon someone|the restaurant and online-shopping word|Ich habe schon bestellt.|etw+A · jdm etw+A
+feststellen|t|to determine, to establish, to notice|"ich stelle fest, dass…" – slightly official "I note that"|Der Arzt stellte eine Grippe fest.|etw+A · dass-Satz
+umstellen|t|to rearrange; to switch over, to convert|"auf Sommerzeit umstellen" – clocks and habits|Wir haben auf Ökostrom umgestellt.|etw+A auf etw+A · sich+A auf etw+A
+abstellen|t|to park, to put down; to switch off; to stop (a nuisance)|"stell das Radio ab" = turn the radio off|Wo kann ich das Fahrrad abstellen?|etw+A
+zustellen|t|to deliver (post); to block (an exit)|postal service register|Das Paket wurde gestern zugestellt.|jdm etw+A
+erstellen|f|to create, to draw up (a document, a report)|IT and office German: "einen Account erstellen"|Ich erstelle die Rechnung heute.|etw+A
+verstellen|f|to adjust; to block; to disguise (sich verstellen)|"sich verstellen" = to put on an act|Verstell dich nicht, ich kenne dich.|etw+A · sich+A
 
 =lassen|to let, to leave|lässt|ließ|gelassen|hat
-lassen|f|to let, to allow; to leave something; to have something done|"ich lasse mir die Haare schneiden" – the causative that trips up learners|Lass mich in Ruhe!
-verlassen|f|to leave (a place, a person); to rely on (sich verlassen auf)|"verlass dich drauf!" = you can count on it|Er hat die Stadt verlassen.
-zulassen|t|to permit, to license; to leave closed|"das lässt keine Zweifel zu" = that leaves no doubt|Das Medikament ist in der EU zugelassen.
-entlassen|f|to dismiss, to lay off; to discharge (from hospital)|the HR euphemism for firing someone|Er wurde fristlos entlassen.
-überlassen|f|to leave something to someone, to hand over|"das überlasse ich dir" = I'll leave that to you|Ich überlasse dir die Entscheidung.
-hinterlassen|f|to leave behind (a message, an impression)|"eine Nachricht hinterlassen" – voicemail German|Sie hinterließ einen guten Eindruck.
-auslassen|t|to skip, to omit; to vent (anger on someone)|"lass deine Wut nicht an mir aus"|Ich lasse das Frühstück heute aus.
-nachlassen|t|to let up, to decrease; to deteriorate|"die Schmerzen lassen nach" – the relief word|Der Regen lässt langsam nach.
-weglassen|t|to leave out, to omit|editing and cooking: "den Zucker weglassen"|Diesen Absatz kannst du weglassen.
-loslassen|t|to let go, to release|"lass los!" – both literal and about moving on|Lass endlich los.
-unterlassen|f|to refrain from, to omit doing|legal warning language: "unterlassen Sie das"|Unterlassen Sie diese Bemerkungen.
-einlassen|t|to let in; to get involved with (sich einlassen auf)|"darauf lasse ich mich nicht ein" = I'm not getting into that|Ich lasse mich auf keinen Streit ein.
+lassen|f|to let, to allow; to leave something; to have something done|"ich lasse mir die Haare schneiden" – the causative that trips up learners|Lass mich in Ruhe!|jdn/etw+A · jdn+A etw tun
+verlassen|f|to leave (a place, a person); to rely on (sich verlassen auf)|"verlass dich drauf!" = you can count on it|Er hat die Stadt verlassen.|jdn/etw+A · sich+A auf jdn/etw+A
+zulassen|t|to permit, to license; to leave closed|"das lässt keine Zweifel zu" = that leaves no doubt|Das Medikament ist in der EU zugelassen.|etw+A · jdn+A zu etw+D
+entlassen|f|to dismiss, to lay off; to discharge (from hospital)|the HR euphemism for firing someone|Er wurde fristlos entlassen.|jdn+A aus etw+D
+überlassen|f|to leave something to someone, to hand over|"das überlasse ich dir" = I'll leave that to you|Ich überlasse dir die Entscheidung.|jdm etw+A
+hinterlassen|f|to leave behind (a message, an impression)|"eine Nachricht hinterlassen" – voicemail German|Sie hinterließ einen guten Eindruck.|jdm etw+A
+auslassen|t|to skip, to omit; to vent (anger on someone)|"lass deine Wut nicht an mir aus"|Ich lasse das Frühstück heute aus.|etw+A · etw+A an jdm+D
+nachlassen|t|to let up, to decrease; to deteriorate|"die Schmerzen lassen nach" – the relief word|Der Regen lässt langsam nach.|kein Obj. · in etw+D
+weglassen|t|to leave out, to omit|editing and cooking: "den Zucker weglassen"|Diesen Absatz kannst du weglassen.|etw+A
+loslassen|t|to let go, to release|"lass los!" – both literal and about moving on|Lass endlich los.|jdn/etw+A · kein Obj.
+unterlassen|f|to refrain from, to omit doing|legal warning language: "unterlassen Sie das"|Unterlassen Sie diese Bemerkungen.|etw+A
+einlassen|t|to let in; to get involved with (sich einlassen auf)|"darauf lasse ich mich nicht ein" = I'm not getting into that|Ich lasse mich auf keinen Streit ein.|jdn+A · sich+A auf etw+A
 
 =tragen|to carry, to wear|trägt|trug|getragen|hat
-tragen|f|to carry; to wear; to bear (costs, responsibility)|one verb for both carrying and wearing clothes|Sie trägt eine Brille.
-beitragen|t|to contribute (zu +D)|"seinen Teil beitragen" = to do your bit|Jeder kann etwas dazu beitragen.
-vertragen|f|to tolerate (food, criticism); to get along (sich vertragen)|"ich vertrage keinen Kaffee" and "vertragt euch!" to squabbling kids|Ich vertrage keine Milch.
-ertragen|f|to endure, to bear (something unpleasant)|heavier than "aushalten" – suffering, not inconvenience|Diesen Lärm ertrage ich nicht länger.
-übertragen|f|to transmit, to broadcast; to transfer; to delegate|"live übertragen" – broadcasting, and disease transmission|Das Spiel wird live übertragen.
-auftragen|t|to apply (paint, cream); to instruct someone to do something|"dick auftragen" = to lay it on thick, to exaggerate|Trag die Creme dünn auf.
-eintragen|t|to enter, to register (in a list)|"trag dich in die Liste ein" – sign-up sheets|Ich habe den Termin eingetragen.
-betragen|f|to amount to (a sum); to behave (sich betragen)|invoices: "die Summe beträgt 40 Euro"|Die Kosten betragen 300 Euro.
-vortragen|t|to present, to recite, to perform|conferences and poetry recitals|Sie trägt das Gedicht vor.
-nachtragen|t|to add later; to hold a grudge|"das trage ich dir nicht nach" = no hard feelings|Er trägt mir das immer noch nach.
+tragen|f|to carry; to wear; to bear (costs, responsibility)|one verb for both carrying and wearing clothes|Sie trägt eine Brille.|etw+A
+beitragen|t|to contribute (zu +D)|"seinen Teil beitragen" = to do your bit|Jeder kann etwas dazu beitragen.|zu etw+D
+vertragen|f|to tolerate (food, criticism); to get along (sich vertragen)|"ich vertrage keinen Kaffee" and "vertragt euch!" to squabbling kids|Ich vertrage keine Milch.|etw+A · sich+A mit jdm+D
+ertragen|f|to endure, to bear (something unpleasant)|heavier than "aushalten" – suffering, not inconvenience|Diesen Lärm ertrage ich nicht länger.|etw/jdn+A
+übertragen|f|to transmit, to broadcast; to transfer; to delegate|"live übertragen" – broadcasting, and disease transmission|Das Spiel wird live übertragen.|etw+A · etw+A auf jdn/etw+A
+auftragen|t|to apply (paint, cream); to instruct someone to do something|"dick auftragen" = to lay it on thick, to exaggerate|Trag die Creme dünn auf.|etw+A · jdm etw+A
+eintragen|t|to enter, to register (in a list)|"trag dich in die Liste ein" – sign-up sheets|Ich habe den Termin eingetragen.|etw+A in etw+A · sich+A in etw+A
+betragen|f|to amount to (a sum); to behave (sich betragen)|invoices: "die Summe beträgt 40 Euro"|Die Kosten betragen 300 Euro.|etw+A (Summe) · sich+A
+vortragen|t|to present, to recite, to perform|conferences and poetry recitals|Sie trägt das Gedicht vor.|etw+A · jdm etw+A
+nachtragen|t|to add later; to hold a grudge|"das trage ich dir nicht nach" = no hard feelings|Er trägt mir das immer noch nach.|jdm etw+A
 
 =führen|to lead|führt|führte|geführt|hat
-führen|f|to lead, to guide; to run (a business); to keep (a list)|"das führt zu nichts" = that gets us nowhere|Der Weg führt zum See.
-ausführen|t|to carry out, to execute; to export; to take out (a dog)|IT: "ein Programm ausführen"|Der Plan wurde sofort ausgeführt.
-einführen|t|to introduce (a rule, a product); to import|"eine Regel einführen" – policy language|Die Firma führt ein neues System ein.
-durchführen|t|to conduct, to carry out (a study, an event)|the bureaucrat's favourite: everything is "durchgeführt"|Wir führen eine Umfrage durch.
-verführen|f|to seduce; to tempt|adverts and desserts: "verführerisch"|Der Duft verführt zum Naschen.
-aufführen|t|to perform (a play); to list; to behave badly (sich aufführen)|"führ dich nicht so auf!" = stop making a scene|Das Stück wird heute aufgeführt.
-anführen|t|to lead (a group); to cite, to quote|"Gründe anführen" – argumentation|Er führt die Tabelle an.
-abführen|t|to lead away (an arrest); to pay over (taxes); to be laxative|"Steuern abführen" – payroll German|Die Steuern werden automatisch abgeführt.
-vorführen|t|to demonstrate, to show; to make a fool of someone|"jemanden vorführen" = to show someone up|Er führt das neue Gerät vor.
-entführen|f|to kidnap, to hijack|news register; also playful "jemanden entführen" = to whisk someone away|Das Flugzeug wurde entführt.
+führen|f|to lead, to guide; to run (a business); to keep (a list)|"das führt zu nichts" = that gets us nowhere|Der Weg führt zum See.|jdn+A · etw+A · zu etw+D
+ausführen|t|to carry out, to execute; to export; to take out (a dog)|IT: "ein Programm ausführen"|Der Plan wurde sofort ausgeführt.|etw+A · jdn+A
+einführen|t|to introduce (a rule, a product); to import|"eine Regel einführen" – policy language|Die Firma führt ein neues System ein.|etw+A · jdn+A in etw+A
+durchführen|t|to conduct, to carry out (a study, an event)|the bureaucrat's favourite: everything is "durchgeführt"|Wir führen eine Umfrage durch.|etw+A
+verführen|f|to seduce; to tempt|adverts and desserts: "verführerisch"|Der Duft verführt zum Naschen.|jdn+A zu etw+D
+aufführen|t|to perform (a play); to list; to behave badly (sich aufführen)|"führ dich nicht so auf!" = stop making a scene|Das Stück wird heute aufgeführt.|etw+A · sich+A
+anführen|t|to lead (a group); to cite, to quote|"Gründe anführen" – argumentation|Er führt die Tabelle an.|etw/jdn+A
+abführen|t|to lead away (an arrest); to pay over (taxes); to be laxative|"Steuern abführen" – payroll German|Die Steuern werden automatisch abgeführt.|etw+A · jdn+A
+vorführen|t|to demonstrate, to show; to make a fool of someone|"jemanden vorführen" = to show someone up|Er führt das neue Gerät vor.|jdm etw+A · jdn+A
+entführen|f|to kidnap, to hijack|news register; also playful "jemanden entführen" = to whisk someone away|Das Flugzeug wurde entführt.|jdn/etw+A
 
 =schließen|to close|schließt|schloss|geschlossen|hat
-schließen|f|to close, to shut; to conclude (from evidence)|"daraus schließe ich…" = from that I conclude…|Das Geschäft schließt um acht.
-beschließen|f|to decide, to resolve; to conclude|the word for formal decisions – parliaments and committees|Wir haben beschlossen zu bleiben.
-entschließen|f|to make up one's mind (always sich entschließen zu)|weightier than "entscheiden" – a resolution, not a choice|Ich habe mich entschlossen zu kündigen.
-abschließen|t|to lock; to complete, to finish; to take out (insurance)|"einen Vertrag abschließen" – contract German|Hast du die Tür abgeschlossen?
-anschließen|t|to connect, to plug in; to join (sich anschließen)|"da schließe ich mich an" = I second that|Schließ den Drucker an.
-ausschließen|t|to exclude, to rule out; to expel|"das ist nicht auszuschließen" = it can't be ruled out|Ich schließe das nicht aus.
-einschließen|t|to include; to lock in|"inklusive" in prose: "Frühstück eingeschlossen"|Der Preis schließt alles ein.
-erschließen|f|to develop (land, a market); to deduce|urban planning and data: "neue Märkte erschließen"|Das Gebiet wird neu erschlossen.
-verschließen|f|to seal, to lock up; to close oneself off|"sich einer Idee verschließen" = to be closed to an idea|Er verschließt sich vor der Wahrheit.
-aufschließen|t|to unlock; to catch up (in a race)|the physical opposite of abschließen|Kannst du mir aufschließen?
+schließen|f|to close, to shut; to conclude (from evidence)|"daraus schließe ich…" = from that I conclude…|Das Geschäft schließt um acht.|etw+A · aus etw+D auf etw+A
+beschließen|f|to decide, to resolve; to conclude|the word for formal decisions – parliaments and committees|Wir haben beschlossen zu bleiben.|etw+A · zu + Inf.
+entschließen|f|to make up one's mind (always sich entschließen zu)|weightier than "entscheiden" – a resolution, not a choice|Ich habe mich entschlossen zu kündigen.|sich+A zu etw+D
+abschließen|t|to lock; to complete, to finish; to take out (insurance)|"einen Vertrag abschließen" – contract German|Hast du die Tür abgeschlossen?|etw+A · mit etw+D
+anschließen|t|to connect, to plug in; to join (sich anschließen)|"da schließe ich mich an" = I second that|Schließ den Drucker an.|etw+A an etw+A · sich+A jdm+D
+ausschließen|t|to exclude, to rule out; to expel|"das ist nicht auszuschließen" = it can't be ruled out|Ich schließe das nicht aus.|jdn/etw+A · von etw+D
+einschließen|t|to include; to lock in|"inklusive" in prose: "Frühstück eingeschlossen"|Der Preis schließt alles ein.|etw/jdn+A
+erschließen|f|to develop (land, a market); to deduce|urban planning and data: "neue Märkte erschließen"|Das Gebiet wird neu erschlossen.|etw+A · sich+D etw+A
+verschließen|f|to seal, to lock up; to close oneself off|"sich einer Idee verschließen" = to be closed to an idea|Er verschließt sich vor der Wahrheit.|etw+A · sich+A etw+D
+aufschließen|t|to unlock; to catch up (in a race)|the physical opposite of abschließen|Kannst du mir aufschließen?|etw+A · jdm+D
 
 =werfen|to throw|wirft|warf|geworfen|hat
-werfen|f|to throw, to toss|"einen Blick werfen" = to take a look|Wirf mir den Ball zu!
-vorwerfen|t|to accuse, to reproach (jemandem etwas)|"ich werfe dir nichts vor" = I'm not blaming you|Man wirft ihm Betrug vor.
-entwerfen|f|to design, to draft|the designer's verb: "einen Entwurf" comes from it|Sie entwirft Möbel.
-verwerfen|f|to reject, to discard (an idea, a plan)|"den Plan wieder verworfen" – deliberation vocabulary|Die Idee wurde schnell verworfen.
-wegwerfen|t|to throw away, to bin|"wegwerfen" also names throwaway culture: Wegwerfgesellschaft|Wirf das bitte nicht weg.
-abwerfen|t|to drop (from a height); to yield (profit)|"Gewinn abwerfen" – investment German|Die Anlage wirft kaum Zinsen ab.
-einwerfen|t|to post (a letter); to interject; to smash (a window)|"darf ich kurz einwerfen…" = may I add something|Wirfst du den Brief ein?
-umwerfen|t|to knock over; to bowl someone over|"das wirft mich um" = that blows my mind|Die Nachricht hat mich umgeworfen.
-unterwerfen|f|to subjugate; to submit to (sich unterwerfen)|history-book register|Sie unterwarfen das ganze Land.
-auswerfen|t|to cast (a net); to pay out, to allocate|fishing and finance|Das Netz wird ausgeworfen.
+werfen|f|to throw, to toss|"einen Blick werfen" = to take a look|Wirf mir den Ball zu!|etw+A · jdm etw+A
+vorwerfen|t|to accuse, to reproach (jemandem etwas)|"ich werfe dir nichts vor" = I'm not blaming you|Man wirft ihm Betrug vor.|jdm etw+A
+entwerfen|f|to design, to draft|the designer's verb: "einen Entwurf" comes from it|Sie entwirft Möbel.|etw+A
+verwerfen|f|to reject, to discard (an idea, a plan)|"den Plan wieder verworfen" – deliberation vocabulary|Die Idee wurde schnell verworfen.|etw+A
+wegwerfen|t|to throw away, to bin|"wegwerfen" also names throwaway culture: Wegwerfgesellschaft|Wirf das bitte nicht weg.|etw+A
+abwerfen|t|to drop (from a height); to yield (profit)|"Gewinn abwerfen" – investment German|Die Anlage wirft kaum Zinsen ab.|etw+A
+einwerfen|t|to post (a letter); to interject; to smash (a window)|"darf ich kurz einwerfen…" = may I add something|Wirfst du den Brief ein?|etw+A
+umwerfen|t|to knock over; to bowl someone over|"das wirft mich um" = that blows my mind|Die Nachricht hat mich umgeworfen.|jdn/etw+A
+unterwerfen|f|to subjugate; to submit to (sich unterwerfen)|history-book register|Sie unterwarfen das ganze Land.|jdn/etw+A · sich+A jdm+D
+auswerfen|t|to cast (a net); to pay out, to allocate|fishing and finance|Das Netz wird ausgeworfen.|etw+A
 
 =treten|to step, to kick|tritt|trat|getreten|ist
-treten|f|to step; to kick|takes "hat" when you kick something, "ist" when you step somewhere|Er trat mir auf den Fuß.
-auftreten|t|to appear, to perform; to occur (a problem)|"Fehler treten auf" – bug reports in German|Die Band tritt heute Abend auf.
-eintreten|t|to enter; to join (a club); to occur, to come to pass|"bitte eintreten" on doors|Der Fall ist nie eingetreten.
-austreten|t|to leave (an organisation); to step outside|"aus der Kirche austreten" – a real German life event|Er ist aus der Partei ausgetreten.
-betreten|f|to enter, to set foot in|signs: "Betreten verboten"|Betreten der Baustelle verboten.|hat
-vertreten|f|to represent, to stand in for; to hold (an opinion)|"ich vertrete dich morgen" = I'll cover for you|Wer vertritt Sie im Urlaub?|hat
-zurücktreten|t|to resign, to step down; to step back|the political headline verb|Der Minister ist zurückgetreten.
-übertreten|f|to violate, to break (a law)|legal register; "übertreten" as separable means to switch sides|Er hat das Gesetz übertreten.|hat
-antreten|t|to start (a job, a journey); to line up, to compete|"eine Stelle antreten" = to take up a post|Sie tritt die neue Stelle im Mai an.
-beitreten|t|to join, to accede to (+D)|formal joining: unions, treaties, clubs|Er ist dem Verein beigetreten.
+treten|f|to step; to kick|takes "hat" when you kick something, "ist" when you step somewhere|Er trat mir auf den Fuß.|kein Obj. · jdn+A (treten) · in/auf etw+A
+auftreten|t|to appear, to perform; to occur (a problem)|"Fehler treten auf" – bug reports in German|Die Band tritt heute Abend auf.|kein Obj. · als etw
+eintreten|t|to enter; to join (a club); to occur, to come to pass|"bitte eintreten" on doors|Der Fall ist nie eingetreten.|in etw+A · für jdn/etw+A
+austreten|t|to leave (an organisation); to step outside|"aus der Kirche austreten" – a real German life event|Er ist aus der Partei ausgetreten.|aus etw+D
+betreten|f|to enter, to set foot in|signs: "Betreten verboten"|Betreten der Baustelle verboten.|etw+A|hat
+vertreten|f|to represent, to stand in for; to hold (an opinion)|"ich vertrete dich morgen" = I'll cover for you|Wer vertritt Sie im Urlaub?|jdn+A · etw+A (Meinung)|hat
+zurücktreten|t|to resign, to step down; to step back|the political headline verb|Der Minister ist zurückgetreten.|kein Obj. · von etw+D
+übertreten|f|to violate, to break (a law)|legal register; "übertreten" as separable means to switch sides|Er hat das Gesetz übertreten.|etw+A (Gesetz)|hat
+antreten|t|to start (a job, a journey); to line up, to compete|"eine Stelle antreten" = to take up a post|Sie tritt die neue Stelle im Mai an.|etw+A · gegen jdn+A
+beitreten|t|to join, to accede to (+D)|formal joining: unions, treaties, clubs|Er ist dem Verein beigetreten.|etw+D
 
 =finden|to find|findet|fand|gefunden|hat
-finden|f|to find; to think, to have an opinion|"ich finde das gut" is how Germans state opinions|Wie findest du den Film?
-stattfinden|t|to take place, to be held|the event-announcement verb: "findet nicht statt" = cancelled|Das Konzert findet morgen statt.
-erfinden|f|to invent; to make up|"das hast du erfunden!" = you made that up|Wer hat das Telefon erfunden?
-befinden|f|to be located (sich befinden); to deem, to judge|"sich befinden" is the formal "to be" of signs and announcements|Der Ausgang befindet sich links.
-empfinden|f|to feel, to perceive (an emotion)|more inward than "fühlen" – "als unangenehm empfinden"|Ich empfinde großen Respekt.
-herausfinden|t|to find out, to discover|"das finde ich raus" – the everyday research word|Ich habe herausgefunden, warum.
-abfinden|t|to come to terms with (sich abfinden mit); to pay off, to compensate|"damit muss ich mich abfinden" = I'll have to live with it|Er hat sich damit abgefunden.
-vorfinden|t|to find something on arrival|slightly formal, reports and inspections|Wir fanden ein leeres Haus vor.
+finden|f|to find; to think, to have an opinion|"ich finde das gut" is how Germans state opinions|Wie findest du den Film?|etw/jdn+A · etw+A gut/schlecht
+stattfinden|t|to take place, to be held|the event-announcement verb: "findet nicht statt" = cancelled|Das Konzert findet morgen statt.|kein Obj.
+erfinden|f|to invent; to make up|"das hast du erfunden!" = you made that up|Wer hat das Telefon erfunden?|etw+A
+befinden|f|to be located (sich befinden); to deem, to judge|"sich befinden" is the formal "to be" of signs and announcements|Der Ausgang befindet sich links.|sich+A (irgendwo)
+empfinden|f|to feel, to perceive (an emotion)|more inward than "fühlen" – "als unangenehm empfinden"|Ich empfinde großen Respekt.|etw+A · etw+A als etw
+herausfinden|t|to find out, to discover|"das finde ich raus" – the everyday research word|Ich habe herausgefunden, warum.|etw+A · dass-Satz
+abfinden|t|to come to terms with (sich abfinden mit); to pay off, to compensate|"damit muss ich mich abfinden" = I'll have to live with it|Er hat sich damit abgefunden.|sich+A mit etw+D · jdn+A
+vorfinden|t|to find something on arrival|slightly formal, reports and inspections|Wir fanden ein leeres Haus vor.|etw/jdn+A
 
 =brechen|to break|bricht|brach|gebrochen|hat
-brechen|f|to break, to snap; to break (a promise, a record)|"ein Versprechen brechen" and "sich den Arm brechen"|Er hat sich das Bein gebrochen.
-unterbrechen|f|to interrupt|"darf ich kurz unterbrechen?" – meeting etiquette|Entschuldigung, dass ich unterbreche.
-abbrechen|t|to cancel, to abort; to break off|IT: "den Vorgang abbrechen" = cancel the operation|Wir mussten die Reise abbrechen.
-ausbrechen|t|to break out (war, fire, escape); to burst out (laughing)|"in Tränen ausbrechen" = to burst into tears|Ein Feuer ist ausgebrochen.|ist
-einbrechen|t|to burgle, to break in; to collapse (a market)|"bei uns wurde eingebrochen" – the police-report phrase|Diebe sind ins Haus eingebrochen.|ist
-zerbrechen|f|to shatter, to break into pieces|also figurative: "an etwas zerbrechen" = to be destroyed by something|Das Glas ist zerbrochen.|ist
-aufbrechen|t|to break open; to set off, to depart|"wir brechen früh auf" = we're leaving early|Wir brechen morgen früh auf.
-durchbrechen|f|to break through (a barrier, a pattern)|"den Teufelskreis durchbrechen" = break the vicious circle|Sie durchbrach die Schallmauer.
-zusammenbrechen|t|to collapse, to break down (a person, a system)|"ich bin zusammengebrochen" – of servers and people alike|Das Netz ist zusammengebrochen.|ist
+brechen|f|to break, to snap; to break (a promise, a record)|"ein Versprechen brechen" and "sich den Arm brechen"|Er hat sich das Bein gebrochen.|etw+A · sich+D etw+A · kein Obj.
+unterbrechen|f|to interrupt|"darf ich kurz unterbrechen?" – meeting etiquette|Entschuldigung, dass ich unterbreche.|jdn/etw+A
+abbrechen|t|to cancel, to abort; to break off|IT: "den Vorgang abbrechen" = cancel the operation|Wir mussten die Reise abbrechen.|etw+A · kein Obj.
+ausbrechen|t|to break out (war, fire, escape); to burst out (laughing)|"in Tränen ausbrechen" = to burst into tears|Ein Feuer ist ausgebrochen.|kein Obj. · in etw+A|ist
+einbrechen|t|to burgle, to break in; to collapse (a market)|"bei uns wurde eingebrochen" – the police-report phrase|Diebe sind ins Haus eingebrochen.|in etw+A|ist
+zerbrechen|f|to shatter, to break into pieces|also figurative: "an etwas zerbrechen" = to be destroyed by something|Das Glas ist zerbrochen.|etw+A · kein Obj. · an etw+D|ist
+aufbrechen|t|to break open; to set off, to depart|"wir brechen früh auf" = we're leaving early|Wir brechen morgen früh auf.|kein Obj. · etw+A
+durchbrechen|f|to break through (a barrier, a pattern)|"den Teufelskreis durchbrechen" = break the vicious circle|Sie durchbrach die Schallmauer.|etw+A
+zusammenbrechen|t|to collapse, to break down (a person, a system)|"ich bin zusammengebrochen" – of servers and people alike|Das Netz ist zusammengebrochen.|kein Obj.|ist
 
 =schlagen|to hit, to beat|schlägt|schlug|geschlagen|hat
-schlagen|f|to hit, to beat; to defeat; to whip (cream)|"Sahne schlagen" and "eine Mannschaft schlagen"|Sein Herz schlägt schnell.
-vorschlagen|t|to suggest, to propose|"ich schlage vor, dass…" – the meeting workhorse|Was schlägst du vor?
-erschlagen|f|to beat to death; to overwhelm|"erschlagen sein" = to be wiped out or swamped|Ich bin von der Info erschlagen.
-zuschlagen|t|to slam shut; to strike, to pounce; to grab a bargain|"da musst du zuschlagen!" = you have to jump on that deal|Die Tür schlug zu.
-einschlagen|t|to smash in; to strike (lightning); to take (a path); to catch on|"gut einschlagen" = to go down well|Der Blitz hat eingeschlagen.
-aufschlagen|t|to open (a book); to pitch (a tent); to go up in price|"schlagt Seite 20 auf" – classroom German|Schlagt bitte das Buch auf.
-nachschlagen|t|to look up (in a reference work)|the dictionary verb – what you do instead of guessing|Schlag das Wort im Wörterbuch nach.
-umschlagen|t|to turn over; to change suddenly (weather, mood)|"die Stimmung schlug um" = the mood turned|Das Wetter schlägt um.
-ausschlagen|t|to turn down (an offer); to kick out (a horse)|"ein Angebot ausschlagen" – formal refusal|Er hat das Angebot ausgeschlagen.
-anschlagen|t|to put up (a notice); to take effect; to strike (a note)|"das Medikament schlägt an" = the drug is working|Die Behandlung schlägt an.
+schlagen|f|to hit, to beat; to defeat; to whip (cream)|"Sahne schlagen" and "eine Mannschaft schlagen"|Sein Herz schlägt schnell.|jdn/etw+A · kein Obj. (Herz)
+vorschlagen|t|to suggest, to propose|"ich schlage vor, dass…" – the meeting workhorse|Was schlägst du vor?|jdm etw+A · vor, zu + Inf.
+erschlagen|f|to beat to death; to overwhelm|"erschlagen sein" = to be wiped out or swamped|Ich bin von der Info erschlagen.|jdn+A
+zuschlagen|t|to slam shut; to strike, to pounce; to grab a bargain|"da musst du zuschlagen!" = you have to jump on that deal|Die Tür schlug zu.|kein Obj. · etw+A
+einschlagen|t|to smash in; to strike (lightning); to take (a path); to catch on|"gut einschlagen" = to go down well|Der Blitz hat eingeschlagen.|etw+A · kein Obj. (Blitz)
+aufschlagen|t|to open (a book); to pitch (a tent); to go up in price|"schlagt Seite 20 auf" – classroom German|Schlagt bitte das Buch auf.|etw+A · kein Obj. (Preis)
+nachschlagen|t|to look up (in a reference work)|the dictionary verb – what you do instead of guessing|Schlag das Wort im Wörterbuch nach.|etw+A in etw+D
+umschlagen|t|to turn over; to change suddenly (weather, mood)|"die Stimmung schlug um" = the mood turned|Das Wetter schlägt um.|kein Obj. · in etw+A
+ausschlagen|t|to turn down (an offer); to kick out (a horse)|"ein Angebot ausschlagen" – formal refusal|Er hat das Angebot ausgeschlagen.|etw+A · kein Obj.
+anschlagen|t|to put up (a notice); to take effect; to strike (a note)|"das Medikament schlägt an" = the drug is working|Die Behandlung schlägt an.|etw+A · kein Obj. (wirken)
 
 =laden|to load|lädt|lud|geladen|hat
-laden|f|to load (cargo, software, a gun); to summon (to court)|the battery and the truck share this verb|Der Akku lädt noch.
-einladen|t|to invite; to load in|"ich lade dich ein" also means "it's on me"|Ich lade dich zum Essen ein.
-aufladen|t|to charge (a battery); to load up; to burden|the phone-charging word: "das Handy aufladen"|Ich muss mein Handy aufladen.
-abladen|t|to unload; to dump (problems on someone)|"seinen Frust bei jemandem abladen"|Wir laden die Kisten ab.
-entladen|f|to discharge, to unload; to erupt (tension)|physics and warehouses; "die Spannung entlud sich"|Die Batterie hat sich entladen.
-herunterladen|t|to download|the official word; everyday speech says "downloaden"|Lade die Datei herunter.
-hochladen|t|to upload|same story – natives often just say "uploaden"|Ich habe die Fotos hochgeladen.
-beladen|f|to load up (a vehicle)|"schwer beladen" = heavily loaded|Der LKW ist voll beladen.
-vorladen|t|to summon (to court)|legal register only|Der Zeuge wurde vorgeladen.
+laden|f|to load (cargo, software, a gun); to summon (to court)|the battery and the truck share this verb|Der Akku lädt noch.|etw+A · jdn+A
+einladen|t|to invite; to load in|"ich lade dich ein" also means "it's on me"|Ich lade dich zum Essen ein.|jdn+A zu etw+D
+aufladen|t|to charge (a battery); to load up; to burden|the phone-charging word: "das Handy aufladen"|Ich muss mein Handy aufladen.|etw+A · sich+D etw+A
+abladen|t|to unload; to dump (problems on someone)|"seinen Frust bei jemandem abladen"|Wir laden die Kisten ab.|etw+A · etw+A bei jdm+D
+entladen|f|to discharge, to unload; to erupt (tension)|physics and warehouses; "die Spannung entlud sich"|Die Batterie hat sich entladen.|etw+A · sich+A
+herunterladen|t|to download|the official word; everyday speech says "downloaden"|Lade die Datei herunter.|etw+A
+hochladen|t|to upload|same story – natives often just say "uploaden"|Ich habe die Fotos hochgeladen.|etw+A
+beladen|f|to load up (a vehicle)|"schwer beladen" = heavily loaded|Der LKW ist voll beladen.|etw+A mit etw+D
+vorladen|t|to summon (to court)|legal register only|Der Zeuge wurde vorgeladen.|jdn+A
 
 =bringen|to bring|bringt|brachte|gebracht|hat
-bringen|f|to bring, to take (somewhere); to broadcast; to yield|"das bringt nichts" = that's pointless – extremely common|Bring mir bitte ein Glas Wasser.
-verbringen|f|to spend (time)|only for time – money is "ausgeben"|Wir verbringen den Sommer am Meer.
-mitbringen|t|to bring along|"was soll ich mitbringen?" – the party question|Ich bringe einen Kuchen mit.
-umbringen|t|to kill, to murder|hyperbolic in speech: "der bringt mich noch um"|Er hat sich fast umgebracht vor Lachen.
-anbringen|t|to attach, to fix; to raise (a point)|"ein Schild anbringen" and "eine Kritik anbringen"|Wir bringen ein Regal an.
-aufbringen|t|to raise (money, energy); to infuriate|"die Geduld aufbringen" = to muster the patience|Ich bringe das Geld nicht auf.
-beibringen|t|to teach someone something; to break news to someone|"wie bringe ich ihm das bei?" = how do I tell him?|Er hat mir Schach beigebracht.
-unterbringen|f|to accommodate, to house; to fit something in|"kannst du mich unterbringen?" = can I crash at yours?|Wir bringen die Gäste im Hotel unter.
-vorbringen|t|to put forward (an argument, a complaint)|formal, courtroom and committee|Er brachte Einwände vor.
-hervorbringen|t|to produce, to bring forth (a sound, a generation)|literary and academic|Die Stadt hat große Künstler hervorgebracht.
+bringen|f|to bring, to take (somewhere); to broadcast; to yield|"das bringt nichts" = that's pointless – extremely common|Bring mir bitte ein Glas Wasser.|jdm etw+A · jdn+A irgendwohin
+verbringen|f|to spend (time)|only for time – money is "ausgeben"|Wir verbringen den Sommer am Meer.|etw+A (Zeit)
+mitbringen|t|to bring along|"was soll ich mitbringen?" – the party question|Ich bringe einen Kuchen mit.|jdm etw+A
+umbringen|t|to kill, to murder|hyperbolic in speech: "der bringt mich noch um"|Er hat sich fast umgebracht vor Lachen.|jdn+A · sich+A
+anbringen|t|to attach, to fix; to raise (a point)|"ein Schild anbringen" and "eine Kritik anbringen"|Wir bringen ein Regal an.|etw+A an etw+D
+aufbringen|t|to raise (money, energy); to infuriate|"die Geduld aufbringen" = to muster the patience|Ich bringe das Geld nicht auf.|etw+A · jdn+A (ärgern)
+beibringen|t|to teach someone something; to break news to someone|"wie bringe ich ihm das bei?" = how do I tell him?|Er hat mir Schach beigebracht.|jdm etw+A
+unterbringen|f|to accommodate, to house; to fit something in|"kannst du mich unterbringen?" = can I crash at yours?|Wir bringen die Gäste im Hotel unter.|jdn/etw+A
+vorbringen|t|to put forward (an argument, a complaint)|formal, courtroom and committee|Er brachte Einwände vor.|etw+A
+hervorbringen|t|to produce, to bring forth (a sound, a generation)|literary and academic|Die Stadt hat große Künstler hervorgebracht.|etw/jdn+A
 
 =denken|to think|denkt|dachte|gedacht|hat
-denken|f|to think (an +A about)|"ich denke an dich" vs "ich finde…" for opinions|Ich denke oft an dich.
-nachdenken|t|to think over, to reflect (über +A)|"lass mich kurz nachdenken" = let me think|Ich muss darüber nachdenken.
-bedenken|f|to consider, to bear in mind|"bedenke, dass…" – a warning tone|Bedenken Sie die Folgen.
-überdenken|f|to reconsider, to rethink|"das sollten wir überdenken" – diplomatic pushback|Ich werde meine Position überdenken.
-ausdenken|t|to think up, to make up (sich ausdenken)|"denk dir was aus!" = come up with something|Ich habe mir eine Geschichte ausgedacht.
-umdenken|t|to change one's thinking, to rethink an approach|climate and business talk: "wir müssen umdenken"|Hier müssen wir umdenken.
-gedenken|f|to commemorate (+G); to intend to|memorial-day register|Wir gedenken der Opfer.
-mitdenken|t|to think along, to use your head|"denk mal mit!" = pay attention, think it through|Bitte denk ein bisschen mit.
+denken|f|to think (an +A about)|"ich denke an dich" vs "ich finde…" for opinions|Ich denke oft an dich.|an jdn/etw+A · über etw+A
+nachdenken|t|to think over, to reflect (über +A)|"lass mich kurz nachdenken" = let me think|Ich muss darüber nachdenken.|über etw+A
+bedenken|f|to consider, to bear in mind|"bedenke, dass…" – a warning tone|Bedenken Sie die Folgen.|etw+A · dass-Satz
+überdenken|f|to reconsider, to rethink|"das sollten wir überdenken" – diplomatic pushback|Ich werde meine Position überdenken.|etw+A
+ausdenken|t|to think up, to make up (sich ausdenken)|"denk dir was aus!" = come up with something|Ich habe mir eine Geschichte ausgedacht.|sich+D etw+A
+umdenken|t|to change one's thinking, to rethink an approach|climate and business talk: "wir müssen umdenken"|Hier müssen wir umdenken.|kein Obj.
+gedenken|f|to commemorate (+G); to intend to|memorial-day register|Wir gedenken der Opfer.|jds/etw+G
+mitdenken|t|to think along, to use your head|"denk mal mit!" = pay attention, think it through|Bitte denk ein bisschen mit.|kein Obj.
 
 =sehen|to see|sieht|sah|gesehen|hat
-sehen|f|to see; to look|"mal sehen" = we'll see – a national hedge|Ich sehe nichts.
-aussehen|t|to look, to appear (a certain way)|"du siehst müde aus" – appearance, not vision|Das sieht gut aus!
-ansehen|t|to look at, to watch; to regard as|"sich etwas ansehen" = to check something out|Ich sehe mir den Film an.
-einsehen|t|to see, to understand, to accept (a point); to inspect (files)|"das sehe ich ein" = fair enough, I get it|Ich sehe meinen Fehler ein.
-übersehen|f|to overlook, to miss; to survey|"das habe ich übersehen" = I missed that|Ich habe den Fehler übersehen.
-versehen|f|to provide, to equip with; to make a slip (sich versehen)|"aus Versehen" = by accident comes from this|Der Text ist mit Fußnoten versehen.
-vorsehen|t|to plan, to provide for; to be careful (sich vorsehen)|"vorgesehen" = scheduled, in every project plan|Ein Treffen ist nicht vorgesehen.
-absehen|t|to foresee; to refrain from (von etwas absehen)|"es ist nicht abzusehen" = there's no telling|Die Folgen sind nicht abzusehen.
-nachsehen|t|to check, to look up; to let something slide|"ich sehe kurz nach" = let me check|Sieh bitte im Kalender nach.
-zusehen|t|to watch, to look on; to make sure (dass)|"sieh zu, dass du fertig wirst" = see to it that you finish|Ich habe nur zugesehen.
-fernsehen|t|to watch television|the verb Germans use instead of "TV schauen"|Wir sehen abends fern.
+sehen|f|to see; to look|"mal sehen" = we'll see – a national hedge|Ich sehe nichts.|etw/jdn+A · kein Obj.
+aussehen|t|to look, to appear (a certain way)|"du siehst müde aus" – appearance, not vision|Das sieht gut aus!|wie/nach etw+D
+ansehen|t|to look at, to watch; to regard as|"sich etwas ansehen" = to check something out|Ich sehe mir den Film an.|sich+D etw+A · jdn+A
+einsehen|t|to see, to understand, to accept (a point); to inspect (files)|"das sehe ich ein" = fair enough, I get it|Ich sehe meinen Fehler ein.|etw+A · dass-Satz
+übersehen|f|to overlook, to miss; to survey|"das habe ich übersehen" = I missed that|Ich habe den Fehler übersehen.|etw+A
+versehen|f|to provide, to equip with; to make a slip (sich versehen)|"aus Versehen" = by accident comes from this|Der Text ist mit Fußnoten versehen.|etw+A mit etw+D · sich+A
+vorsehen|t|to plan, to provide for; to be careful (sich vorsehen)|"vorgesehen" = scheduled, in every project plan|Ein Treffen ist nicht vorgesehen.|etw+A · sich+A vor jdm/etw+D
+absehen|t|to foresee; to refrain from (von etwas absehen)|"es ist nicht abzusehen" = there's no telling|Die Folgen sind nicht abzusehen.|etw+A · von etw+D
+nachsehen|t|to check, to look up; to let something slide|"ich sehe kurz nach" = let me check|Sieh bitte im Kalender nach.|etw+A · jdm etw+A
+zusehen|t|to watch, to look on; to make sure (dass)|"sieh zu, dass du fertig wirst" = see to it that you finish|Ich habe nur zugesehen.|jdm+D · dass-Satz
+fernsehen|t|to watch television|the verb Germans use instead of "TV schauen"|Wir sehen abends fern.|kein Obj.
 
 =fangen|to catch|fängt|fing|gefangen|hat
-fangen|f|to catch; to trap|"sich wieder fangen" = to regain composure|Der Torwart fängt den Ball.
-anfangen|t|to start, to begin|"fang schon mal an" – the everyday "start"|Wann fängt der Film an?
-empfangen|f|to receive (guests, a signal); to welcome|reception desks and radio signals|Wir empfangen kein Signal.
-auffangen|t|to catch (something falling); to cushion, to absorb|"die Kosten auffangen" = to absorb the costs|Sie fing das Kind auf.
-einfangen|t|to capture (an animal, a mood)|"die Stimmung einfangen" – photography talk|Das Foto fängt die Stimmung ein.
-abfangen|t|to intercept; to catch, to cushion|"eine E-Mail abfangen" and "einen Sturz abfangen"|Der Angriff wurde abgefangen.
-verfangen|f|to get caught, entangled (sich verfangen); to work, to be effective|"das Argument verfängt nicht" = the argument doesn't stick|Er verfing sich in Widersprüchen.
+fangen|f|to catch; to trap|"sich wieder fangen" = to regain composure|Der Torwart fängt den Ball.|etw/jdn+A · sich+A
+anfangen|t|to start, to begin|"fang schon mal an" – the everyday "start"|Wann fängt der Film an?|mit etw+D · zu + Inf.
+empfangen|f|to receive (guests, a signal); to welcome|reception desks and radio signals|Wir empfangen kein Signal.|jdn/etw+A
+auffangen|t|to catch (something falling); to cushion, to absorb|"die Kosten auffangen" = to absorb the costs|Sie fing das Kind auf.|jdn/etw+A
+einfangen|t|to capture (an animal, a mood)|"die Stimmung einfangen" – photography talk|Das Foto fängt die Stimmung ein.|etw/jdn+A
+abfangen|t|to intercept; to catch, to cushion|"eine E-Mail abfangen" and "einen Sturz abfangen"|Der Angriff wurde abgefangen.|jdn/etw+A
+verfangen|f|to get caught, entangled (sich verfangen); to work, to be effective|"das Argument verfängt nicht" = the argument doesn't stick|Er verfing sich in Widersprüchen.|sich+A in etw+D · kein Obj. (wirken)
 
 =greifen|to grab, to reach|greift|griff|gegriffen|hat
-greifen|f|to grab, to reach (nach +A); to take effect|"die Maßnahmen greifen" = the measures are working|Er greift nach dem Buch.
-angreifen|t|to attack; to criticise; to wear down|"scharf angreifen" – politics and sport|Die Truppen greifen an.
-begreifen|f|to grasp, to comprehend|deeper than "verstehen" – "ich begreife das nicht"|Ich begreife nicht, warum.
-eingreifen|t|to intervene, to step in|"die Polizei musste eingreifen"|Wir müssen hier eingreifen.
-zugreifen|t|to grab, to help oneself; to access (data)|at the table: "greif zu!" = dig in|Greif zu, es ist genug da!
-aufgreifen|t|to pick up (an idea, a topic); to apprehend|"den Vorschlag aufgreifen" – meeting language|Ich greife deinen Punkt auf.
-vergreifen|f|to grab the wrong thing (sich vergreifen); to lay hands on someone|"sich im Ton vergreifen" = to strike the wrong tone|Er hat sich im Ton vergriffen.
-durchgreifen|t|to crack down, to take firm action|"hart durchgreifen" – law and order talk|Der Staat muss durchgreifen.
+greifen|f|to grab, to reach (nach +A); to take effect|"die Maßnahmen greifen" = the measures are working|Er greift nach dem Buch.|nach etw+D · zu etw+D · kein Obj.
+angreifen|t|to attack; to criticise; to wear down|"scharf angreifen" – politics and sport|Die Truppen greifen an.|jdn/etw+A
+begreifen|f|to grasp, to comprehend|deeper than "verstehen" – "ich begreife das nicht"|Ich begreife nicht, warum.|etw+A · dass-Satz
+eingreifen|t|to intervene, to step in|"die Polizei musste eingreifen"|Wir müssen hier eingreifen.|in etw+A
+zugreifen|t|to grab, to help oneself; to access (data)|at the table: "greif zu!" = dig in|Greif zu, es ist genug da!|kein Obj. · auf etw+A
+aufgreifen|t|to pick up (an idea, a topic); to apprehend|"den Vorschlag aufgreifen" – meeting language|Ich greife deinen Punkt auf.|etw+A · jdn+A
+vergreifen|f|to grab the wrong thing (sich vergreifen); to lay hands on someone|"sich im Ton vergreifen" = to strike the wrong tone|Er hat sich im Ton vergriffen.|sich+A an jdm/etw+D
+durchgreifen|t|to crack down, to take firm action|"hart durchgreifen" – law and order talk|Der Staat muss durchgreifen.|kein Obj. · gegen jdn+A
 
 =legen|to lay, to put|legt|legte|gelegt|hat
-legen|f|to lay, to put down (lying); to lie down (sich legen); to die down|"der Sturm legt sich" = the storm subsides|Leg das Buch auf den Tisch.
-anlegen|t|to invest; to put on; to dock; to create (a file)|"Geld anlegen" and "einen Ordner anlegen"|Sie legt ihr Geld in Aktien an.
-auflegen|t|to hang up (the phone); to put on (a record); to publish an edition|"aufgelegt" also = in a mood: "gut aufgelegt"|Sie hat einfach aufgelegt.
-überlegen|f|to think about, to consider|"lass mich überlegen" = let me think – with "sich" for deliberating|Ich überlege es mir.
-verlegen|f|to misplace; to postpone; to publish|three unrelated meanings; also the adjective "verlegen" = embarrassed|Ich habe meine Brille verlegt.
-belegen|f|to occupy (a seat); to prove, to document; to take (a course)|"belegt" on a phone line and a sandwich alike|Können Sie das belegen?
-ablegen|t|to take off (a coat); to file away; to sit (an exam)|"eine Prüfung ablegen" – official exam vocabulary|Legen Sie bitte ab.
-vorlegen|t|to present, to submit (a document)|"Unterlagen vorlegen" – bureaucracy|Er legte den Bericht vor.
-festlegen|t|to fix, to determine; to commit oneself (sich festlegen)|"ich will mich nicht festlegen" = I don't want to commit|Der Termin ist festgelegt.
-hinlegen|t|to put down; to lie down (sich hinlegen)|"ich lege mich kurz hin" = I'm taking a nap|Ich lege mich eine Stunde hin.
-darlegen|t|to set out, to explain in detail|formal writing only|Er legte seine Gründe dar.
-zerlegen|f|to take apart, to dismantle; to carve|"in Einzelteile zerlegen"|Er zerlegt den Motor.
+legen|f|to lay, to put down (lying); to lie down (sich legen); to die down|"der Sturm legt sich" = the storm subsides|Leg das Buch auf den Tisch.|etw+A (irgendwohin) · sich+A · kein Obj. (nachlassen)
+anlegen|t|to invest; to put on; to dock; to create (a file)|"Geld anlegen" and "einen Ordner anlegen"|Sie legt ihr Geld in Aktien an.|etw+A · in etw+A (Geld)
+auflegen|t|to hang up (the phone); to put on (a record); to publish an edition|"aufgelegt" also = in a mood: "gut aufgelegt"|Sie hat einfach aufgelegt.|kein Obj. · etw+A
+überlegen|f|to think about, to consider|"lass mich überlegen" = let me think – with "sich" for deliberating|Ich überlege es mir.|sich+D etw+A · kein Obj.
+verlegen|f|to misplace; to postpone; to publish|three unrelated meanings; also the adjective "verlegen" = embarrassed|Ich habe meine Brille verlegt.|etw+A · auf etw+A (Termin)
+belegen|f|to occupy (a seat); to prove, to document; to take (a course)|"belegt" on a phone line and a sandwich alike|Können Sie das belegen?|etw+A · etw+A mit etw+D
+ablegen|t|to take off (a coat); to file away; to sit (an exam)|"eine Prüfung ablegen" – official exam vocabulary|Legen Sie bitte ab.|etw+A · kein Obj.
+vorlegen|t|to present, to submit (a document)|"Unterlagen vorlegen" – bureaucracy|Er legte den Bericht vor.|jdm etw+A
+festlegen|t|to fix, to determine; to commit oneself (sich festlegen)|"ich will mich nicht festlegen" = I don't want to commit|Der Termin ist festgelegt.|etw+A · sich+A auf etw+A
+hinlegen|t|to put down; to lie down (sich hinlegen)|"ich lege mich kurz hin" = I'm taking a nap|Ich lege mich eine Stunde hin.|etw+A · sich+A
+darlegen|t|to set out, to explain in detail|formal writing only|Er legte seine Gründe dar.|jdm etw+A
+zerlegen|f|to take apart, to dismantle; to carve|"in Einzelteile zerlegen"|Er zerlegt den Motor.|etw+A in etw+A
+
+=laufen|to run, to walk|läuft|lief|gelaufen|ist
+laufen|f|to run; to walk; to be running (a machine, a contract)|"wie läuft's?" = how's it going?|Der Vertrag läuft noch ein Jahr.|kein Obj. · durch/über +A
+ablaufen|t|to expire; to run off; to proceed, to go (an event)|"wie ist es abgelaufen?" = how did it go?|Mein Pass ist abgelaufen.|kein Obj. · etw+A
+verlaufen|f|to run, to take a course; to get lost (sich verlaufen)|"alles ist gut verlaufen" = everything went well|Wir haben uns im Wald verlaufen.|kein Obj. · sich+A
+auflaufen|t|to run aground; to accumulate (costs, interest)|"aufgelaufene Zinsen" – banking|Es sind Gebühren aufgelaufen.|kein Obj. · auf etw+A
+zulaufen|t|to run towards; to be a stray (of an animal)|"die Katze ist uns zugelaufen" = the cat adopted us|Der Hund ist uns zugelaufen.|auf jdn/etw+A · jdm+D
+weglaufen|t|to run away|"lauf nicht weg!" – of children, dogs and problems|Er ist von zu Hause weggelaufen.|kein Obj. · vor jdm/etw+D
+überlaufen|f|to overrun; to defect|"überlaufen" as an adjective = overcrowded|Der Ort ist im Sommer überlaufen.|jdn+A (Gefühl) · zu jdm+D|hat
+durchlaufen|f|to go through, to pass through (a process)|HR and IT: "eine Ausbildung durchlaufen"|Die Daten durchlaufen mehrere Prüfungen.|etw+A|hat
+einlaufen|t|to come in (a ship, a train); to shrink (clothes)|"der Pulli ist eingelaufen" – laundry disaster|Der Pullover ist eingelaufen.|kein Obj. · in etw+A
+mitlaufen|t|to run along; to tag along, to be included|"läuft so nebenbei mit" = it just runs in the background|Das Skript läuft im Hintergrund mit.|kein Obj.
+hinauslaufen|t|to amount to, to come down to (auf +A)|"das läuft auf dasselbe hinaus" = it comes to the same thing|Es läuft auf einen Kompromiss hinaus.|auf etw+A
+
+=schreiben|to write|schreibt|schrieb|geschrieben|hat
+schreiben|f|to write; to spell|"wie schreibt man das?" = how do you spell it?|Sie schreibt einen Roman.|jdm etw+A · an jdn+A · über etw+A
+beschreiben|f|to describe|"schwer zu beschreiben" – the everyday word|Kannst du ihn beschreiben?|jdn/etw+A
+verschreiben|f|to prescribe; to make a typo (sich verschreiben)|"der Arzt hat mir etwas verschrieben"|Der Arzt verschreibt ein Antibiotikum.|jdm etw+A · sich+A
+unterschreiben|f|to sign|"hier unterschreiben, bitte" – forms and contracts|Bitte unterschreiben Sie unten.|etw+A
+aufschreiben|t|to write down, to note|"schreib's dir auf!" = write it down|Ich schreibe mir die Nummer auf.|sich+D etw+A
+abschreiben|t|to copy, to plagiarise; to write off|"von jemandem abschreiben" – school cheating|Er hat bei mir abgeschrieben.|etw+A · bei jdm+D
+anschreiben|t|to write to someone; to put on the tab|"anschreiben lassen" = to run a tab|Wir haben die Firma angeschrieben.|jdn+A · etw+A
+ausschreiben|t|to advertise (a job); to write out in full|"eine Stelle ausschreiben" – recruitment|Die Stelle wird bald ausgeschrieben.|etw+A
+einschreiben|t|to enrol, to register (sich einschreiben); to send registered|"sich an der Uni einschreiben"|Ich habe mich für den Kurs eingeschrieben.|sich+A für etw+A
+zuschreiben|t|to attribute to, to credit to|"dem Zufall zuschreiben"|Man schreibt ihm den Erfolg zu.|jdm etw+A
+umschreiben|f|to paraphrase, to put another way|"umschreiben" (separable) instead means to rewrite|Er umschrieb das Problem vorsichtig.|etw+A
+vorschreiben|t|to prescribe, to stipulate; to dictate to someone|"lass dir nichts vorschreiben" = don't let anyone boss you around|Das Gesetz schreibt es vor.|jdm etw+A
+
+=lesen|to read|liest|las|gelesen|hat
+lesen|f|to read; to pick, to gather (grapes)|"ich lese gerade…" – small talk staple|Er liest jeden Abend.|etw+A · über etw+A
+vorlesen|t|to read aloud to someone|the bedtime-story verb|Ich lese den Kindern vor.|jdm etw+A
+durchlesen|t|to read through, to read all the way|"lies es dir noch mal durch"|Lies dir den Vertrag durch.|sich+D etw+A
+auslesen|t|to finish reading; to select, to sort out|IT: "Daten auslesen" = to read out data|Das Gerät liest die Werte aus.|etw+A
+ablesen|t|to read off (a meter); to read from a script|"vom Blatt ablesen" = to read off the page|Der Zähler wird jährlich abgelesen.|etw+A · etw+A von etw+D
+verlesen|f|to read out (a list); to misread (sich verlesen)|"ich habe mich verlesen" = I misread it|Die Namen wurden verlesen.|etw+A · sich+A
+nachlesen|t|to look up, to read up on|"das kannst du nachlesen"|Details kannst du im Handbuch nachlesen.|etw+A in etw+D
+zusammenlesen|t|to scrape together (information)|slightly disparaging: bits gathered from anywhere|Er hat sich das im Netz zusammengelesen.|sich+D etw+A
+
+=machen|to make, to do|macht|machte|gemacht|hat
+machen|f|to make, to do|the universal verb: "das macht nichts" = never mind|Was machst du gerade?|etw+A · jdm etw+A
+aufmachen|t|to open; to set up (a shop)|colloquial twin of "öffnen": "mach mal auf!"|Mach bitte das Fenster auf.|etw+A · kein Obj.
+zumachen|t|to close, to shut|colloquial twin of "schließen"|Die Kneipe macht um zwei zu.|etw+A · kein Obj.
+ausmachen|t|to turn off; to arrange, to agree; to matter|"macht es dir was aus?" = do you mind?|Mach bitte das Licht aus.|etw+A · jdm etw+A (stören)
+anmachen|t|to turn on; to dress (a salad); to hit on someone|"jemanden anmachen" = to chat someone up, or to snap at them|Mach das Radio an.|etw+A · jdn+A
+mitmachen|t|to join in, to take part|casual counterpart to "teilnehmen"|Machst du beim Turnier mit?|bei etw+D · etw+A
+weitermachen|t|to carry on, to continue|"mach weiter so!" = keep it up|Nach der Pause machen wir weiter.|kein Obj. · mit etw+D
+nachmachen|t|to copy, to imitate|"er macht alles nach" – of kids and competitors|Sie macht seine Stimme nach.|jdm etw+A
+abmachen|t|to agree on; to take off, to detach|"abgemacht!" = deal!|Wir haben nichts abgemacht.|etw+A mit jdm+D
+kaputtmachen|t|to break, to ruin|colloquial: "mach es nicht kaputt!"|Du machst das Spiel kaputt.|etw+A · sich+A
+klarmachen|t|to make clear; to get ready|"mach dir klar, dass…" = realise that…|Er machte mir klar, worum es geht.|jdm etw+A · sich+D etw+A
+saubermachen|t|to clean up|everyday alternative to "putzen"|Wir machen am Samstag sauber.|etw+A · kein Obj.
+
+=suchen|to look for|sucht|suchte|gesucht|hat
+suchen|f|to look for, to search|"gesucht" on a wanted poster and in job ads|Ich suche meinen Schlüssel.|etw/jdn+A · nach etw+D
+besuchen|f|to visit; to attend (a school, a course)|"Besuch" comes from this – visiting is a formal event in German|Wir besuchen sie am Wochenende.|jdn/etw+A
+untersuchen|f|to examine, to investigate|doctors and police both "untersuchen"|Der Arzt untersucht den Patienten.|jdn/etw+A · auf etw+A
+versuchen|f|to try, to attempt; to tempt|"versuch's mal!" = give it a go|Ich versuche es später noch mal.|etw+A · zu + Inf.
+aussuchen|t|to pick out, to choose|"such dir was aus" = take your pick|Sie hat sich ein Kleid ausgesucht.|sich+D etw+A
+absuchen|t|to search thoroughly, to comb|"den Boden absuchen"|Wir haben den Wald abgesucht.|etw+A nach etw+D
+aufsuchen|t|to go to see, to seek out (a doctor, a place)|formal: "einen Arzt aufsuchen"|Bitte suchen Sie einen Facharzt auf.|jdn/etw+A
+durchsuchen|f|to search through, to frisk|police register: "die Wohnung durchsuchen"|Die Polizei durchsuchte das Haus.|etw+A nach etw+D
+heraussuchen|t|to look out, to pick out from a set|"ich suche dir die Unterlagen raus"|Ich suche die Fotos heraus.|jdm/sich+D etw+A
+
+=holen|to fetch|holt|holte|geholt|hat
+holen|f|to fetch, to get; to catch (a cold)|"ich hol mir was zu trinken" – constant in speech|Hol mir bitte ein Glas.|etw+A · sich+D etw+A
+abholen|t|to pick up, to collect (a person, a parcel)|"ich hole dich um acht ab" – the meeting-up verb|Ich hole dich vom Bahnhof ab.|jdn/etw+A von +D
+einholen|t|to catch up with; to obtain (permission, information)|"Erlaubnis einholen" – bureaucratic|Wir müssen die Genehmigung einholen.|jdn+A · etw+A
+wiederholen|f|to repeat|inseparable and stressed on "hol": "können Sie das wiederholen?"|Können Sie das bitte wiederholen?|etw+A · sich+A
+nachholen|t|to catch up on, to make up for|"Schlaf nachholen" = to catch up on sleep|Die Prüfung hole ich nächstes Jahr nach.|etw+A
+aufholen|t|to make up ground, to catch up|sports and schedules: "Zeit aufholen"|Wir haben zwei Punkte aufgeholt.|etw+A · kein Obj.
+herausholen|t|to get out of something, to extract|"das Beste herausholen" = to make the most of it|Er holt viel aus dem Team heraus.|etw+A aus jdm/etw+D
+überholen|f|to overtake; to overhaul|"überholt" as an adjective = outdated|Das Auto hat uns überholt.|jdn/etw+A
+zurückholen|t|to bring back, to retrieve|"jemanden zurückholen" – of people and files|Wir holen die Produktion zurück.|jdn/etw+A
+
+=rufen|to call|ruft|rief|gerufen|hat
+rufen|f|to call, to shout|"um Hilfe rufen" – not for phone calls, that's "anrufen"|Sie rief laut um Hilfe.|kein Obj. · jdn+A · nach jdm+D
+anrufen|t|to phone, to call someone|the phone verb: "ruf mich an!"|Ich rufe dich später an.|jdn+A
+ausrufen|t|to proclaim, to declare; to call out|"den Notstand ausrufen" – news register|Der Streik wurde ausgerufen.|etw+A
+aufrufen|t|to call up (a name, a page); to call on people to do something|IT: "eine Seite aufrufen" = to load a page|Der nächste Patient wird aufgerufen.|jdn+A · etw+A · zu etw+D
+zurückrufen|t|to call back; to recall (a product)|"ich rufe zurück" – phone etiquette|Rufen Sie mich bitte zurück.|jdn+A · etw+A
+hervorrufen|t|to cause, to provoke (a reaction)|"Nebenwirkungen hervorrufen" – medical and formal|Die Rede rief Kritik hervor.|etw+A
+berufen|f|to appoint; to invoke, to cite (sich berufen auf)|"sich auf jemanden berufen" = to cite someone as authority|Er wurde an die Uni berufen.|jdn+A auf/in etw+A · sich+A auf jdn/etw+A
+einberufen|f|to convene (a meeting); to conscript|official register|Der Vorstand wurde einberufen.|etw+A · jdn+A
+abberufen|f|to recall (an official), to remove from post|diplomatic and corporate|Der Botschafter wurde abberufen.|jdn+A
+
+=schneiden|to cut|schneidet|schnitt|geschnitten|hat
+schneiden|f|to cut; to edit (film); to cut someone dead|"jemanden schneiden" = to blank someone|Ich schneide das Brot.|etw+A · sich+D etw+A · jdn+A
+abschneiden|t|to cut off; to do (well or badly) in a test|"gut abschneiden" = to come off well|Sie hat gut abgeschnitten.|etw+A · gut/schlecht abschneiden
+ausschneiden|t|to cut out|IT: "ausschneiden und einfügen" = cut and paste|Ich schneide den Artikel aus.|etw+A
+zerschneiden|f|to cut to pieces|emphatic destruction|Er zerschnitt den Brief.|etw+A
+aufschneiden|t|to slice open; to brag|"aufschneiden" also = to talk big|Der Arzt schneidet die Wunde auf.|etw+A · kein Obj. (prahlen)
+einschneiden|t|to cut into; to bite in (of a strap)|"einschneidend" = drastic, far-reaching|Der Riemen schneidet ein.|etw+A · kein Obj.
+anschneiden|t|to cut the first slice; to broach (a topic)|"ein Thema anschneiden" = to bring something up|Er schnitt das heikle Thema an.|etw+A
+durchschneiden|f|to cut through, to sever|"das Band durchschneiden" – ribbon cuttings|Sie durchschnitt das Seil.|etw+A
+zuschneiden|t|to cut to size, to tailor|"auf jemanden zugeschnitten" = tailor-made for someone|Das Angebot ist auf Firmen zugeschnitten.|etw+A auf etw+A
+
+=springen|to jump|springt|sprang|gesprungen|ist
+springen|f|to jump, to leap; to crack (glass)|"der Funke springt über" = the spark catches|Er springt ins Wasser.|kein Obj. · in/über +A
+abspringen|t|to jump off; to back out, to pull out|"der Kunde ist abgesprungen" = the client walked|Zwei Sponsoren sind abgesprungen.|kein Obj. · von etw+D
+einspringen|t|to step in, to fill in for someone|"kannst du einspringen?" = can you cover?|Ich springe für ihn ein.|für jdn+A
+überspringen|f|to skip, to leave out; to jump over|"ein Kapitel überspringen"|Wir überspringen das Kapitel.|etw+A|hat
+aufspringen|t|to jump up; to spring open; to jump on (a bandwagon)|"auf den Zug aufspringen" = to jump on the trend|Er sprang vom Stuhl auf.|kein Obj. · auf etw+A
+zurückspringen|t|to jump back; to revert|"die Anzeige springt zurück"|Der Wert springt auf null zurück.|kein Obj. · auf etw+A
+herausspringen|t|to come of it, to be gained (colloquial)|"was springt für mich dabei heraus?" = what's in it for me?|Dabei springt nicht viel heraus.|kein Obj. · bei etw+D
+umspringen|t|to change abruptly (weather, a light); to treat someone badly|"so kannst du nicht mit mir umspringen"|Die Ampel springt auf Grün um.|kein Obj. · mit jdm+D
+
+=steigen|to climb, to rise|steigt|stieg|gestiegen|ist
+steigen|f|to climb; to rise, to go up (prices)|"die Preise steigen" – the news headline verb|Die Temperatur steigt.|kein Obj. · auf etw+A · um etw+A
+einsteigen|t|to get in, to board; to get into (a field)|"einsteigen, bitte!" – on platforms|Steig vorne ein.|in etw+A
+aussteigen|t|to get out, to alight; to drop out, to quit|"aussteigen" = to leave the rat race|Ich steige an der nächsten Station aus.|aus etw+D
+umsteigen|t|to change (trains); to switch over (to something else)|"auf Öko umsteigen" = to switch to green|In Hannover müssen wir umsteigen.|in etw+A · auf etw+A
+aufsteigen|t|to rise, to ascend; to be promoted|sports leagues and careers|Der Verein ist aufgestiegen.|kein Obj. · in etw+A
+absteigen|t|to descend; to be relegated; to stay (at a hotel)|"im Hotel absteigen" is slightly old-fashioned|Der Verein ist abgestiegen.|kein Obj. · in etw+D
+besteigen|f|to climb (a mountain); to board (a ship)|formal, mountaineering register|Sie bestiegen den Gipfel.|etw+A|hat
+übersteigen|f|to exceed, to surpass|"die Kosten übersteigen das Budget"|Das übersteigt meine Vorstellungskraft.|etw+A|hat
+zusteigen|t|to board later, to get on along the way|"noch jemand zugestiegen?" – the conductor's question|Noch jemand zugestiegen?|kein Obj.
+
+=stoßen|to push, to bump|stößt|stieß|gestoßen|hat
+stoßen|f|to push, to shove; to bump into (auf +A: to come across)|"auf ein Problem stoßen" = to run into a problem|Ich bin auf einen Fehler gestoßen.|jdn/etw+A · auf etw+A (finden) · an etw+A
+anstoßen|t|to nudge; to clink glasses; to initiate|"anstoßen!" = cheers!|Wir stoßen auf dein Wohl an.|jdn+A · auf jdn/etw+A
+abstoßen|t|to repel, to push away; to sell off|"das stößt mich ab" = that repels me|Sein Verhalten stößt mich ab.|jdn/etw+A
+ausstoßen|t|to emit; to expel someone|"CO2 ausstoßen" – climate vocabulary|Die Fabrik stößt Schadstoffe aus.|etw+A · jdn+A aus etw+D
+zusammenstoßen|t|to collide; to clash|"die Autos sind zusammengestoßen"|Die Züge sind zusammengestoßen.|mit jdm/etw+D|ist
+verstoßen|f|to violate (gegen +A); to disown|legal: "gegen die Regeln verstoßen"|Das verstößt gegen das Gesetz.|gegen etw+A · jdn+A
+umstoßen|t|to knock over; to overturn (a plan)|"alle Pläne umstoßen"|Er hat das Glas umgestoßen.|etw+A
+vorstoßen|t|to advance, to push forward|"in neue Bereiche vorstoßen"|Das Team stieß ins Finale vor.|in etw+A · zu etw+D|ist
+
+=stecken|to put, to stick|steckt|steckte|gesteckt|hat
+stecken|f|to put, to stick (into); to be stuck|"da steckt mehr dahinter" = there's more to it|Der Schlüssel steckt.|etw+A in etw+A · kein Obj. (feststecken)
+anstecken|t|to infect; to pin on; to light|"das steckt an" = it's catching, of laughter too|Er hat mich angesteckt.|jdn+A mit etw+D · sich+A
+einstecken|t|to pocket; to plug in; to take (criticism)|"einstecken können" = to be able to take it|Steck das Ladegerät ein.|etw+A
+abstecken|t|to mark out, to stake out (limits)|"den Rahmen abstecken" – planning meetings|Wir stecken die Ziele ab.|etw+A
+verstecken|f|to hide|"Versteck spielen" = to play hide and seek|Er versteckt sich hinter Ausreden.|etw+A · sich+A vor jdm+D
+zustecken|t|to slip someone something|"er hat mir zwanzig Euro zugesteckt"|Oma steckt den Kindern Geld zu.|jdm etw+A
+wegstecken|t|to put away; to shrug off (a setback)|"das steckt er locker weg" = he takes it in stride|Die Niederlage hat er gut weggesteckt.|etw+A
+
+=treffen|to meet, to hit|trifft|traf|getroffen|hat
+treffen|f|to meet; to hit (a target); to make (a decision)|"eine Entscheidung treffen" and "wir treffen uns um acht"|Wir treffen uns morgen.|jdn+A · sich+A mit jdm+D · etw+A (Ziel)
+antreffen|t|to find someone in, to come across|"ich habe ihn nicht angetroffen" – official visits|Wir trafen ihn zu Hause an.|jdn+A
+eintreffen|t|to arrive; to come true (a prediction)|formal for arriving: "die Ware ist eingetroffen"|Die Gäste treffen um sieben ein.|kein Obj.|ist
+zutreffen|t|to be true, to apply|forms: "Zutreffendes bitte ankreuzen"|Das trifft auf mich nicht zu.|kein Obj. · auf jdn/etw+A
+betreffen|f|to concern, to affect|"was das betrifft…" = as far as that's concerned|Die Änderung betrifft alle Kunden.|jdn/etw+A
+übertreffen|f|to surpass, to exceed, to beat|"alle Erwartungen übertreffen"|Das Ergebnis übertrifft alles.|jdn/etw+A · sich+A selbst
+aufeinandertreffen|t|to meet, to face each other (opponents)|sports reporting|Im Finale treffen beide Teams aufeinander.|kein Obj. · auf jdn+A|ist
+
+=trennen|to separate|trennt|trennte|getrennt|hat
+trennen|f|to separate, to divide; to split up (sich trennen)|"wir haben uns getrennt" = we broke up|Wir trennen den Müll.|etw+A von etw+D · sich+A von jdm+D
+auftrennen|t|to unpick, to undo (a seam)|sewing vocabulary|Ich trenne die Naht auf.|etw+A
+abtrennen|t|to detach, to sever, to partition off|"den Abschnitt abtrennen" – on forms|Bitte den Abschnitt abtrennen.|etw+A von etw+D
+zertrennen|f|to cut apart, to take apart at the seams|rare, craft register|Sie zertrennte das alte Kleid.|etw+A
+
+=wachsen|to grow|wächst|wuchs|gewachsen|ist
+wachsen|f|to grow|"einer Aufgabe gewachsen sein" = to be up to a task|Die Stadt wächst schnell.|kein Obj. · um etw+A
+aufwachsen|t|to grow up|"ich bin auf dem Land aufgewachsen"|Sie ist in Berlin aufgewachsen.|kein Obj. · in/bei +D
+anwachsen|t|to grow, to increase; to take root|"die Zahl wächst an" – statistics|Die Schulden wachsen an.|kein Obj. · auf etw+A
+verwachsen|f|to grow together, to become one with something|"mit der Stadt verwachsen sein"|Die Narbe ist gut verwachsen.|kein Obj. · mit etw+D
+zuwachsen|t|to become overgrown; to heal over|"der Weg ist zugewachsen"|Der Garten ist zugewachsen.|kein Obj.
+herauswachsen|t|to grow out of (clothes, a habit)|"aus den Schuhen herauswachsen"|Er ist aus der Jacke herausgewachsen.|aus etw+D
+
+=weisen|to point, to direct|weist|wies|gewiesen|hat
+weisen|f|to point, to show the way; to direct|literary; "in die Schranken weisen" = to put in their place|Er wies uns den Weg.|jdm etw+A · auf etw+A
+beweisen|f|to prove, to demonstrate|"das musst du erst mal beweisen"|Kannst du das beweisen?|jdm etw+A · dass-Satz
+verweisen|f|to refer (auf +A); to expel, to send off|"auf die Website verweisen" – formal writing|Ich verweise auf Paragraf drei.|jdn+A auf etw+A · auf etw+A
+hinweisen|t|to point out, to draw attention to (auf +A)|"ich möchte darauf hinweisen, dass…" – official caution|Er wies auf das Risiko hin.|jdn+A auf etw+A
+zuweisen|t|to assign, to allocate|"Aufgaben zuweisen" – project management|Uns wurde ein Platz zugewiesen.|jdm etw+A
+abweisen|t|to turn away, to reject|"eine Klage abweisen" – courts|Der Antrag wurde abgewiesen.|jdn/etw+A
+anweisen|t|to instruct, to direct; to transfer (money)|"jemanden anweisen" – hierarchical|Die Zentrale wies uns an zu warten.|jdn+A zu + Inf. · etw+A
+ausweisen|t|to deport; to identify oneself (sich ausweisen); to show (figures)|"können Sie sich ausweisen?" = ID please|Er musste sich ausweisen.|jdn+A · sich+A
+nachweisen|t|to prove, to provide evidence of|"Einkommen nachweisen" – bureaucracy|Er konnte nichts nachweisen.|jdm etw+A · etw+A
+überweisen|f|to transfer (money); to refer (a patient)|the banking verb: "Geld überweisen"|Ich überweise dir das Geld morgen.|jdm etw+A · jdn+A an jdn+A
+
+=wenden|to turn|wendet|wendete|gewendet|hat
+wenden|f|to turn (over, around); to turn to someone (sich wenden an)|"bitte wenden" = please turn the page|Wenden Sie den Braten.|etw+A · sich+A an jdn+A
+verwenden|f|to use, to apply|slightly more formal than "benutzen"|Verwenden Sie frische Zutaten.|etw+A für etw+A
+anwenden|t|to apply (a rule, a method)|"die Regel anwenden" – manuals and law|Diese Regel wenden wir hier an.|etw+A auf etw+A
+abwenden|t|to avert (a disaster); to turn away|"das Schlimmste abwenden"|Wir konnten den Schaden abwenden.|etw+A · sich+A von jdm+D
+zuwenden|t|to turn towards; to devote oneself to (sich zuwenden)|"sich neuen Aufgaben zuwenden"|Er wandte sich der Kamera zu.|sich+A jdm/etw+D · jdm etw+A
+aufwenden|t|to spend, to expend (time, money)|"viel Zeit aufwenden" – project reports|Dafür muss man viel Geld aufwenden.|etw+A für etw+A
+einwenden|t|to object|"dagegen ist nichts einzuwenden" = no objections|Er wandte ein, dass es zu teuer sei.|etw+A gegen etw+A
+umwenden|t|to turn over, to turn around|physical only|Sie wendete das Blatt um.|etw+A · sich+A
+
+=drücken|to press|drückt|drückte|gedrückt|hat
+drücken|f|to press, to push; to hug; to pinch (a shoe)|"wo drückt der Schuh?" = what's the trouble?|Drück den roten Knopf.|etw+A · jdn+A · auf etw+A
+ausdrücken|t|to express; to stub out|"wie soll ich es ausdrücken?" = how shall I put it?|Er kann sich gut ausdrücken.|etw+A · sich+A
+unterdrücken|f|to suppress, to oppress|"ein Lachen unterdrücken"|Sie unterdrückte ein Gähnen.|etw/jdn+A
+bedrücken|f|to weigh on someone, to depress|"was bedrückt dich?" = what's bothering you?|Die Lage bedrückt mich.|jdn+A
+eindrücken|t|to push in, to dent|"die Tür eindrücken"|Die Delle wurde eingedrückt.|etw+A
+wegdrücken|t|to push away; to decline (a call)|"den Anruf wegdrücken" – modern usage|Er hat mich weggedrückt.|jdn/etw+A
+zudrücken|t|to press shut|"ein Auge zudrücken" = to turn a blind eye|Ich drücke ein Auge zu.|etw+A
+abdrücken|t|to pull the trigger; to squeeze|"jemandem die Luft abdrücken"|Er drückte ab.|kein Obj. · jdm etw+A
+
+=decken|to cover|deckt|deckte|gedeckt|hat
+decken|f|to cover; to set (the table); to meet (demand)|"den Tisch decken" – the dinner chore|Der Preis deckt die Kosten.|etw+A · sich+A mit etw+D
+entdecken|f|to discover, to spot|"ich habe ein Café entdeckt" – everyday|Wer hat Amerika entdeckt?|etw/jdn+A
+aufdecken|t|to uncover, to expose (a scandal)|investigative journalism|Der Betrug wurde aufgedeckt.|etw+A
+abdecken|t|to cover, to cater for (a range); to cover up|"das deckt alles ab" – business speak|Der Kurs deckt alle Themen ab.|etw+A
+zudecken|t|to cover up, to tuck in|"das Kind zudecken" – bedtime|Ich decke dich zu.|jdn/etw+A
+eindecken|t|to stock up (sich eindecken mit); to swamp someone|"sich mit Vorräten eindecken"|Wir haben uns mit Wasser eingedeckt.|sich+A mit etw+D · jdn+A mit etw+D
+überdecken|f|to mask, to cover over (a smell, a sound)|"den Geruch überdecken"|Der Lärm überdeckt die Musik.|etw+A
+
+=fassen|to grasp|fasst|fasste|gefasst|hat
+fassen|f|to grasp, to seize; to hold (a capacity); to catch (a criminal)|"ich kann es nicht fassen" = I can't believe it|Der Saal fasst 200 Personen.|etw/jdn+A · sich+A · etw+A (Beschluss)
+verfassen|f|to compose, to write (a text)|formal: "einen Text verfassen"|Sie verfasste den Bericht.|etw+A
+umfassen|f|to comprise, to cover; to embrace|"das Paket umfasst drei Kurse"|Der Kurs umfasst zehn Stunden.|etw+A
+erfassen|f|to grasp, to comprehend; to record (data)|"Daten erfassen" – admin work|Die Zahlen werden digital erfasst.|etw+A
+zusammenfassen|t|to summarise|"lass mich kurz zusammenfassen"|Fassen Sie das bitte zusammen.|etw+A
+anfassen|t|to touch; to tackle (a task)|"nicht anfassen!" in museums|Bitte nichts anfassen.|etw/jdn+A · mit anfassen
+auffassen|t|to interpret, to understand as|"falsch auffassen" = to take the wrong way|Er fasste es als Kritik auf.|etw+A als etw+A
+abfassen|t|to draw up, to draft (a document)|legal drafting|Der Vertrag ist knapp abgefasst.|etw+A
+befassen|f|to deal with, to look into (sich befassen mit)|"sich mit dem Thema befassen"|Der Ausschuss befasst sich damit.|sich+A mit etw+D
+
+=reichen|to reach, to pass|reicht|reichte|gereicht|hat
+reichen|f|to be enough; to pass, to hand; to reach|"das reicht!" = that's enough!|Reich mir bitte das Salz.|jdm etw+A · kein Obj. (genügen) · bis zu +D
+erreichen|f|to reach, to achieve; to get hold of someone|"ich erreiche ihn nicht" = I can't get through to him|Sie erreichte ihr Ziel.|jdn/etw+A
+einreichen|t|to submit, to hand in (an application)|"einen Antrag einreichen" – bureaucracy|Ich habe die Unterlagen eingereicht.|etw+A bei jdm+D
+ausreichen|t|to be sufficient|"ausreichend" is also the school grade "D"|Die Zeit reicht nicht aus.|kein Obj. · für etw+A
+überreichen|f|to present, to hand over ceremonially|"einen Preis überreichen"|Der Preis wurde feierlich überreicht.|jdm etw+A
+weiterreichen|t|to pass on, to hand along|"die Kosten weiterreichen"|Er reicht die Beschwerde weiter.|etw+A an jdn+A
+hinreichen|t|to suffice; to hand over|"hinreichend" = sufficient, in formal writing|Die Beweise reichen nicht hin.|kein Obj. · jdm etw+A
+
+=richten|to direct, to judge|richtet|richtete|gerichtet|hat
+richten|f|to direct, to aim; to fix, to prepare; to judge|"sich nach etwas richten" = to go by something|Die Kritik richtet sich an alle.|etw+A an jdn+A · sich+A nach etw+D
+berichten|f|to report, to tell about|the journalism verb: "es wird berichtet, dass…"|Er berichtet aus Kiew.|jdm+D über etw+A · von etw+D
+einrichten|t|to furnish; to set up, to arrange; to manage it (sich einrichten)|"eine Wohnung einrichten" and "ein Konto einrichten"|Wir richten das Büro neu ein.|etw+A · sich+A
+ausrichten|t|to align; to host (an event); to pass on (a message)|"kann ich etwas ausrichten?" = can I take a message?|Wir richten das Turnier aus.|etw+A · jdm etw+A
+aufrichten|t|to straighten up; to encourage, to cheer up|"sich aufrichten" – posture and morale|Er richtete sich im Bett auf.|jdn+A · sich+A
+verrichten|f|to perform, to carry out (a duty)|formal, slightly old-fashioned|Sie verrichtet ihre Arbeit sorgfältig.|etw+A
+hinrichten|t|to execute (a person)|news and history only|Er wurde 1943 hingerichtet.|jdn+A
+zurichten|t|to prepare, to dress (food); to batter someone|"übel zugerichtet" = badly beaten up|Das Opfer war übel zugerichtet.|etw+A · jdn+A
+
+=schaffen|to manage, to create|schafft|schaffte|geschafft|hat
+schaffen|f|to manage, to pull off; to create|"ich hab's geschafft!" = I made it!|Wir schaffen das schon.|etw+A · es schaffen, zu + Inf.
+abschaffen|t|to abolish, to do away with|"die Todesstrafe abschaffen"|Die Gebühr wurde abgeschafft.|etw+A
+anschaffen|t|to buy, to acquire (something sizeable)|"sich ein Auto anschaffen"|Wir haben uns einen Hund angeschafft.|sich+D etw+A
+beschaffen|f|to procure, to obtain|purchasing departments: "Material beschaffen"|Er beschaffte die Ersatzteile.|jdm/sich+D etw+A
+verschaffen|f|to get, to obtain for someone; to gain (an advantage)|"sich einen Überblick verschaffen" = to get an overview|Ich verschaffe dir einen Termin.|jdm/sich+D etw+A
+wegschaffen|t|to clear away, to remove|"den Schutt wegschaffen"|Wir schaffen den Müll weg.|etw+A
+herschaffen|t|to bring here, to get something delivered|colloquial: "schaff das mal her"|Wie schaffen wir das Klavier her?|etw+A
+
+=schieben|to push|schiebt|schob|geschoben|hat
+schieben|f|to push, to shove; to blame (auf +A)|"die Schuld auf andere schieben"|Er schiebt den Wagen.|etw+A · etw+A auf jdn+A
+verschieben|f|to postpone; to move, to shift|"den Termin verschieben" – calendar German|Wir verschieben das Treffen.|etw+A auf etw+A · sich+A
+aufschieben|t|to put off, to procrastinate|"nicht aufschieben!" – the productivity nag|Ich schiebe die Steuererklärung auf.|etw+A
+einschieben|t|to insert, to squeeze in|"einen Termin einschieben"|Ich schiebe dich um drei ein.|etw+A
+abschieben|t|to deport; to palm off onto someone|"jemanden abschieben" – immigration news|Er wurde abgeschoben.|jdn+A · etw+A auf jdn+A
+vorschieben|t|to push forward; to use as a pretext|"einen Vorwand vorschieben"|Er schob Zeitmangel vor.|etw+A
+zuschieben|t|to push towards; to pass the buck|"die Verantwortung zuschieben"|Sie schieben sich die Schuld zu.|jdm etw+A
+
+=sitzen|to sit|sitzt|saß|gesessen|hat
+sitzen|f|to sit; to fit (clothes); to hit home (a remark)|"der Spruch saß" = that one landed|Das Hemd sitzt gut.|kein Obj. · an etw+D
+besitzen|f|to own, to possess|"besitzen" is for property, "haben" for everything else|Er besitzt zwei Wohnungen.|etw+A
+absitzen|t|to sit out, to serve (a sentence)|"eine Strafe absitzen"|Er sitzt seine Strafe ab.|etw+A
+aufsitzen|t|to mount (a horse); to be taken in (jemandem aufsitzen)|"einem Betrüger aufsitzen"|Sie ist einem Gerücht aufgesessen.|jdm+D · auf etw+A
+
+=teilen|to divide, to share|teilt|teilte|geteilt|hat
+teilen|f|to share; to divide|"geteilte Meinung" = divided opinion; also social-media sharing|Wir teilen uns ein Zimmer.|etw+A mit jdm+D · etw+A durch etw+A
+mitteilen|t|to inform, to communicate|formal: "wir teilen Ihnen mit, dass…"|Er teilte uns die Entscheidung mit.|jdm etw+A
+verteilen|f|to distribute, to hand out|"Flyer verteilen"|Wir verteilen die Aufgaben.|etw+A an jdn+A
+aufteilen|t|to split up, to divide among|"die Rechnung aufteilen" = to split the bill|Wir teilen die Arbeit auf.|etw+A unter jdm+D
+einteilen|t|to organise, to schedule; to classify|"sich die Zeit einteilen" = to pace yourself|Teil dir die Zeit gut ein.|sich+D etw+A · etw+A in etw+A
+zuteilen|t|to allocate, to assign|"Plätze zuteilen" – administrative|Uns wurde ein Zimmer zugeteilt.|jdm etw+A
+abteilen|t|to partition off|"einen Raum abteilen"|Der Raum wurde abgeteilt.|etw+A
+austeilen|t|to hand out, to deal out|"Karten austeilen" and "Kritik austeilen"|Der Lehrer teilt die Tests aus.|etw+A an jdn+A
+
+=wechseln|to change|wechselt|wechselte|gewechselt|hat
+wechseln|f|to change (money, clothes, jobs); to swap|"kannst du wechseln?" = can you break a note?|Ich wechsle die Reifen.|etw+A · kein Obj.
+abwechseln|t|to alternate, to take turns (sich abwechseln)|"wir wechseln uns ab" – shift work and chores|Wir wechseln uns beim Fahren ab.|sich+A mit jdm+D · bei etw+D
+einwechseln|t|to substitute in (a player); to change (currency)|football commentary|Er wurde in der 70. Minute eingewechselt.|jdn+A · etw+A
+auswechseln|t|to replace, to substitute out|"wie ausgewechselt" = like a different person|Die Batterie muss ausgewechselt werden.|jdn/etw+A
+umwechseln|t|to change (money into another currency)|"Euro in Dollar umwechseln"|Ich wechsle 200 Euro um.|etw+A in etw+A
+verwechseln|f|to confuse, to mix up (two things)|"ich verwechsle die beiden immer"|Ich habe dich mit deinem Bruder verwechselt.|jdn/etw+A mit jdm/etw+D
+
+=wirken|to have an effect|wirkt|wirkte|gewirkt|hat
+wirken|f|to have an effect, to work; to seem, to come across|"du wirkst müde" = you seem tired|Die Tablette wirkt schnell.|kein Obj. · auf jdn+A · wie/als etw
+bewirken|f|to bring about, to achieve|"nichts bewirken" = to accomplish nothing|Der Protest bewirkte nichts.|etw+A
+einwirken|t|to act on, to influence (auf +A); to soak in|"einwirken lassen" – on shampoo bottles|Lassen Sie das Mittel kurz einwirken.|auf jdn/etw+A
+auswirken|t|to have an impact (sich auswirken auf)|"das wirkt sich auf den Preis aus"|Das wirkt sich negativ aus.|sich+A auf etw+A
+mitwirken|t|to take part, to collaborate|film credits: "unter Mitwirkung von"|Sie wirkte an dem Projekt mit.|an/bei etw+D
+entgegenwirken|t|to counteract (+D)|policy language: "der Inflation entgegenwirken"|Wir müssen dem Trend entgegenwirken.|etw+D
+
+=zeichnen|to draw|zeichnet|zeichnete|gezeichnet|hat
+zeichnen|f|to draw; to sign (formally)|"gezeichnet von der Krankheit" = marked by illness|Sie zeichnet gern Porträts.|etw+A
+bezeichnen|f|to call, to describe as; to denote|"als Experte bezeichnet werden"|Man bezeichnet ihn als Genie.|jdn/etw+A als etw+A
+unterzeichnen|f|to sign (a treaty, a contract)|formal twin of "unterschreiben"|Beide Länder unterzeichneten den Vertrag.|etw+A
+aufzeichnen|t|to record; to sketch out|"eine Sendung aufzeichnen" = to record a broadcast|Das Interview wurde aufgezeichnet.|etw+A
+verzeichnen|f|to record, to register (a change, a figure)|"einen Anstieg verzeichnen" – statistics|Wir verzeichnen mehr Anfragen.|etw+A
+auszeichnen|t|to award, to honour; to price (goods); to distinguish (sich auszeichnen)|"ausgezeichnet!" = excellent!|Der Film wurde ausgezeichnet.|jdn+A für etw+A · sich+A durch etw+A
+kennzeichnen|t|to mark, to label; to characterise|"gekennzeichnet mit" – packaging|Die Ware ist deutlich gekennzeichnet.|etw+A
+abzeichnen|t|to initial, to sign off; to become apparent (sich abzeichnen)|"eine Lösung zeichnet sich ab" = a solution is emerging|Eine Wende zeichnet sich ab.|etw+A · sich+A
+
+=kennen|to know (be familiar with)|kennt|kannte|gekannt|hat
+kennen|f|to know, to be acquainted with|"kennen" for people and places, "wissen" for facts|Kennst du ihn?|jdn/etw+A
+erkennen|f|to recognise; to realise|"ich habe dich nicht erkannt"|Ich erkenne die Melodie.|jdn/etw+A · an etw+D
+anerkennen|t|to recognise officially, to acknowledge|"einen Abschluss anerkennen" – paperwork|Der Abschluss wird hier anerkannt.|etw/jdn+A als etw+A
+verkennen|f|to misjudge, to fail to appreciate|"ein verkanntes Genie" = an unappreciated genius|Du verkennst die Lage.|jdn/etw+A
+auskennen|t|to know one's way around (sich auskennen)|"da kenne ich mich aus" = that's my area|Ich kenne mich hier nicht aus.|sich+A in/mit +D
+bekennen|f|to confess, to profess (sich bekennen zu)|"Farbe bekennen" = to show your true colours|Er bekannte sich schuldig.|sich+A zu etw+D · etw+A
+
+=liegen|to lie, to be situated|liegt|lag|gelegen|hat
+liegen|f|to lie; to be located; to be due to (an +D)|"das liegt an dir" = that's down to you|Das Dorf liegt am See.|kein Obj. · an jdm/etw+D · bei +D
+erliegen|f|to succumb to (+D)|"einem Irrtum erliegen" – formal|Er erlag seinen Verletzungen.|etw+D|ist
+unterliegen|f|to be subject to; to lose (a match)|"der Schweigepflicht unterliegen"|Die Daten unterliegen dem Datenschutz.|etw+D · jdm+D
+vorliegen|t|to be available, to be on hand; to be the case|"es liegt ein Fehler vor" – official reports|Die Ergebnisse liegen vor.|kein Obj. · jdm+D
+anliegen|t|to be pending; to fit closely|"was liegt heute an?" = what's on today?|Es liegt nichts Dringendes an.|kein Obj. · an etw+D
+naheliegen|t|to be obvious, to suggest itself|"das liegt nahe" = that seems likely|Die Vermutung liegt nahe.|kein Obj.
+zurückliegen|t|to be in the past; to be behind|"das liegt Jahre zurück"|Der Unfall liegt lange zurück.|kein Obj.
+
+=sagen|to say|sagt|sagte|gesagt|hat
+sagen|f|to say, to tell|"sag mal…" opens half of all German questions|Sag mir die Wahrheit.|jdm etw+A · zu jdm+D
+absagen|t|to cancel, to call off; to turn down|"ich muss leider absagen" – the polite cancel|Das Konzert wurde abgesagt.|jdm+D · etw+A
+zusagen|t|to accept (an invitation); to promise; to appeal to someone|"das sagt mir zu" = that suits me|Er hat fest zugesagt.|jdm+D · etw+A
+aussagen|t|to testify; to state, to express|courtroom: "als Zeuge aussagen"|Die Zeugin sagte vor Gericht aus.|etw+A · über etw+A · gegen jdn+A
+ansagen|t|to announce; to call (in a game)|"Regen ist angesagt" = rain is forecast; "angesagt" = trendy|Der Moderator sagt das Lied an.|etw+A
+vorhersagen|t|to predict, to forecast|weather and elections|Das war nicht vorherzusagen.|jdm etw+A · etw+A
+untersagen|f|to prohibit, to forbid|officialese: "das Rauchen ist untersagt"|Das Betreten ist untersagt.|jdm etw+A
+versagen|f|to fail; to deny someone something|"die Bremsen versagten" and "ich habe versagt"|Er hat auf ganzer Linie versagt.|kein Obj. · jdm etw+A
+weitersagen|t|to pass on, to tell others|"nicht weitersagen!" = keep it to yourself|Sag es bitte nicht weiter.|etw+A · jdm etw+A
+
+=raten|to advise, to guess|rät|riet|geraten|hat
+raten|f|to advise (+D); to guess|"rate mal!" = take a guess|Ich rate dir zu warten.|jdm+D zu etw+D · etw+A (erraten)
+beraten|f|to advise, to consult|professional advice: "sich beraten lassen"|Wir beraten Sie gern.|jdn+A bei etw+D · sich+A
+verraten|f|to betray; to give away, to reveal|"verrat mir dein Geheimnis" = tell me your secret|Verrate nichts vom Ende!|jdm etw+A · jdn+A
+erraten|f|to guess correctly|"du hast es erraten!"|Du hast es erraten.|etw+A
+abraten|f|to advise against (von +D)|"davon rate ich ab" – professional caution|Ich rate dir davon ab.|jdm+D von etw+D
+geraten|f|to end up somewhere; to turn out; to get into (a state)|"in Schwierigkeiten geraten" = to get into trouble|Der Kuchen ist gut geraten.|in etw+A · an jdn+A · kein Obj. (gelingen)|ist
+
+=spielen|to play|spielt|spielte|gespielt|hat
+spielen|f|to play; to act; to matter (eine Rolle spielen)|"das spielt keine Rolle" = it doesn't matter|Wir spielen Karten.|etw+A · mit jdm/etw+D · gegen jdn+A
+abspielen|t|to play back; to happen (sich abspielen)|"was spielt sich hier ab?" = what's going on here?|Die Szene spielte sich nachts ab.|etw+A · sich+A
+vorspielen|t|to play for someone, to audition; to put on an act|"jemandem etwas vorspielen" = to fake it|Sie spielt uns etwas vor.|jdm etw+A
+mitspielen|t|to join in the game; to play along, to cooperate|"wenn das Wetter mitspielt" = if the weather cooperates|Darf ich mitspielen?|bei etw+D · jdm+D (mitmachen)
+zuspielen|t|to pass (a ball); to leak (information)|"Dokumente zuspielen" – journalism|Er spielte dem Reporter Unterlagen zu.|jdm etw+A
+verspielen|f|to gamble away, to forfeit|"seine Chance verspielen"|Er hat sein Vertrauen verspielt.|etw+A
+anspielen|t|to allude to (auf +A); to pass to|"worauf spielst du an?" = what are you getting at?|Er spielte auf den Skandal an.|auf etw+A · jdm+D
+einspielen|t|to gross (money); to get into the swing (sich einspielen)|"der Film hat Millionen eingespielt"|Das Team hat sich gut eingespielt.|etw+A · sich+A
+
+=lösen|to solve, to loosen|löst|löste|gelöst|hat
+lösen|f|to solve; to loosen; to buy (a ticket); to dissolve|"das Problem lösen" – and "eine Fahrkarte lösen" at machines|Er löst das Rätsel.|etw+A · sich+A von etw+D
+auflösen|t|to dissolve; to disband; to resolve|"die Firma auflösen" and "der Nebel löst sich auf"|Die Tablette löst sich in Wasser auf.|etw+A · sich+A in etw+D
+erlösen|f|to redeem, to release from suffering|"erlöst sein" = to be relieved|Der Anruf erlöste mich.|jdn+A von etw+D
+ablösen|t|to relieve (a shift), to replace; to peel off|"jemanden ablösen" – shift work|Wer löst dich um sechs ab?|jdn/etw+A · sich+A
+einlösen|t|to redeem (a voucher); to keep (a promise)|"ein Versprechen einlösen"|Ich löse den Gutschein ein.|etw+A
+auslösen|t|to trigger, to set off; to cause|"eine Debatte auslösen"|Der Fehler löste einen Alarm aus.|etw+A · bei jdm+D
+
+=treiben|to drive, to push|treibt|trieb|getrieben|hat
+treiben|f|to drive, to propel; to do (sport); to drift|"was treibst du so?" = what are you up to?|Was treibt ihr denn da?|etw+A · jdn+A zu etw+D · kein Obj.
+betreiben|f|to operate, to run (a business); to pursue|"eine Website betreiben"|Sie betreibt ein Café.|etw+A
+antreiben|t|to drive, to power; to spur someone on|"was treibt dich an?" = what drives you?|Der Motor treibt die Pumpe an.|jdn/etw+A · jdn+A zu etw+D
+vertreiben|f|to drive away, to expel; to distribute, to sell|"die Zeit vertreiben" = to pass the time|Die Firma vertreibt Software.|jdn+A aus etw+D · etw+A
+übertreiben|f|to exaggerate, to overdo|"jetzt übertreib mal nicht!"|Du übertreibst maßlos.|etw+A · kein Obj.
+vorantreiben|t|to push forward, to drive on (a project)|business speak: "das Projekt vorantreiben"|Wir treiben die Reform voran.|etw+A
+auftreiben|t|to scare up, to get hold of something|"kannst du zwei Karten auftreiben?"|Ich habe noch ein Zimmer aufgetrieben.|etw+A
+
+=binden|to tie|bindet|band|gebunden|hat
+binden|f|to tie, to bind; to commit|"vertraglich gebunden" = bound by contract|Er bindet sich die Schuhe.|etw+A · sich+A an jdn/etw+A
+verbinden|f|to connect, to join; to bandage; to put through (a call)|"ich verbinde Sie" = I'll put you through|Was verbindet euch?|etw+A mit etw+D · jdn+A mit jdm+D
+einbinden|t|to integrate, to involve; to bind (a book)|"das Team einbinden" – management speak|Wir binden alle Abteilungen ein.|jdn/etw+A in etw+A
+anbinden|t|to tie up; to connect (to a network)|"gut angebunden" = well connected by transport|Der Ort ist schlecht angebunden.|etw+A an etw+A
+abbinden|t|to tie off; to untie|medical: "die Wunde abbinden"|Das Bein wurde abgebunden.|etw+A
+unterbinden|f|to prevent, to put a stop to|official: "den Missbrauch unterbinden"|Die Polizei unterband die Aktion.|etw+A
+losbinden|t|to untie, to set loose|physical only|Er band das Boot los.|etw/jdn+A
+
+=hören|to hear|hört|hörte|gehört|hat
+hören|f|to hear; to listen to|"hör mal!" = listen!|Hörst du das auch?|etw/jdn+A · auf jdn+A · von jdm+D
+gehören|f|to belong to (+D); to be part of|"das gehört mir" = that's mine|Wem gehört die Tasche?|jdm+D · zu etw+D
+aufhören|t|to stop, to quit|"hör auf!" = stop it!|Hör auf zu reden.|mit etw+D · zu + Inf.
+zuhören|t|to listen to someone (+D)|"hör mir zu!" – attention, not just hearing|Er hört mir nie zu.|jdm+D
+anhören|t|to listen to; to sound (sich anhören)|"das hört sich gut an" = that sounds good|Hör dir das mal an!|sich+D etw+A · sich+A (klingen)
+erhören|f|to answer (a plea), to grant|literary and religious|Ihr Gebet wurde erhört.|jdn/etw+A
+verhören|f|to interrogate; to mishear (sich verhören)|"habe ich mich verhört?" = did I hear that right?|Der Zeuge wurde verhört.|jdn+A · sich+A
+überhören|f|to miss hearing; to ignore deliberately|"das habe ich überhört" – deniable|Diese Bemerkung überhöre ich.|etw+A
+mithören|t|to listen in, to overhear|"hör nicht mit!" – privacy|Die Nachbarn hören alles mit.|etw+A · kein Obj.
+
+=wählen|to choose, to vote|wählt|wählte|gewählt|hat
+wählen|f|to choose; to vote, to elect; to dial|"welche Partei wählst du?" and "eine Nummer wählen"|Wählen Sie eine Option.|jdn/etw+A · zwischen +D
+auswählen|t|to select, to pick out|"wähl dir was aus"|Wähle drei Fotos aus.|etw/jdn+A aus etw+D
+abwählen|t|to vote out; to drop (a school subject)|"Mathe abwählen" – school life|Die Regierung wurde abgewählt.|jdn/etw+A
+anwählen|t|to dial; to select (an item)|technical: "eine Nummer anwählen"|Der Anschluss ist nicht angewählt.|etw+A
+
+=arbeiten|to work|arbeitet|arbeitete|gearbeitet|hat
+arbeiten|f|to work|"ich arbeite bei…" – the standard job answer|Sie arbeitet bei einer Bank.|kein Obj. · an etw+D · bei/für jdn+A
+bearbeiten|f|to work on, to process, to edit|"einen Antrag bearbeiten" – every office|Der Antrag wird noch bearbeitet.|etw+A
+verarbeiten|f|to process (material, data); to come to terms with|"das muss ich erst verarbeiten" = I need to digest that|Er verarbeitet die Nachricht.|etw+A · etw+A zu etw+D
+erarbeiten|f|to work out, to develop; to earn through work|"sich etwas erarbeiten" = to earn it the hard way|Wir erarbeiten ein Konzept.|sich+D etw+A · etw+A
+überarbeiten|f|to revise, to rework; to overwork (sich überarbeiten)|"überarbeitet sein" = to be burnt out|Ich überarbeite den Text noch mal.|etw+A · sich+A
+ausarbeiten|t|to work out in detail, to draft|"einen Plan ausarbeiten"|Sie arbeitet den Vorschlag aus.|etw+A
+einarbeiten|t|to train someone in; to get up to speed (sich einarbeiten)|"jemanden einarbeiten" – the first week at a job|Ich arbeite die Neue ein.|jdn+A · sich+A in etw+A
+mitarbeiten|t|to collaborate, to contribute|"an einem Projekt mitarbeiten"|Er arbeitet an dem Buch mit.|an/bei etw+D
+zusammenarbeiten|t|to work together, to cooperate|"gut zusammenarbeiten" – business staple|Wir arbeiten eng zusammen.|mit jdm+D
+abarbeiten|t|to work off (a debt, a list); to wear oneself out|"die Liste abarbeiten"|Ich arbeite die Aufgaben ab.|etw+A · sich+A
+
+=bauen|to build|baut|baute|gebaut|hat
+bauen|f|to build; to count on (auf +A)|"auf jemanden bauen" = to rely on someone|Sie bauen ein Haus.|etw+A · auf jdn/etw+A
+aufbauen|t|to set up, to build up; to be based on (auf +D)|"eine Firma aufbauen" and "jemanden aufbauen" = to encourage|Wir bauen die Bühne auf.|etw+A · auf etw+D
+abbauen|t|to dismantle; to reduce (jobs, stress); to mine|"Stress abbauen" and "Stellen abbauen"|Die Firma baut Stellen ab.|etw+A
+einbauen|t|to install, to build in; to work into (a text)|"eine Pause einbauen" = to build in a break|Wir bauen eine Spülmaschine ein.|etw+A in etw+A
+umbauen|t|to convert, to remodel|"den Dachboden umbauen"|Sie bauen das Haus um.|etw+A zu etw+D
+ausbauen|t|to extend, to expand; to remove (a part)|"seine Position ausbauen"|Wir bauen den Vorsprung aus.|etw+A
+anbauen|t|to add an extension; to grow (crops)|"Gemüse anbauen" – gardening|Sie bauen Wein an.|etw+A
+verbauen|f|to block, to spoil; to use up in building|"sich die Zukunft verbauen"|Der Neubau verbaut uns die Sicht.|jdm etw+A
+erbauen|f|to build, to erect (formal); to edify|"nicht erbaut sein von" = not thrilled about|Die Kirche wurde 1750 erbaut.|etw+A
+zusammenbauen|t|to assemble, to put together|the flat-pack furniture verb|Ich baue das Regal zusammen.|etw+A
+
+=drehen|to turn|dreht|drehte|gedreht|hat
+drehen|f|to turn, to rotate; to shoot (a film)|"es dreht sich um…" = it's about…|Er dreht den Schlüssel.|etw+A · sich+A um etw+A
+umdrehen|t|to turn around, to flip over|"dreh dich um!" = turn around|Dreh das Blatt um.|etw+A · sich+A
+aufdrehen|t|to turn up (volume, tap); to liven up|"voll aufdrehen" = to go all out|Dreh die Musik auf!|etw+A
+zudrehen|t|to turn off (a tap); to turn away from|"jemandem den Rücken zudrehen"|Dreh den Hahn zu.|etw+A · jdm etw+A
+abdrehen|t|to turn off; to veer away; to finish shooting|"der Pilot drehte ab"|Das Flugzeug drehte ab.|etw+A · kein Obj.
+andrehen|t|to turn on; to palm something off on someone|"jemandem etwas andrehen" = to fob something off|Er hat mir eine Versicherung angedreht.|jdm etw+A · etw+A
+verdrehen|f|to twist, to distort; to roll (one's eyes)|"die Augen verdrehen" = to roll your eyes|Er verdreht meine Worte.|etw+A
+durchdrehen|t|to panic, to lose it; to spin (wheels)|"ich dreh gleich durch!" = I'm losing my mind|Er ist völlig durchgedreht.|kein Obj.
+eindrehen|t|to screw in; to put in curlers|technical and hairdressing|Sie dreht die Schraube ein.|etw+A
+
+=fragen|to ask|fragt|fragte|gefragt|hat
+fragen|f|to ask|"frag mal nach" = go and ask|Darf ich dich etwas fragen?|jdn+A (nach etw+D)
+nachfragen|t|to enquire, to ask again|"ich frage noch mal nach" – following up|Ich frage bei der Firma nach.|bei jdm+D nach etw+D
+anfragen|t|to enquire formally, to request|business e-mail: "wir fragen an, ob…"|Wir haben beim Hotel angefragt.|bei jdm+D
+befragen|f|to question, to survey, to interview|"Passanten befragen" – polls and police|Die Polizei befragte die Zeugen.|jdn+A zu etw+D
+hinterfragen|f|to question critically, to examine|"kritisch hinterfragen" – academic and journalistic|Wir sollten das hinterfragen.|etw+A
+abfragen|t|to test someone on something; to query (a database)|"Vokabeln abfragen" – school|Frag mich die Vokabeln ab.|jdn+A etw+A · etw+A
+ausfragen|t|to interrogate, to grill someone|"er hat mich ausgefragt" – nosy relatives|Sie fragt mich ständig aus.|jdn+A über etw+A
+zurückfragen|t|to ask back, to query in return|"darf ich zurückfragen?"|Er fragte höflich zurück.|kein Obj. · bei jdm+D
+
+=füllen|to fill|füllt|füllte|gefüllt|hat
+füllen|f|to fill|"gefüllte Paprika" – stuffed peppers|Er füllt das Glas.|etw+A mit etw+D
+erfüllen|f|to fulfil, to meet (a requirement); to fill (a room)|"die Bedingungen erfüllen"|Der Wunsch hat sich erfüllt.|etw+A · sich+A
+ausfüllen|t|to fill in (a form); to take up (time, space)|"das Formular ausfüllen" – bureaucracy|Bitte füllen Sie das Formular aus.|etw+A
+auffüllen|t|to top up, to replenish|"das Lager auffüllen"|Ich fülle den Vorrat auf.|etw+A
+einfüllen|t|to pour in, to fill into|"in Flaschen einfüllen"|Er füllt den Wein in Karaffen ein.|etw+A in etw+A
+abfüllen|t|to bottle, to decant|"Wasser abfüllen" – industry|Die Milch wird abgefüllt.|etw+A in etw+A
+nachfüllen|t|to refill, to top up|"Kaffee nachfüllen"|Soll ich nachfüllen?|etw+A
+überfüllen|f|to overfill, to overcrowd|"überfüllt" = packed, of trains|Der Zug war überfüllt.|etw+A
+
+=hängen|to hang (trans.; intrans. hing/gehangen)|hängt|hängte|gehängt|hat
+hängen|f|to hang; to be attached to (an +D)|"an jemandem hängen" = to be attached to someone|Das Bild hängt schief.|etw+A an etw+A · an jdm/etw+D
+abhängen|t|to depend on (von +D); to unhook; to shake off|"das hängt davon ab" = that depends|Es hängt vom Wetter ab.|von jdm/etw+D · etw+A
+aufhängen|t|to hang up; to hang (a person)|"die Wäsche aufhängen"|Häng die Jacke auf.|etw+A · sich+A
+anhängen|t|to attach, to append; to pin something on someone|"eine Datei anhängen" – e-mail|Ich hänge die Datei an.|etw+A an etw+A · jdm etw+A
+zusammenhängen|t|to be connected, to be related|"das hängt damit zusammen"|Beides hängt eng zusammen.|mit etw+D
+aushängen|t|to put up (a notice); to unhinge|"einen Aushang machen"|Der Plan hängt im Flur aus.|etw+A
+einhängen|t|to hang in place; to hang up (the phone, dated)|"den Hörer einhängen"|Sie hängte den Hörer ein.|etw+A
+umhängen|t|to rehang; to sling over one's shoulder|"sich die Tasche umhängen"|Ich hänge mir den Rucksack um.|sich+D etw+A · etw+A
+
+=heben|to lift|hebt|hob|gehoben|hat
+heben|f|to lift, to raise|"die Stimmung heben" = to lift the mood|Er hebt den Koffer.|etw+A
+aufheben|t|to pick up; to keep; to cancel, to lift (a rule)|"gut aufgehoben sein" = to be in good hands|Heb den Zettel auf.|etw+A
+abheben|t|to withdraw (money); to take off (a plane); to pick up|"Geld abheben" – the ATM verb|Ich hebe 100 Euro ab.|etw+A · kein Obj.
+erheben|f|to raise, to levy (a fee); to rise up (sich erheben)|"Gebühren erheben" – official|Es werden keine Gebühren erhoben.|etw+A · sich+A gegen jdn+A
+hervorheben|t|to emphasise, to highlight|"besonders hervorheben"|Er hob ihre Leistung hervor.|etw+A
+anheben|t|to raise slightly (prices, wages)|"die Preise anheben" – business news|Die Löhne werden angehoben.|etw+A
+ausheben|t|to dig out; to raid, to bust (a gang)|"eine Bande ausheben" – police|Die Polizei hob den Ring aus.|etw+A
+verheben|f|to injure oneself lifting (sich verheben)|"ich habe mich verhoben"|Ich habe mich beim Umzug verhoben.|sich+A
+
+=kaufen|to buy|kauft|kaufte|gekauft|hat
+kaufen|f|to buy|"dafür kann ich mir nichts kaufen" = that's no use to me|Ich kaufe ein neues Rad.|etw+A · sich+D etw+A
+verkaufen|f|to sell|"sich gut verkaufen" = to sell well, or to present yourself well|Er verkauft sein Auto.|jdm etw+A · sich+A
+einkaufen|t|to shop, to buy in; to buy into (sich einkaufen)|"einkaufen gehen" = to go shopping|Ich kaufe noch schnell ein.|etw+A · kein Obj.
+abkaufen|t|to buy from someone; to believe someone|"das kauf ich dir nicht ab" = I don't buy that|Ich kaufe dir das Rad ab.|jdm etw+A
+aufkaufen|t|to buy up|"Grundstücke aufkaufen" – business news|Ein Konzern kauft die Firma auf.|etw+A
+ankaufen|t|to purchase, to buy in (trade)|dealers' register: "Gold ankaufen"|Wir kaufen Altgold an.|etw+A
+zukaufen|t|to buy in addition, to source externally|corporate procurement|Teile werden zugekauft.|etw+A
+freikaufen|t|to buy free, to ransom|"sich freikaufen" = to buy your way out|Er kaufte sich frei.|jdn+A · sich+A
+
+=leiten|to lead, to conduct|leitet|leitete|geleitet|hat
+leiten|f|to lead, to manage; to conduct (heat, electricity)|"eine Abteilung leiten" – org charts|Sie leitet das Projekt.|etw+A
+ableiten|t|to derive; to divert (water)|"daraus lässt sich ableiten, dass…"|Das Wort leitet sich vom Latein ab.|etw+A aus/von etw+D · sich+A
+einleiten|t|to initiate, to start (proceedings); to introduce (a text)|"Maßnahmen einleiten" – official action|Es wurde ein Verfahren eingeleitet.|etw+A
+weiterleiten|t|to forward, to pass on|"die Mail weiterleiten" – daily office verb|Ich leite die Anfrage weiter.|etw+A an jdn+A
+umleiten|t|to divert, to reroute|"der Verkehr wird umgeleitet"|Die Straße ist umgeleitet.|etw+A
+begleiten|f|to accompany; to come along|"jemanden begleiten" – socially and musically|Darf ich dich begleiten?|jdn+A
+verleiten|f|to lead someone astray, to tempt into|"zum Kauf verleiten" – advertising|Das verleitet zu Fehlern.|jdn+A zu etw+D
+anleiten|t|to instruct, to guide someone|"Auszubildende anleiten"|Er leitet die Praktikanten an.|jdn+A zu etw+D
+überleiten|t|to lead over, to transition (to a topic)|presentations: "zum nächsten Punkt überleiten"|Sie leitete zum Fazit über.|zu etw+D
+
+=ordnen|to order, to arrange|ordnet|ordnete|geordnet|hat
+ordnen|f|to arrange, to sort, to put in order|"seine Gedanken ordnen"|Ich ordne die Papiere.|etw+A
+einordnen|t|to classify, to categorise; to file; to get in lane|"sich einordnen" – traffic and social|Wie ordnest du das ein?|etw+A · sich+A
+anordnen|t|to order, to instruct; to arrange spatially|"der Arzt hat Ruhe angeordnet"|Der Chef ordnete Überstunden an.|etw+A
+zuordnen|t|to assign, to attribute to|"einer Kategorie zuordnen"|Ich kann das Bild nicht zuordnen.|jdm/etw+D etw+A
+unterordnen|f|to subordinate; to fall in line (sich unterordnen)|"sich unterordnen können" – job interviews|Er ordnet sich nur ungern unter.|sich+A jdm/etw+D
+verordnen|f|to prescribe; to decree|"der Arzt verordnet Ruhe"|Man verordnete ihm Bettruhe.|jdm etw+A
+umordnen|t|to rearrange|"die Möbel umordnen"|Wir ordnen die Regale um.|etw+A
+
+=passen|to fit, to suit|passt|passte|gepasst|hat
+passen|f|to fit; to suit someone; to pass (a ball, a turn)|"das passt mir gut" = that works for me|Der Termin passt mir nicht.|jdm+D · zu etw+D
+anpassen|t|to adapt, to adjust; to fit in (sich anpassen)|"sich anpassen" – the immigration and office word|Wir passen die Preise an.|etw+A an etw+A · sich+A
+aufpassen|t|to pay attention; to look after|"pass auf!" = watch out! and "auf die Kinder aufpassen"|Pass auf dich auf!|auf jdn/etw+A
+verpassen|f|to miss (a train, a chance); to give someone something|"den Zug verpassen" and "eine Strafe verpassen"|Ich habe den Bus verpasst.|etw+A · jdm etw+A
+einpassen|t|to fit into place|craftsmanship: "ein Brett einpassen"|Das Teil wird genau eingepasst.|etw+A in etw+A
+abpassen|t|to catch someone at the right moment; to time|"den richtigen Moment abpassen"|Ich habe ihn am Ausgang abgepasst.|jdn+A · etw+A
+
+=rechnen|to calculate|rechnet|rechnete|gerechnet|hat
+rechnen|f|to calculate, to do maths; to count on (mit +D)|"damit habe ich nicht gerechnet" = I didn't expect that|Ich rechne mit dem Schlimmsten.|mit etw/jdm+D
+berechnen|f|to calculate, to compute; to charge|"wir berechnen Ihnen nichts" = no charge|Der Preis wird automatisch berechnet.|etw+A · jdm etw+A
+verrechnen|f|to offset, to settle; to miscalculate (sich verrechnen)|"ich habe mich verrechnet" = I got my sums wrong|Das wird mit der Miete verrechnet.|etw+A mit etw+D · sich+A
+anrechnen|t|to credit, to count towards; to give credit for|"das rechne ich dir hoch an" = I really appreciate that|Das Praktikum wird angerechnet.|jdm etw+A
+ausrechnen|t|to work out, to compute|"rechne dir das mal aus!"|Ich rechne die Kosten aus.|etw+A · sich+D etw+A
+abrechnen|t|to settle accounts, to invoice; to get even|"mit jemandem abrechnen" = to settle a score|Wir rechnen am Monatsende ab.|etw+A · mit jdm+D
+einrechnen|t|to factor in, to include in the calculation|"die Pause ist eingerechnet"|Die Steuer ist schon eingerechnet.|etw+A
+nachrechnen|t|to check the figures|"rechne mal nach!"|Rechne bitte noch mal nach.|etw+A · kein Obj.
+hochrechnen|t|to extrapolate, to project|election night vocabulary|Die Zahlen werden hochgerechnet.|etw+A
+
+=reden|to talk|redet|redete|geredet|hat
+reden|f|to talk, to speak|"reden" is chattier than "sprechen": "wir müssen reden"|Wir reden später darüber.|mit jdm+D über etw+A
+überreden|f|to persuade, to talk someone into|"lass dich nicht überreden!"|Er hat mich überredet.|jdn+A zu etw+D
+verabreden|f|to arrange, to agree (a time); to meet up (sich verabreden)|"ich bin verabredet" = I have plans|Wir haben uns für Freitag verabredet.|sich+A mit jdm+D · etw+A
+einreden|t|to talk someone into believing; to convince oneself|"rede dir nichts ein!" = don't kid yourself|Das hat er sich nur eingeredet.|jdm/sich+D etw+A
+ausreden|t|to finish speaking; to talk someone out of something|"lass mich ausreden!" = let me finish|Ich rede ihm die Idee aus.|kein Obj. · jdm etw+A
+mitreden|t|to have a say, to join the conversation|"da kann ich mitreden" = I know something about that|Bei dem Thema kann ich mitreden.|bei etw+D
+nachreden|t|to repeat what someone said; to say bad things about someone|"jemandem etwas nachreden"|Man redet ihm Schlimmes nach.|jdm etw+A
+zureden|t|to encourage, to coax (+D)|"gut zureden" = to talk someone round gently|Ich musste ihr lange zureden.|jdm+D
+
+=schalten|to switch|schaltet|schaltete|geschaltet|hat
+schalten|f|to switch; to change gear; to catch on|"er schaltet schnell" = he catches on fast|Er schaltet in den dritten Gang.|kein Obj. · etw+A
+einschalten|t|to switch on; to bring someone in (sich einschalten)|"den Anwalt einschalten"|Schalte bitte das Licht ein.|etw+A · sich+A in etw+A
+ausschalten|t|to switch off; to eliminate (a rival)|"die Konkurrenz ausschalten"|Vergiss nicht, den Herd auszuschalten.|etw/jdn+A
+umschalten|t|to switch over (channels, modes)|"auf ein anderes Programm umschalten"|Kannst du mal umschalten?|auf etw+A
+abschalten|t|to shut down; to switch off mentally|"ich muss mal abschalten" = I need to unwind|Das Kraftwerk wird abgeschaltet.|etw+A · kein Obj.
+anschalten|t|to turn on (a device)|everyday twin of "einschalten"|Schalt den Fernseher an.|etw+A
+zuschalten|t|to connect in, to bring in (a line, a studio)|broadcasting: "wir schalten Berlin zu"|Wir schalten den Reporter zu.|jdn/etw+A
+freischalten|t|to activate, to unlock (an account, a feature)|telecom and software support|Die SIM wird sofort freigeschaltet.|etw+A für jdn+A
+
+=schicken|to send|schickt|schickte|geschickt|hat
+schicken|f|to send|"schick mir mal die Datei"|Ich schicke dir die Adresse.|jdm etw+A · jdn+A irgendwohin
+verschicken|f|to send out, to dispatch (in quantity)|"Einladungen verschicken"|Die Rechnungen sind verschickt.|etw+A an jdn+A
+abschicken|t|to send off, to post|"hast du den Brief abgeschickt?"|Ich habe das Formular abgeschickt.|etw+A
+zurückschicken|t|to send back, to return|online shopping: "die Ware zurückschicken"|Ich schicke die Schuhe zurück.|etw+A an jdn+A
+mitschicken|t|to enclose, to send along|"ich schicke die Rechnung mit"|Die Quittung schicke ich mit.|etw+A
+einschicken|t|to send in (a form, an entry)|"das Gerät einschicken" – warranty|Schicken Sie das Formular ein.|etw+A
+wegschicken|t|to send away, to turn someone away|"jemanden wegschicken" – curt|Er hat den Vertreter weggeschickt.|jdn/etw+A
+nachschicken|t|to forward (post), to send on|"die Post nachschicken lassen"|Die Briefe werden nachgeschickt.|jdm etw+A
+
+=sorgen|to care, to see to|sorgt|sorgte|gesorgt|hat
+sorgen|f|to see to it (für +A); to worry (sich sorgen)|"dafür ist gesorgt" = that's taken care of|Ich sorge für das Essen.|für jdn/etw+A · sich+A um jdn+A
+versorgen|f|to supply, to provide for; to look after|"die Familie versorgen"|Er versorgt die Tiere.|jdn+A mit etw+D
+besorgen|f|to get, to obtain; to run (errands)|"kannst du das besorgen?" – everyday|Ich besorge die Karten.|jdm/sich+D etw+A
+entsorgen|f|to dispose of (waste)|"Altöl entsorgen" – recycling German|Wo kann ich die Batterien entsorgen?|etw+A
+vorsorgen|t|to make provision, to plan ahead|"fürs Alter vorsorgen" – pensions|Man sollte früh vorsorgen.|für etw+A
+umsorgen|f|to look after devotedly, to fuss over|warm, slightly literary|Sie umsorgt ihre Gäste.|jdn+A
+
+=sperren|to block, to lock|sperrt|sperrte|gesperrt|hat
+sperren|f|to block, to close off; to suspend (a card, a player)|"die Karte sperren lassen"|Die Straße ist gesperrt.|etw+A · jdn+A
+absperren|t|to cordon off; to lock|"das Gelände absperren" – police tape|Die Polizei sperrte den Platz ab.|etw+A
+aussperren|t|to lock out|"ich habe mich ausgesperrt" = I locked myself out|Ich habe mich ausgesperrt.|jdn+A · sich+A
+einsperren|t|to lock up, to imprison|"jemanden einsperren"|Der Hund wird nicht eingesperrt.|jdn/etw+A
+versperren|f|to block, to obstruct (a view, a path)|"den Weg versperren"|Der Lkw versperrt die Sicht.|jdm etw+A
+aufsperren|t|to unlock; to open wide (in Austria/Bavaria)|regional for "aufschließen"|Sperr bitte die Tür auf.|etw+A
+zusperren|t|to lock up (southern German)|"zusperren" where the north says "abschließen"|Wir sperren um sechs zu.|etw+A
+
+=stimmen|to be right, to vote|stimmt|stimmte|gestimmt|hat
+stimmen|f|to be correct; to vote; to tune (an instrument)|"stimmt!" = true! and "stimmt so" = keep the change|Das stimmt nicht.|kein Obj. · für/gegen etw+A
+bestimmen|f|to determine, to decide; to define|"du hast hier nichts zu bestimmen"|Wer bestimmt das?|etw+A · über etw+A
+zustimmen|t|to agree, to consent (+D)|"da stimme ich dir zu" – polite agreement|Ich stimme dir völlig zu.|jdm/etw+D
+abstimmen|t|to vote; to coordinate, to align|"sich mit jemandem abstimmen" – teamwork|Wir stimmen morgen darüber ab.|über etw+A · etw+A mit jdm+D
+übereinstimmen|t|to agree, to match, to be consistent|"die Zahlen stimmen überein"|Unsere Angaben stimmen überein.|mit jdm/etw+D
+einstimmen|t|to get in the mood (sich einstimmen); to join in|"sich auf Weihnachten einstimmen"|Das Lied stimmte alle ein.|sich+A auf etw+A
+verstimmen|f|to annoy, to put out; to detune|"verstimmt sein" = to be miffed, or out of tune|Die Bemerkung hat ihn verstimmt.|jdn+A
+umstimmen|t|to change someone's mind, to win over|"er ließ sich umstimmen"|Ich konnte sie umstimmen.|jdn+A
+
+=streichen|to paint, to stroke|streicht|strich|gestrichen|hat
+streichen|f|to paint; to stroke; to delete, to cut|"frisch gestrichen!" = wet paint|Wir streichen die Wand weiß.|etw+A · über etw+A
+unterstreichen|f|to underline; to emphasise|"das möchte ich unterstreichen"|Der Redner unterstrich die Bedeutung.|etw+A
+durchstreichen|t|to cross out|"streich das durch"|Streichen Sie den Satz durch.|etw+A
+anstreichen|t|to paint (a surface); to mark, to highlight|"Fehler anstreichen" – marking homework|Der Lehrer streicht die Fehler an.|etw+A
+bestreichen|f|to spread on, to coat|"das Brot mit Butter bestreichen" – recipes|Bestreichen Sie den Teig mit Ei.|etw+A mit etw+D
+ausstreichen|t|to cross out; to smooth out|"das Wort ausstreichen"|Er strich den Namen aus.|etw+A
+einstreichen|t|to pocket, to rake in (money)|"den Gewinn einstreichen" – slightly cynical|Er strich die Prämie ein.|etw+A
+
+=tauschen|to swap|tauscht|tauschte|getauscht|hat
+tauschen|f|to swap, to exchange|"wollen wir tauschen?" = shall we swap?|Wir tauschen die Plätze.|etw+A mit jdm+D · etw+A gegen etw+A
+austauschen|t|to exchange; to replace|"Erfahrungen austauschen" – networking|Wir tauschen die Teile aus.|etw+A · sich+A mit jdm+D
+umtauschen|t|to exchange (a purchase, currency)|"kann ich das umtauschen?" – shops|Ich möchte den Pullover umtauschen.|etw+A gegen etw+A
+eintauschen|t|to trade in, to swap for|"das Auto eintauschen"|Er tauschte den Wagen gegen einen neuen ein.|etw+A gegen etw+A
+vertauschen|f|to mix up, to swap by mistake|"die Koffer vertauschen"|Wir haben die Jacken vertauscht.|etw+A mit etw+D
+abtauschen|t|to trade off, to exchange (pieces in chess)|chess and football commentary|Er tauschte die Dame ab.|etw+A
+
+=werten|to rate, to judge|wertet|wertete|gewertet|hat
+werten|f|to rate, to score; to interpret as|"als Erfolg werten" = to count as a success|Wie werten Sie das Ergebnis?|etw+A als etw+A
+bewerten|f|to evaluate, to grade, to rate|"eine Leistung bewerten" – school and app stores|Bitte bewerten Sie unseren Service.|jdn/etw+A mit etw+D
+auswerten|t|to analyse, to evaluate (data)|"die Umfrage auswerten"|Die Daten werden noch ausgewertet.|etw+A
+abwerten|t|to devalue; to belittle|"eine Währung abwerten" and "jemanden abwerten"|Die Währung wurde abgewertet.|etw/jdn+A
+aufwerten|t|to upgrade, to enhance; to revalue|"das Viertel aufwerten" – gentrification|Der Preis wertet das Projekt auf.|etw+A
+verwerten|f|to make use of, to recycle, to exploit|"Abfall verwerten" and "Informationen verwerten"|Die Reste lassen sich gut verwerten.|etw+A
+entwerten|f|to validate (a ticket); to devalue|"den Fahrschein entwerten" – trams|Bitte den Fahrschein entwerten.|etw+A
+
+=zahlen|to pay|zahlt|zahlte|gezahlt|hat
+zahlen|f|to pay|"zahlen, bitte!" = the bill, please|Ich zahle bar.|etw+A · für etw+A
+bezahlen|f|to pay for, to pay someone|"hast du schon bezahlt?" – the fuller everyday verb|Er hat die Rechnung bezahlt.|etw+A · jdm etw+A
+auszahlen|t|to pay out; to be worth it (sich auszahlen)|"das zahlt sich aus" = it pays off|Der Lohn wird morgen ausgezahlt.|jdm etw+A · sich+A
+einzahlen|t|to pay in, to deposit|"Geld einzahlen" – bank counters|Ich zahle 500 Euro ein.|etw+A auf etw+A
+zurückzahlen|t|to pay back, to repay|"ich zahle es dir zurück"|Er zahlt den Kredit zurück.|jdm etw+A
+anzahlen|t|to pay a deposit on|"das Auto anzahlen"|Wir haben 20 Prozent angezahlt.|etw+A
+nachzahlen|t|to pay extra, to pay in arrears|"Steuern nachzahlen" – tax bills|Ich musste 300 Euro nachzahlen.|etw+A
+abzahlen|t|to pay off in instalments|"den Kredit abzahlen"|Wir zahlen das Haus ab.|etw+A
+zuzahlen|t|to pay a top-up, to make a co-payment|health insurance German|Sie müssen zehn Euro zuzahlen.|etw+A
+
+=zählen|to count|zählt|zählte|gezählt|hat
+zählen|f|to count; to count as, to matter|"das zählt nicht!" = that doesn't count|Er zählt bis zehn.|etw+A · auf jdn+A · zu etw+D
+erzählen|f|to tell, to narrate|"erzähl mal!" = tell me about it|Erzähl mir von deiner Reise.|jdm etw+A · von etw+D
+aufzählen|t|to list, to enumerate|"alle Gründe aufzählen"|Er zählte die Vorteile auf.|etw+A
+abzählen|t|to count off, to count out|"an den Fingern abzählen"|Zähl das Wechselgeld ab.|etw+A
+mitzählen|t|to count too, to be counted|"zählt das mit?" = does that count?|Die Probezeit zählt mit.|kein Obj. · etw+A
+nachzählen|t|to recount, to check the count|"noch mal nachzählen"|Bitte zählen Sie nach.|etw+A · kein Obj.
+zusammenzählen|t|to add up, to total|"alles zusammenzählen"|Zähl die Beträge zusammen.|etw+A
+dazuzählen|t|to add on, to include in the count|"die Kinder dazuzählen"|Rechne die Gebühr dazu.|etw+A

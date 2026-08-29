@@ -12,11 +12,16 @@ import (
 )
 
 const (
-	prefixWidth = 14
+	prefixWidth = 16
 	stemWidth   = 16
-	centerWidth = 36
-	minWidth    = 96
-	chromeH     = 3 // header line, footer line, and the gap between them
+	centerWidth = 38
+	wideWidth   = 100 // four panes fit
+	mediumWidth = 64  // reels plus one combined detail pane
+	chromeH     = 3   // header line, footer line, and the gap between them
+	// lipgloss Width() counts padding but not the border, so a pane of width w
+	// occupies w+border columns and has w-padding columns of content.
+	border  = 2
+	padding = 2
 )
 
 var (
@@ -34,36 +39,43 @@ var (
 		Padding(0, 1)
 	boxFocused = box.BorderForeground(accent)
 
-	brandStyle   = lipgloss.NewStyle().Foreground(bright).Bold(true)
 	kickerStyle  = lipgloss.NewStyle().Foreground(secondary)
 	metaStyle    = lipgloss.NewStyle().Foreground(muted)
 	reelStyle    = lipgloss.NewStyle().Foreground(bright)
-	deadStyle    = lipgloss.NewStyle().Foreground(subtle)
 	pickedStyle  = lipgloss.NewStyle().Foreground(ink).Background(accent).Bold(true)
 	restingStyle = lipgloss.NewStyle().Foreground(ink).Background(subtle)
 	headingStyle = lipgloss.NewStyle().Foreground(secondary).Bold(true)
 	bodyStyle    = lipgloss.NewStyle().Foreground(bright)
 	wordStyle    = lipgloss.NewStyle().Foreground(accent).Bold(true)
 	formStyle    = lipgloss.NewStyle().Foreground(bright).Bold(true)
-	ghostStyle   = lipgloss.NewStyle().Foreground(subtle)
+	useStyle     = lipgloss.NewStyle().Foreground(green)
 	sepStyle     = lipgloss.NewStyle().Foreground(green)
 	insepStyle   = lipgloss.NewStyle().Foreground(secondary)
 	exampleStyle = lipgloss.NewStyle().Foreground(muted).Italic(true)
 	footerStyle  = lipgloss.NewStyle().Foreground(muted)
 	keyStyle     = lipgloss.NewStyle().Foreground(secondary).Bold(true)
+	thumbStyle   = lipgloss.NewStyle().Foreground(accent)
+	trackStyle   = lipgloss.NewStyle().Foreground(subtle)
 )
 
-// The two reels: prefixes on the left, stems beside them. Spinning them
-// independently is the point — most combinations are real words, and the ones
-// that are not are worth seeing too.
+// Two reels that filter each other: the prefix reel shows only prefixes that
+// make a word with the stem showing, and the stem reel only stems that take
+// the prefix showing. Every combination you can land on is a real verb, so the
+// reels are the vocabulary list.
 type model struct {
 	stems    []*Stem
-	prefixes []string        // "" (the bare stem) first, then alphabetical
-	sepOf    map[string]bool // separability, taken from the verbs we do have
-	pi, si   int             // reel positions
+	sepOf    map[string]bool // separability, inferred from the verbs we have
+	pfx      string          // where the prefix reel is resting ("" = bare stem)
+	stem     *Stem           // where the stem reel is resting
 	ptop, st int             // first visible row of each reel
 	focus    int             // 0 = prefix reel, 1 = stem reel
 	w, h     int
+
+	searching bool // "/" search over prefixes, stems and meanings at once
+	query     string
+	hits      []*Verb
+	hit       int
+	saved     savedPos // where the reels were, to restore on a cancelled search
 
 	testing  bool // flash-card mode: one prefix, one stem, meaning hidden
 	card     *Verb
@@ -72,79 +84,192 @@ type model struct {
 
 func newModel() model {
 	stems := load()
-	seen := map[string]int{} // prefix -> separable votes minus inseparable
+	votes := map[string]int{}
 	for _, s := range stems {
 		for _, v := range s.Verbs {
-			p := v.Prefix()
-			if p == "" {
-				continue
-			}
-			if _, ok := seen[p]; !ok {
-				seen[p] = 0
-			}
-			if v.Sep {
-				seen[p]++
-			} else {
-				seen[p]--
+			if p := v.Prefix(); p != "" {
+				if v.Sep {
+					votes[p]++
+				} else {
+					votes[p]--
+				}
 			}
 		}
 	}
-	m := model{stems: stems, prefixes: []string{""}, sepOf: map[string]bool{}}
-	for p, votes := range seen {
-		m.prefixes = append(m.prefixes, p)
-		m.sepOf[p] = votes >= 0
+	// Alphabetical by the umlaut-folded name, the order a German dictionary uses.
+	sort.SliceStable(stems, func(i, j int) bool {
+		return folds.Replace(stems[i].Name) < folds.Replace(stems[j].Name)
+	})
+	m := model{stems: stems, sepOf: map[string]bool{}, stem: stems[0]}
+	for p, n := range votes {
+		m.sepOf[p] = n >= 0
 	}
-	sort.Strings(m.prefixes[1:])
 	return m
+}
+
+type savedPos struct {
+	pfx  string
+	stem *Stem
 }
 
 func (m model) Init() tea.Cmd { return nil }
 
-// matches returns the real verbs for the current combination. It is usually
-// zero or one; a handful of prefixes (über-, um-) give two words that differ
-// only by separability.
-func (m model) matches() []*Verb {
-	var out []*Verb
-	s := m.stems[m.si]
-	want := m.prefixes[m.pi] + s.Name
-	for i := range s.Verbs {
-		if s.Verbs[i].Name == want {
-			out = append(out, &s.Verbs[i])
+// prefixList is the prefix reel: the prefixes that make a word with the stem
+// currently showing. stemList is the mirror image.
+func (m model) prefixList() []string {
+	seen := map[string]bool{}
+	var out []string
+	for _, v := range m.stem.Verbs {
+		if p := v.Prefix(); !seen[p] {
+			seen[p] = true
+			out = append(out, p)
+		}
+	}
+	sort.SliceStable(out, func(i, j int) bool { return folds.Replace(out[i]) < folds.Replace(out[j]) })
+	return out
+}
+
+func (m model) stemList() []*Stem {
+	var out []*Stem
+	for _, s := range m.stems {
+		for _, v := range s.Verbs {
+			if v.Prefix() == m.pfx {
+				out = append(out, s)
+				break
+			}
 		}
 	}
 	return out
 }
 
-func (m model) exists(pi, si int) bool {
-	want := m.prefixes[pi] + m.stems[si].Name
-	for _, v := range m.stems[si].Verbs {
-		if v.Name == want {
-			return true
+func indexOf[T comparable](xs []T, x T) int {
+	for i, y := range xs {
+		if y == x {
+			return i
 		}
 	}
-	return false
+	return 0
 }
 
-// ghost is the word the combination would make if it existed, conjugated by
-// the same rules as a real one.
-func (m model) ghost() Verb {
-	p := m.prefixes[m.pi]
-	return Verb{Name: p + m.stems[m.si].Name, Sep: m.sepOf[p], Stem: m.stems[m.si]}
+func (m model) pi() int { return indexOf(m.prefixList(), m.pfx) }
+func (m model) si() int { return indexOf(m.stemList(), m.stem) }
+
+// Moving one reel can only land on a combination the other reel already
+// allows, so neither selection ever has to be repaired.
+func (m *model) setPI(i int) {
+	l := m.prefixList()
+	m.pfx = l[min(max(i, 0), len(l)-1)]
+}
+
+func (m *model) setSI(i int) {
+	l := m.stemList()
+	m.stem = l[min(max(i, 0), len(l)-1)]
+}
+
+// matches returns the verbs for the current combination — usually one, but a
+// few prefixes (über-, um-) give two words that differ only by separability.
+func (m model) matches() []*Verb {
+	var out []*Verb
+	want := m.pfx + m.stem.Name
+	for i := range m.stem.Verbs {
+		if m.stem.Verbs[i].Name == want {
+			out = append(out, &m.stem.Verbs[i])
+		}
+	}
+	return out
+}
+
+// fold normalises umlauts so a query typed without them still matches. Trying
+// both forms lets "uber" and "ueber" find übernehmen.
+var folds = strings.NewReplacer("ä", "a", "ö", "o", "ü", "u", "ß", "s")
+var expands = strings.NewReplacer("ä", "ae", "ö", "oe", "ü", "ue", "ß", "ss")
+
+// fuzzy reports whether every rune of q appears in s in order, and how tightly
+// they sit together — "anneh" and "annh" both find annehmen.
+func fuzzy(s, q string) (int, bool) {
+	i, first, last := 0, -1, 0
+	rs := []rune(s)
+	for _, r := range q {
+		for i < len(rs) && rs[i] != r {
+			i++
+		}
+		if i == len(rs) {
+			return 0, false
+		}
+		if first < 0 {
+			first = i
+		}
+		last, i = i, i+1
+	}
+	return (last - first) + first, true // tighter and earlier scores lower
+}
+
+// search ranks every verb against the query. The whole word is matched, so a
+// query spanning prefix and stem ("mitneh") works, and meanings count too.
+func (m *model) search() {
+	q := strings.ToLower(strings.TrimSpace(m.query))
+	m.hits, m.hit = nil, 0
+	if q == "" {
+		return
+	}
+	type scored struct {
+		v *Verb
+		n int
+	}
+	var all []scored
+	for _, s := range m.stems {
+		for i := range s.Verbs {
+			v := &s.Verbs[i]
+			name := strings.ToLower(v.Name)
+			switch {
+			case strings.HasPrefix(name, q) || strings.HasPrefix(folds.Replace(name), folds.Replace(q)):
+				all = append(all, scored{v, -1000 + len(name)})
+			default:
+				n, ok := fuzzy(folds.Replace(name), folds.Replace(q))
+				if !ok {
+					n, ok = fuzzy(expands.Replace(name), expands.Replace(q))
+				}
+				if ok {
+					all = append(all, scored{v, n})
+				} else if text := strings.ToLower(v.Official + " " + v.Colloquial + " " + v.Use); strings.Contains(folds.Replace(text), folds.Replace(q)) {
+					all = append(all, scored{v, 1000})
+				}
+			}
+		}
+	}
+	sort.SliceStable(all, func(i, j int) bool { return all[i].n < all[j].n })
+	for _, s := range all {
+		m.hits = append(m.hits, s.v)
+	}
+	m.show()
+}
+
+// show moves both reels onto the currently selected search hit.
+func (m *model) show() {
+	if len(m.hits) == 0 {
+		return
+	}
+	v := m.hits[m.hit]
+	m.stem, m.pfx = v.Stem, v.Prefix()
+	m.rescroll()
 }
 
 func (m *model) spin() {
-	for {
-		pi, si := rand.Intn(len(m.prefixes)), rand.Intn(len(m.stems))
-		if m.exists(pi, si) {
-			m.pi, m.si = pi, si
-			return
-		}
-	}
+	m.stem = m.stems[rand.Intn(len(m.stems))]
+	l := m.prefixList()
+	m.pfx = l[rand.Intn(len(l))]
 }
 
-func (m model) reelHeight() int { return max(1, m.h-chromeH-box.GetVerticalFrameSize()) }
+func (m model) reelHeight() int {
+	h := m.h - chromeH - box.GetVerticalFrameSize()
+	if m.w < mediumWidth {
+		// Reels on top, detail underneath: they only get half the screen.
+		h = (m.h-chromeH)/2 - box.GetVerticalFrameSize()
+	}
+	return max(1, h)
+}
 
-func scroll(cursor, top, h int) int {
+func scrollTop(cursor, top, h int) int {
 	if cursor < top {
 		return cursor
 	}
@@ -156,8 +281,8 @@ func scroll(cursor, top, h int) int {
 
 func (m *model) rescroll() {
 	h := m.reelHeight()
-	m.ptop = scroll(m.pi, m.ptop, h)
-	m.st = scroll(m.si, m.st, h)
+	m.ptop = scrollTop(m.pi(), min(m.ptop, max(0, len(m.prefixList())-h)), h)
+	m.st = scrollTop(m.si(), min(m.st, max(0, len(m.stemList())-h)), h)
 }
 
 func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
@@ -168,25 +293,32 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		if m.testing {
 			return m.updateTest(msg)
 		}
-		cur, n := &m.si, len(m.stems)
+		if m.searching {
+			return m.updateSearch(msg)
+		}
+		cur, n, set := m.si(), len(m.stemList()), (*model).setSI
 		if m.focus == 0 {
-			cur, n = &m.pi, len(m.prefixes)
+			cur, n, set = m.pi(), len(m.prefixList()), (*model).setPI
 		}
 		switch msg.String() {
 		case "q", "ctrl+c", "esc":
 			return m, tea.Quit
 		case "j", "down":
-			*cur = min(*cur+1, n-1)
+			cur = min(cur+1, n-1)
 		case "k", "up":
-			*cur = max(*cur-1, 0)
-		case "ctrl+d", "pgdown":
-			*cur = min(*cur+m.reelHeight(), n-1)
-		case "ctrl+u", "pgup":
-			*cur = max(*cur-m.reelHeight(), 0)
+			cur = max(cur-1, 0)
+		case "ctrl+d":
+			cur = min(cur+max(1, m.reelHeight()/2), n-1)
+		case "ctrl+u":
+			cur = max(cur-max(1, m.reelHeight()/2), 0)
+		case "ctrl+f", "pgdown":
+			cur = min(cur+m.reelHeight(), n-1)
+		case "ctrl+b", "pgup":
+			cur = max(cur-m.reelHeight(), 0)
 		case "g", "home":
-			*cur = 0
+			cur = 0
 		case "G", "end":
-			*cur = n - 1
+			cur = n - 1
 		case "h", "left", "l", "right", "tab":
 			m.focus = 1 - m.focus
 		case " ", "s":
@@ -194,23 +326,47 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case "t":
 			m.testing = true
 			m.deal()
-		case "J":
-			// Step to the next prefix that actually makes a word here.
-			for i := m.pi + 1; i < len(m.prefixes); i++ {
-				if m.exists(i, m.si) {
-					m.pi = i
-					break
-				}
-			}
-		case "K":
-			for i := m.pi - 1; i >= 0; i-- {
-				if m.exists(i, m.si) {
-					m.pi = i
-					break
-				}
-			}
+		case "/":
+			m.searching, m.query = true, ""
+			m.saved = savedPos{m.pfx, m.stem}
+			m.hits, m.hit = nil, 0
 		}
+		set(&m, cur)
 		m.rescroll()
+	}
+	return m, nil
+}
+
+func (m model) updateSearch(msg tea.KeyMsg) (tea.Model, tea.Cmd) {
+	switch msg.String() {
+	case "ctrl+c":
+		return m, tea.Quit
+	case "enter":
+		m.searching = false
+	case "esc":
+		m.searching = false
+		m.pfx, m.stem = m.saved.pfx, m.saved.stem
+		m.rescroll()
+	case "down", "ctrl+n", "tab":
+		if len(m.hits) > 0 {
+			m.hit = (m.hit + 1) % len(m.hits)
+			m.show()
+		}
+	case "up", "ctrl+p", "shift+tab":
+		if len(m.hits) > 0 {
+			m.hit = (m.hit + len(m.hits) - 1) % len(m.hits)
+			m.show()
+		}
+	case "backspace":
+		if m.query != "" {
+			m.query = string([]rune(m.query)[:len([]rune(m.query))-1])
+			m.search()
+		}
+	default:
+		if msg.Type == tea.KeyRunes || msg.Type == tea.KeySpace {
+			m.query += msg.String()
+			m.search()
+		}
 	}
 	return m, nil
 }
@@ -248,40 +404,32 @@ func (m model) testView() string {
 	reel := func(s string) string {
 		return box.Width(18).Align(lipgloss.Center).Render("\n" + wordStyle.Render(s) + "\n")
 	}
-	prefix := m.prefixLabel(v.Prefix())
 	card := []string{
-		lipgloss.JoinHorizontal(lipgloss.Top, reel(prefix), reel(v.Stem.Name)),
+		lipgloss.JoinHorizontal(lipgloss.Top, reel(m.prefixLabel(v.Prefix())), reel(v.Stem.Name)),
 		"",
 	}
 	if !m.revealed {
 		card = append(card,
-			metaStyle.Render("Was bedeutet es? Wie lauten die Formen?"),
+			metaStyle.Render("What does it mean? What are the forms?"),
 			"",
-			footerStyle.Render("␣ aufdecken  ·  n nächste  ·  esc zurück"))
+			footerStyle.Render("␣ reveal  ·  n next  ·  esc back"))
 	} else {
 		present, past, perfect := v.Forms()
-		kind := insepStyle.Render("untrennbar")
-		if v.Sep {
-			kind = sepStyle.Render("trennbar")
-		}
-		if v.Prefix() == "" {
-			kind = metaStyle.Render("stamm")
-		}
-		w := min(64, m.w-4)
-		wrap := lipgloss.NewStyle().Width(w)
+		wrap := lipgloss.NewStyle().Width(min(66, max(20, m.w-4)))
 		card = append(card,
-			wordStyle.Render(v.Name)+"   "+kind,
+			wordStyle.Render(v.Name)+"   "+kindOf(*v),
 			formStyle.Render(present+"  ·  "+past+"  ·  "+perfect),
+			useStyle.Render(v.Use),
 			"",
 			wrap.Render(headingStyle.Render("offiziell   ")+bodyStyle.Render(v.Official)),
 			wrap.Render(headingStyle.Render("umgangssprachlich   ")+bodyStyle.Render(v.Colloquial)),
 			"",
 			wrap.Render(exampleStyle.Render(v.Example)),
 			"",
-			footerStyle.Render("␣/n nächste  ·  esc zurück"))
+			footerStyle.Render("␣/n next card  ·  esc back"))
 	}
-	body := lipgloss.JoinVertical(lipgloss.Center, card...)
-	return lipgloss.Place(m.w, m.h, lipgloss.Center, lipgloss.Center, body)
+	return lipgloss.Place(m.w, m.h, lipgloss.Center, lipgloss.Center,
+		lipgloss.JoinVertical(lipgloss.Center, card...))
 }
 
 func (m model) View() string {
@@ -291,45 +439,104 @@ func (m model) View() string {
 	if m.testing {
 		return m.testView()
 	}
-	if m.w < minWidth {
-		return fmt.Sprintf("tja braucht %d Spalten (hat %d).\n", minWidth, m.w)
+	if m.w < 20 || m.h < 8 {
+		return "terminal too small\n"
 	}
-	inner := m.reelHeight()
-	rightWidth := m.w - prefixWidth - stemWidth - centerWidth - 4*box.GetHorizontalFrameSize()
-
-	pane := func(focused bool, w int, s string) string {
+	rh := m.reelHeight()
+	pane := func(focused bool, w, h int, s string) string {
 		b := box
 		if focused {
 			b = boxFocused
 		}
-		return b.Width(w).Height(inner).Render(s)
+		return b.Width(w).Height(h).Render(clamp(s, h))
 	}
-	panes := lipgloss.JoinHorizontal(lipgloss.Top,
-		pane(m.focus == 0, prefixWidth, m.prefixReel(inner)),
-		pane(m.focus == 1, stemWidth, m.stemReel(inner)),
-		pane(false, centerWidth, m.forms(centerWidth)),
-		pane(false, rightWidth, m.meanings(rightWidth)),
-	)
-	return m.header() + "\n" + panes + "\n" + m.footer()
+	var prefixes, stems []string
+	for _, p := range m.prefixList() {
+		prefixes = append(prefixes, m.prefixLabel(p))
+	}
+	for _, s := range m.stemList() {
+		stems = append(stems, s.Name)
+	}
+	prefixPane := func(w int) string {
+		return pane(m.focus == 0, w, rh, reel(prefixes, m.pi(), m.ptop, w, rh, m.focus == 0))
+	}
+	stemPane := func(w int) string {
+		return pane(m.focus == 1, w, rh, reel(stems, m.si(), m.st, w, rh, m.focus == 1))
+	}
+
+	var body string
+	switch {
+	case m.w >= wideWidth:
+		rw := m.w - prefixWidth - stemWidth - centerWidth - 4*border
+		body = lipgloss.JoinHorizontal(lipgloss.Top,
+			prefixPane(prefixWidth), stemPane(stemWidth),
+			pane(false, centerWidth, rh, m.forms(centerWidth)),
+			pane(false, rw, rh, m.meanings(rw)))
+	case m.w >= mediumWidth:
+		dw := m.w - prefixWidth - stemWidth - 3*border
+		body = lipgloss.JoinHorizontal(lipgloss.Top,
+			prefixPane(prefixWidth), stemPane(stemWidth),
+			pane(false, dw, rh, m.compact(dw)))
+	default:
+		half := (m.w - 2*border) / 2
+		reels := lipgloss.JoinHorizontal(lipgloss.Top, prefixPane(half), stemPane(m.w-half-2*border))
+		dh := max(1, m.h-chromeH-rh-2*box.GetVerticalFrameSize())
+		dw := m.w - border
+		body = reels + "\n" + pane(false, dw, dh, m.compact(dw))
+	}
+	return m.header() + "\n" + body + "\n" + m.footer()
+}
+
+// clamp keeps a pane from pushing the layout around when the content is taller
+// than the space it was given.
+func clamp(s string, h int) string {
+	lines := strings.Split(s, "\n")
+	if len(lines) <= h {
+		return s
+	}
+	if h < 2 {
+		return lines[0]
+	}
+	return strings.Join(append(lines[:h-1], metaStyle.Render("…")), "\n")
 }
 
 func (m model) header() string {
-	left := brandStyle.Render("tja") + kickerStyle.Render("  ·  Präfix + Stamm = ?")
-	word := m.prefixes[m.pi] + m.stems[m.si].Name
-	right := wordStyle.Render(word)
-	if !m.exists(m.pi, m.si) {
-		right = ghostStyle.Render(word + "  (kein Wort)")
+	left := wordStyle.Render(m.pfx + m.stem.Name)
+	right := kickerStyle.Render("Präfix + Stamm") + metaStyle.Render("  tja")
+	if m.w < mediumWidth {
+		right = metaStyle.Render("tja")
 	}
-	gap := max(1, m.w-lipgloss.Width(left)-lipgloss.Width(right))
+	gap := m.w - lipgloss.Width(left) - lipgloss.Width(right)
+	if gap < 1 {
+		return trunc(left, m.w)
+	}
 	return left + strings.Repeat(" ", gap) + right
 }
 
 func (m model) footer() string {
+	if m.searching {
+		line := keyStyle.Render("/") + bodyStyle.Render(m.query) + wordStyle.Render("█")
+		switch {
+		case m.query == "":
+			line += footerStyle.Render("  type to search prefixes, verbs and meanings")
+		case len(m.hits) == 0:
+			line += footerStyle.Render("  no match")
+		default:
+			line += footerStyle.Render(fmt.Sprintf("  %d/%d  ↑↓ cycle · enter keep · esc cancel", m.hit+1, len(m.hits)))
+		}
+		return trunc(line, m.w)
+	}
 	k := func(key, what string) string { return keyStyle.Render(key) + footerStyle.Render(" "+what) }
-	return strings.Join([]string{
-		k("j/k", "drehen"), k("h/l", "walze"), k("J/K", "nur echte"), k("␣", "zufall"),
-		k("t", "test"), k("q", "ende"),
-	}, footerStyle.Render("  ·  "))
+	keys := []string{k("j/k", "spin"), k("h/l", "reel"), k("^d/^u", "half"), k("^f/^b", "page"),
+		k("g/G", "ends"), k("/", "search"), k("␣", "random"), k("t", "test"), k("q", "quit")}
+	sep := footerStyle.Render("  ·  ")
+	for len(keys) > 2 {
+		if line := strings.Join(keys, sep); lipgloss.Width(line) <= m.w {
+			return line
+		}
+		keys = append(keys[:2], keys[3:]...) // drop the least essential hint first
+	}
+	return trunc(strings.Join(keys, sep), m.w)
 }
 
 // prefixLabel marks separable prefixes with the hyphen dictionaries use.
@@ -343,85 +550,72 @@ func (m model) prefixLabel(p string) string {
 	return p
 }
 
-func (m model) prefixReel(h int) string {
+// reel renders one column of the slot machine plus its scrollbar.
+func reel(items []string, cur, top, w, h int, focused bool) string {
+	lw := max(1, w-padding-2) // the bar takes a gap column and the bar itself
 	var b strings.Builder
-	for i := m.ptop; i < len(m.prefixes) && i < m.ptop+h; i++ {
-		label := m.prefixLabel(m.prefixes[i])
+	for i := top; i < len(items) && i < top+h; i++ {
 		style := reelStyle
-		if !m.exists(i, m.si) {
-			style = deadStyle // no such word with the stem currently showing
-		}
-		if i == m.pi {
+		if i == cur {
 			style = restingStyle
-			if m.focus == 0 {
+			if focused {
 				style = pickedStyle
 			}
 		}
-		b.WriteString(style.Render(pad(" "+label, prefixWidth)) + "\n")
+		b.WriteString(style.Render(pad(" "+items[i], lw)))
+		b.WriteString(scrollbarRow(i-top, h, len(items), top))
+		b.WriteString("\n")
 	}
 	return strings.TrimRight(b.String(), "\n")
 }
 
-func (m model) stemReel(h int) string {
-	var b strings.Builder
-	for i := m.st; i < len(m.stems) && i < m.st+h; i++ {
-		style := reelStyle
-		if !m.exists(m.pi, i) {
-			style = deadStyle
-		}
-		if i == m.si {
-			style = restingStyle
-			if m.focus == 1 {
-				style = pickedStyle
-			}
-		}
-		b.WriteString(style.Render(pad(" "+m.stems[i].Name, stemWidth)) + "\n")
+// scrollbarRow draws row i of a track h tall for total items scrolled to top.
+// The thumb is sized to the share of the list on screen; blank when it all fits.
+func scrollbarRow(i, h, total, top int) string {
+	if total <= h {
+		return "  "
 	}
-	return strings.TrimRight(b.String(), "\n")
+	thumb := max(1, h*h/total)
+	pos := (h - thumb) * top / (total - h)
+	if i >= pos && i < pos+thumb {
+		return " " + thumbStyle.Render("┃")
+	}
+	return " " + trackStyle.Render("│")
+}
+
+func kindOf(v Verb) string {
+	switch {
+	case v.Prefix() == "":
+		return metaStyle.Render("stamm")
+	case v.Sep:
+		return sepStyle.Render("trennbar")
+	}
+	return insepStyle.Render("untrennbar")
 }
 
 func (m model) forms(w int) string {
-	s := m.stems[m.si]
-	hits := m.matches()
+	s := m.stem
 	var rows []string
-
-	if len(hits) == 0 {
-		g := m.ghost()
-		present, past, perfect := g.Forms()
-		rows = []string{
-			ghostStyle.Render(g.Name),
-			metaStyle.Render("kein belegtes Wort — so ginge es aber"),
-			"",
-			ghostStyle.Render("er/sie/es   " + present),
-			ghostStyle.Render("präteritum  " + past),
-			ghostStyle.Render("perfekt     " + perfect),
-		}
-	}
-	for _, v := range hits {
+	for _, v := range m.matches() {
 		present, past, perfect := v.Forms()
-		kind := insepStyle.Render("untrennbar")
-		if v.Sep {
-			kind = sepStyle.Render("trennbar")
-		}
-		if v.Prefix() == "" {
-			kind = metaStyle.Render("stamm")
-		}
 		line := func(label, val string) string {
 			return metaStyle.Render(pad(label, 12)) + formStyle.Render(val)
 		}
 		rows = append(rows,
 			wordStyle.Render(v.Name),
-			kind+metaStyle.Render("   "+dash(v.Prefix())+" + "+s.Name),
+			kindOf(*v)+metaStyle.Render("   "+dash(v.Prefix())+" + "+s.Name),
 			"",
 			headingStyle.Render("wo der stamm sich ändert"),
 			line("er/sie/es", present),
 			line("präteritum", past),
 			line("perfekt", perfect),
 			"",
+			headingStyle.Render("rektion"),
+			useStyle.Render(v.Use),
+			"",
 		)
 	}
 	rows = append(rows,
-		"",
 		headingStyle.Render("stammformen"),
 		metaStyle.Render(s.Name+" · "+s.Present+" · "+s.Past+" · "+s.Aux+" "+s.PartII),
 		metaStyle.Render(s.Gloss),
@@ -429,30 +623,26 @@ func (m model) forms(w int) string {
 	return wrapAll(rows, w)
 }
 
+// compact is the narrow-screen detail pane: the forms squeezed onto one line
+// so the meanings still fit underneath.
+func (m model) compact(w int) string {
+	v := m.matches()[0]
+	present, past, perfect := v.Forms()
+	rows := []string{
+		wordStyle.Render(v.Name) + "   " + kindOf(*v),
+		formStyle.Render(present + " · " + past + " · " + perfect),
+		useStyle.Render(v.Use),
+		"",
+	}
+	return wrapAll(rows, w) + "\n" + m.meanings(w)
+}
+
 func (m model) meanings(w int) string {
 	hits := m.matches()
-	if len(hits) == 0 {
-		var real []string
-		for i, p := range m.prefixes {
-			if m.exists(i, m.si) {
-				real = append(real, dash(p))
-			}
-		}
-		return wrapAll([]string{
-			headingStyle.Render("es gibt stattdessen"),
-			bodyStyle.Render(strings.Join(real, ", ") + " + " + m.stems[m.si].Name),
-			"",
-			metaStyle.Render("J/K springt zur nächsten echten Vorsilbe."),
-		}, w)
-	}
 	var rows []string
 	for _, v := range hits {
 		if len(hits) > 1 {
-			label := "untrennbar"
-			if v.Sep {
-				label = "trennbar"
-			}
-			rows = append(rows, wordStyle.Render(v.Name+" ("+label+")"))
+			rows = append(rows, wordStyle.Render(v.Name)+"  "+kindOf(*v))
 		}
 		rows = append(rows,
 			headingStyle.Render("offiziell"),
@@ -470,7 +660,7 @@ func (m model) meanings(w int) string {
 }
 
 func wrapAll(rows []string, w int) string {
-	wrap := lipgloss.NewStyle().Width(w - box.GetHorizontalFrameSize())
+	wrap := lipgloss.NewStyle().Width(w - padding)
 	for i, r := range rows {
 		rows[i] = wrap.Render(r)
 	}

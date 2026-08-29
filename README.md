@@ -1,28 +1,43 @@
 # tja
 
-A three-pane TUI for German verbs, grouped by stem.
-
-Two reels — prefixes and stems — spin independently, one-armed-bandit style.
-Whatever they land on is spelled out at the top right: a real word, or a greyed-out
-one that does not exist (with its forms shown anyway, because the rules still apply).
-Prefixes that make no word with the stem currently showing are dimmed, and vice versa.
-
-Centre: only the forms where the root actually changes — 3rd person singular, preterite,
-perfect — plus whether the prefix is separable. Right: official meaning, colloquial
-meaning, example.
+A one-armed-bandit TUI for German verbs: two reels, prefixes and stems, that
+filter each other. Whatever they land on is always a real word — spinning the
+reels *is* the vocabulary list.
 
 ```
-go run .          # needs ~96 columns
+go run .
 ```
 
-`j/k` spin · `h/l` switch reel · `J/K` next prefix that makes a real word ·
-`space` random combination · `t` flash cards · `q` quit
+## The panes
+
+- **Prefix reel** — only the prefixes that make a word with the stem showing.
+  Separable ones carry the dictionary hyphen (`auf-` vs `be`), inferred from the data.
+- **Stem reel** — only the stems that take the prefix showing.
+- **Forms** — just the places where the root actually changes: 3rd person singular,
+  preterite, perfect with its auxiliary. Plus the rection: which cases and
+  prepositions the verb governs.
+- **Meanings** — the official meaning, the colloquial or idiomatic one, and an example.
+
+Both reels carry a scrollbar. The layout has three shapes: four panes at 100
+columns or more, reels plus one combined pane down to 64, and reels above a
+detail pane below that.
+
+`j/k` spin · `h/l` switch reel · `^d/^u` half page · `^f/^b` page · `g/G` ends ·
+`/` search · `space` random combination · `t` flash cards · `q` quit
+
+## Search
+
+`/` searches prefixes, stems and meanings at once, fuzzily: `mitneh` finds
+*mitnehmen*, `zusbrech` finds *zusammenbrechen*, `burgle` finds *einbrechen*
+through its English gloss. Umlauts are optional — `uber` and `ueber` both find
+*übernehmen*. `↑↓` cycles hits, `enter` keeps the one showing, `esc` puts the
+reels back.
 
 ## Test mode
 
 `t` deals a random real combination as a card: one prefix, one stem, nothing else.
-`space` reveals forms and meanings, `space`/`n` deals the next one, `esc` returns to
-the reels — parked on the card you just saw.
+`space` reveals forms, rection and meanings, `space`/`n` deals the next one,
+`esc` returns to the reels — parked on the card you just saw.
 
 ## Data
 
@@ -30,9 +45,12 @@ Everything lives in `verbs.txt`, one verb per line, pipe-delimited:
 
 ```
 =stem|gloss|present 3sg|preterite|participle|aux
-verb|separable t/f|official|colloquial|example|aux override
+verb|separable t/f|official|colloquial|example|use|aux override
 ```
 
-Conjugated forms are derived from the stem, not stored — see `Verb.Forms` in `data.go`.
-28 stems, ~310 verbs, chosen from the high-frequency verbs where a prefix genuinely
-shifts the meaning.
+90 stems, ~790 verbs, chosen from the high-frequency verbs where a prefix
+genuinely shifts the meaning. Adding more needs no code: append lines.
+
+Conjugated forms are derived, not stored — separable prefixes detach and swallow
+the *ge-* (`nimmt … an`, `angenommen`), inseparable ones replace it
+(`übernimmt`, `übernommen`). See `Verb.Forms` in `data.go`.
