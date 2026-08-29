@@ -781,7 +781,7 @@ func (m model) chips() []chip {
 		{label: "« ^b", key: "ctrl+b"},
 		{label: "» ^f", key: "ctrl+f"},
 		{label: "/ search", key: "/"},
-		{label: "★ random", key: " "},
+		{label: "space random", key: " "},
 		{label: "f " + m.filterLabel(), key: "f"},
 		{label: "t test", key: "t"},
 		{label: "q quit", key: "q"},
