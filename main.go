@@ -483,6 +483,10 @@ func (m model) updateTest(msg tea.KeyMsg) (tea.Model, tea.Cmd) {
 }
 
 func (m model) testView() string {
+	return m.testBody() + "\n" + m.buttonRow(m.chips())
+}
+
+func (m model) testBody() string {
 	v := m.card
 	reel := func(s string) string {
 		return box.Width(18).Align(lipgloss.Center).Render("\n" + wordStyle.Render(s) + "\n")
@@ -510,8 +514,13 @@ func (m model) testView() string {
 	if lipgloss.Height(content) >= m.h-2 {
 		place = lipgloss.Top
 	}
-	body := lipgloss.Place(m.w, m.h-2, lipgloss.Center, place, content)
-	return body + "\n" + m.buttonRow(m.chips())
+	return lipgloss.Place(m.w, m.h-2, lipgloss.Center, place, content)
+}
+
+// gutterY is the row the button row lands on: the line after the placed body.
+// The hit test reads it from here so it cannot drift from what View draws.
+func (m model) gutterY() int {
+	return lipgloss.Height(m.testBody())
 }
 
 // answer is the back of the card: one fixed-width block, everything ranged
@@ -636,7 +645,7 @@ func (m model) click(msg tea.MouseMsg) (tea.Model, tea.Cmd) {
 		if msg.Action != tea.MouseActionPress || msg.Button != tea.MouseButtonLeft {
 			return m, nil
 		}
-		if msg.Y == m.h-1 {
+		if msg.Y == m.gutterY() {
 			for _, c := range m.chips() {
 				if msg.X >= c.x0 && msg.X <= c.x1 {
 					return m.updateTest(keyOf(c.key))
@@ -820,8 +829,14 @@ type chip struct {
 
 func (m model) chips() []chip {
 	if m.testing {
-		cs := []chip{{label: "  space reveal  ", key: " "}, {label: "  n next  ", key: "n"},
-			{label: "  esc back  ", key: "esc"}, {label: "  q quit  ", key: "q"}}
+		// Reveal and back are the two that have to survive a phone; a new card
+		// is a tap on the card itself, and quitting can wait for a keyboard.
+		cs := []chip{
+			{label: "  space reveal  ", key: " "},
+			{label: "  esc back  ", key: "esc"},
+			{label: "  n next  ", key: "n", drop: 5},
+			{label: "  q quit  ", key: "q", drop: 9},
+		}
 		if m.revealed {
 			cs[0].label = "  space next card  "
 		}
@@ -861,13 +876,18 @@ func measure(cs []chip, w int) []chip {
 			cs[i].x1 = x - 1
 			x += 1 // the gap between chips
 		}
-		if x-1 <= w || len(cs) <= 3 {
+		if x-1 <= w || len(cs) <= 2 {
 			// Centre the row in whatever space is left, hit boxes included.
 			if pad := (w - (x - 1)) / 2; pad > 0 {
 				for i := range cs {
 					cs[i].x0 += pad
 					cs[i].x1 += pad
 				}
+			}
+			// A chip the row cannot fit whole would still be a tap target,
+			// on a label the reader can only see half of.
+			for len(cs) > 1 && cs[len(cs)-1].x1 >= w {
+				cs = cs[:len(cs)-1]
 			}
 			return cs
 		}
