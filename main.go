@@ -9,6 +9,7 @@ import (
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
+	"github.com/charmbracelet/x/ansi"
 )
 
 const (
@@ -502,20 +503,43 @@ func (m model) testView() string {
 // left on a label column, with air between the four things being said.
 func (m model) answer(v *Verb) string {
 	cw := min(64, max(28, m.w-8))
-	label := lipgloss.NewStyle().Foreground(muted).Width(13)
+	// The label column gives way on a phone, but never below the width of the
+	// longest label ("präteritum") plus the space that separates it.
+	lw := min(13, max(11, cw/3))
+	label := lipgloss.NewStyle().Foreground(muted).Width(lw)
+	value := lipgloss.NewStyle().Width(cw - lw)
 	wrap := lipgloss.NewStyle().Width(cw - 2)
 
-	row := func(name, value string) string {
-		return label.Render(name) + value
+	// A long value wraps under itself rather than running past the card and
+	// dragging the centring off with it.
+	row := func(name, text string) string {
+		lines := strings.Split(value.Render(text), "\n")
+		out := label.Render(trunc(name, lw-1)) + lines[0]
+		for _, l := range lines[1:] {
+			out += "\n" + strings.Repeat(" ", lw) + l
+		}
+		return out
+	}
+	// The indent goes on after wrapping, so continuation lines line up with
+	// the first one instead of falling back to the left edge.
+	indent := func(text string) string {
+		lines := strings.Split(wrap.Render(text), "\n")
+		for i, l := range lines {
+			lines[i] = "  " + l
+		}
+		return strings.Join(lines, "\n")
 	}
 	block := func(heading, text string) []string {
-		return []string{headingStyle.Render(heading), wrap.Render("  " + text), ""}
+		return []string{headingStyle.Render(heading), indent(text), ""}
 	}
 
 	present, past, perfect := v.Forms()
-	head := wordStyle.Render(v.Name)
-	if k := kindOf(*v); true {
+	head, k := wordStyle.Render(v.Name), kindOf(*v)
+	if lipgloss.Width(head)+lipgloss.Width(k)+2 <= cw {
 		head = pad(head, cw-lipgloss.Width(k)) + k
+	} else {
+		// No room for both on one line; the badge drops below the word.
+		head += "\n" + pad("", cw-lipgloss.Width(k)) + k
 	}
 	rows := []string{
 		head,
@@ -532,14 +556,18 @@ func (m model) answer(v *Verb) string {
 	rows = append(rows, block("offiziell", bodyStyle.Render(v.Official))...)
 	rows = append(rows, block("umgangssprachlich", bodyStyle.Render(v.Colloquial))...)
 	rows = append(rows, block("beispiel", exampleStyle.Render(v.Example))...)
-	rows = append(rows, "  "+metaStyle.Render(v.English), "")
+	rows = append(rows, indent(metaStyle.Render(v.English)), "")
 
 	// Left-aligned inside a block of known width, so the card as a whole can be
-	// centred without the text going ragged.
-	for i, r := range rows {
-		rows[i] = pad(r, cw)
+	// centred without the text going ragged. Rows may have wrapped, so this
+	// pads line by line rather than row by row.
+	var lines []string
+	for _, r := range rows {
+		for _, l := range strings.Split(r, "\n") {
+			lines = append(lines, pad(l, cw))
+		}
 	}
-	return strings.Join(rows, "\n")
+	return strings.Join(lines, "\n")
 }
 
 // buttonRow lays the chips out with the gaps chips() already measured, so a
@@ -1045,12 +1073,14 @@ func pad(s string, w int) string {
 	return trunc(s, w)
 }
 
+// trunc cuts to a display width. It has to be ANSI-aware: slicing the raw
+// runes of a styled string cuts through the escape sequences and swallows the
+// text they wrap.
 func trunc(s string, w int) string {
 	if lipgloss.Width(s) <= w {
 		return s
 	}
-	r := []rune(s)
-	return string(r[:max(0, w-1)]) + "…"
+	return ansi.Truncate(s, max(0, w), "…")
 }
 
 func main() {
