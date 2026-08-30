@@ -38,3 +38,26 @@ func TestAnswerCardFitsANarrowTerminal(t *testing.T) {
 		}
 	}
 }
+
+// The card also has to fit vertically, which is what actually broke on a
+// phone: the reels plus a revealed answer came to more rows than the terminal
+// had, and centring it meant the top was the part that got cut. Measured
+// against every verb, since the longest card is the one that decides.
+func TestAnswerCardFitsAPhoneVertically(t *testing.T) {
+	for _, h := range []int{28, 32, 40, 60} {
+		worst, name := 0, ""
+		for _, stem := range load() {
+			for i := range stem.Verbs {
+				m := newModel()
+				m.w, m.h = 40, h
+				m.testing, m.revealed, m.card = true, true, &stem.Verbs[i]
+				if n := len(strings.Split(m.View(), "\n")); n > worst {
+					worst, name = n, stem.Verbs[i].Name
+				}
+			}
+		}
+		if worst > h {
+			t.Errorf("40x%d: %q needs %d rows, terminal has %d", h, name, worst, h)
+		}
+	}
+}

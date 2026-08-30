@@ -18,6 +18,7 @@ const (
 	centerWidth = 38
 	wideWidth   = 100 // four panes fit
 	mediumWidth = 64  // reels plus one combined detail pane
+	tallEnough  = 40  // rows needed to show the reels above a revealed answer
 	chromeH     = 3   // the header line, the key hints, and a spare row
 	repoURL     = "https://github.com/progapandist/tja"
 	// lipgloss Width() counts padding but not the border, so a pane of width w
@@ -488,14 +489,28 @@ func (m model) testView() string {
 	}
 	reels := lipgloss.JoinHorizontal(lipgloss.Top, reel(m.prefixLabel(v.Prefix())), reel(v.Stem.Name))
 
-	card := []string{reels, ""}
-	if !m.revealed {
-		card = append(card, "", metaStyle.Render("What does it mean? What are the forms?"))
-	} else {
-		card = append(card, m.answer(v))
+	var card []string
+	switch {
+	case !m.revealed:
+		card = []string{reels, "", "", metaStyle.Render("What does it mean? What are the forms?")}
+	case m.h >= tallEnough:
+		card = []string{reels, "", m.answer(v)}
+	default:
+		// A phone cannot show both. The reels go, not the answer: the word is
+		// written on the card anyway, and the alternative is losing the
+		// example sentence off the bottom.
+		card = []string{m.answer(v)}
 	}
-	body := lipgloss.Place(m.w, m.h-2, lipgloss.Center, lipgloss.Center,
-		lipgloss.JoinVertical(lipgloss.Center, card...))
+
+	content := lipgloss.JoinVertical(lipgloss.Center, card...)
+
+	// Centred while it fits, anchored to the top when it does not, so that the
+	// heading is never the part that scrolls off.
+	place := lipgloss.Center
+	if lipgloss.Height(content) >= m.h-2 {
+		place = lipgloss.Top
+	}
+	body := lipgloss.Place(m.w, m.h-2, lipgloss.Center, place, content)
 	return body + "\n" + m.buttonRow(m.chips())
 }
 
@@ -541,22 +556,30 @@ func (m model) answer(v *Verb) string {
 		// No room for both on one line; the badge drops below the word.
 		head += "\n" + pad("", cw-lipgloss.Width(k)) + k
 	}
-	rows := []string{
-		head,
-		trackStyle.Render(strings.Repeat("─", cw)),
-		"",
+	// On a short terminal the air around the forms is the first thing to go:
+	// it is the cheapest way to buy back lines without dropping any content.
+	air := []string{""}
+	if m.h < tallEnough {
+		air = nil
+	}
+
+	rows := []string{head, trackStyle.Render(strings.Repeat("─", cw))}
+	rows = append(rows, air...)
+	rows = append(rows,
 		row("er/sie/es", formStyle.Render(present)),
 		row("präteritum", formStyle.Render(past)),
 		row("perfekt", formStyle.Render(perfect)),
-		"",
+	)
+	rows = append(rows, air...)
+	rows = append(rows,
 		row("rektion", useStyle.Render(v.Use)),
 		row("nebensatz", bodyStyle.Render(v.Nebensatz())),
 		"",
-	}
+	)
 	rows = append(rows, block("offiziell", bodyStyle.Render(v.Official))...)
 	rows = append(rows, block("umgangssprachlich", bodyStyle.Render(v.Colloquial))...)
 	rows = append(rows, block("beispiel", exampleStyle.Render(v.Example))...)
-	rows = append(rows, indent(metaStyle.Render(v.English)), "")
+	rows = append(rows, indent(metaStyle.Render(v.English)))
 
 	// Left-aligned inside a block of known width, so the card as a whole can be
 	// centred without the text going ragged. Rows may have wrapped, so this
