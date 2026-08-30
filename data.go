@@ -11,7 +11,7 @@ import (
 //	=stem|gloss|präsens 3.sg|präteritum|partizip II|aux
 //	verb|t or f (separable)|official|colloquial|example|use|example in English|aux override
 //
-// ponytail: a text file and a Split, not JSON with a schema. Hand-editable.
+// A text file and a Split, not JSON with a schema, so it stays editable by hand.
 //
 //go:embed verbs.txt
 var raw string
