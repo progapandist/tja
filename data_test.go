@@ -187,3 +187,98 @@ func TestReelReachesBothSenses(t *testing.T) {
 		t.Errorf("both rows gave the same meaning: %v", seen)
 	}
 }
+
+// Separable über- and inseparable über are different prefixes that happen to
+// be spelled alike, and they take different stems. Matching the text alone
+// offered übernehmen while über- was selected, then switched the reel to the
+// inseparable one behind your back.
+func TestStemReelRespectsSeparability(t *testing.T) {
+	m := newModel()
+	for _, s := range m.stems {
+		if s.Name == "setzen" {
+			m.stem = s
+		}
+	}
+	var sepRow, insepRow = -1, -1
+	for i, r := range m.prefixList() {
+		if r.p != "über" {
+			continue
+		}
+		if r.sep {
+			sepRow = i
+		} else {
+			insepRow = i
+		}
+	}
+	if sepRow < 0 || insepRow < 0 {
+		t.Fatalf("über on setzen: sep row %d, insep row %d", sepRow, insepRow)
+	}
+
+	names := func() []string {
+		var out []string
+		for _, s := range m.stemList() {
+			out = append(out, s.Name)
+		}
+		return out
+	}
+	has := func(xs []string, want string) bool {
+		for _, x := range xs {
+			if x == want {
+				return true
+			}
+		}
+		return false
+	}
+
+	m.setPI(sepRow)
+	withSep := names()
+	if has(withSep, "nehmen") {
+		t.Errorf("separable über- offered nehmen, but übernehmen is inseparable: %v", withSep)
+	}
+	m.setPI(insepRow)
+	withInsep := names()
+	if !has(withInsep, "nehmen") {
+		t.Errorf("inseparable über dropped nehmen: %v", withInsep)
+	}
+	if len(withInsep) <= len(withSep) {
+		t.Errorf("inseparable über takes %d stems, separable %d", len(withInsep), len(withSep))
+	}
+}
+
+// Whatever the reel offers, picking it has to land there: the prefix and its
+// separability both survive a move on the stem reel.
+func TestPickingStemKeepsPrefix(t *testing.T) {
+	base := newModel()
+	moves := 0
+	for _, seed := range []string{"setzen", "fahren", "gehen", "nehmen"} {
+		for p := 0; ; p++ {
+			m := base
+			for _, s := range m.stems {
+				if s.Name == seed {
+					m.stem = s
+				}
+			}
+			if p >= len(m.prefixList()) {
+				break
+			}
+			m.setPI(p)
+			before, real := m.current()
+			if !real {
+				continue
+			}
+			for i := range m.stemList() {
+				m2 := m
+				m2.setSI(i)
+				got, ok := m2.current()
+				moves++
+				if !ok || got.Prefix() != before.Prefix() || got.Sep != before.Sep {
+					t.Errorf("%s row %d -> stem %d: had %s (sep=%v), got %s (sep=%v)",
+						seed, p, i, before.Name, before.Sep, got.Name, got.Sep)
+				}
+			}
+		}
+	}
+	if moves < 50 {
+		t.Errorf("only %d moves checked", moves)
+	}
+}

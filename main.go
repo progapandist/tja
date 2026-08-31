@@ -170,14 +170,19 @@ func sortFolded(xs []string) {
 	sort.SliceStable(xs, func(i, j int) bool { return folds.Replace(xs[i]) < folds.Replace(xs[j]) })
 }
 
+// Separability counts as part of the prefix: separable über- and inseparable
+// über are two different prefixes spelled alike, and they take different
+// stems. Matching on the text alone offered übernehmen while über- was
+// selected, then quietly switched the reel to the inseparable one.
 func (m model) stemList() []*Stem {
 	if !m.filtered {
 		return m.stems
 	}
+	cur, real := m.current()
 	var out []*Stem
 	for _, s := range m.stems {
 		for _, v := range s.Verbs {
-			if v.Prefix() == m.pfx {
+			if v.Prefix() == m.pfx && (!real || v.Sep == cur.Sep) {
 				out = append(out, s)
 				break
 			}
@@ -234,9 +239,20 @@ func (m *model) setPI(i int) {
 }
 
 func (m *model) setSI(i int) {
+	cur, real := m.current()
 	l := m.stemList()
 	m.stem = l[min(max(i, 0), len(l)-1)]
-	// The new stem may not have the sense the old one was resting on.
+	// Keep the separability that was selected, not the row it happened to sit
+	// on: a pair spelled alike need not come in the same order under another
+	// stem, and the reel only offers stems that have the one selected.
+	if real {
+		for j, v := range m.matches() {
+			if v.Sep == cur.Sep {
+				m.sense = j
+				return
+			}
+		}
+	}
 	if m.sense >= len(m.matches()) {
 		m.sense = 0
 	}
