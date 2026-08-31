@@ -19,8 +19,8 @@ func TestClick(t *testing.T) {
 	g := m.geometry()
 
 	m = at(m, 2, g.reelY+3, tea.MouseButtonLeft) // fourth prefix
-	if m.focus != 0 || m.pfx != m.prefixList()[3] {
-		t.Errorf("prefix tap: focus %d, prefix %q", m.focus, m.pfx)
+	if m.focus != 0 || m.pi() != 3 || m.pfx != m.prefixList()[3].p {
+		t.Errorf("prefix tap: focus %d, row %d, prefix %q", m.focus, m.pi(), m.pfx)
 	}
 	m = at(m, g.sX0+2, g.reelY+1, tea.MouseButtonLeft) // second stem
 	if m.focus != 1 || m.stem != m.stemList()[1] {

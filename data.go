@@ -2,6 +2,7 @@ package main
 
 import (
 	_ "embed"
+	"regexp"
 	"strings"
 )
 
@@ -58,32 +59,84 @@ func (v Verb) Forms() (present, past, perfect string) {
 	return present, past, v.aux() + " " + perfect
 }
 
+// da holds the compound German uses instead of a preposition plus a pronoun
+// for a thing: "damit", never "mit es".
+var da = map[string]string{"an": "daran", "auf": "darauf", "mit": "damit", "von": "davon",
+	"zu": "dazu", "über": "darüber", "für": "dafür", "bei": "dabei", "in": "darin",
+	"nach": "danach", "gegen": "dagegen", "aus": "daraus", "um": "darum", "vor": "davor",
+	"durch": "dadurch", "unter": "darunter"}
+
+var (
+	slotRE  = regexp.MustCompile(`jdm|jdn|jds|etw|sich`)
+	parenRE = regexp.MustCompile(`\([^)]*\)`)
+)
+
 // object picks a stand-in object from the rection, so the generated clause is
 // something you could actually say.
+//
+// The pattern is read left to right rather than searched for a token anywhere
+// inside it. Searching found "jdm" in the middle of "mit jdm+D" and returned a
+// bare "mir", dropping the preposition the verb governs, and it found "jdm"
+// before "etw+A" in "etw+A mit jdm+D" and picked the wrong object.
 func (v Verb) object() string {
 	// Only the first alternative in the rection counts: it is the main pattern.
-	u := strings.TrimSpace(strings.Split(v.Use, "·")[0])
-	prep := map[string]string{"an": "daran", "auf": "darauf", "mit": "damit", "von": "davon",
-		"zu": "dazu", "über": "darüber", "für": "dafür", "bei": "dabei", "in": "darin",
-		"nach": "danach", "gegen": "dagegen", "aus": "daraus", "um": "darum", "vor": "davor"}
-	switch {
-	case strings.Contains(u, "sich+A"):
-		return "sich "
-	case strings.Contains(u, "sich+D"):
-		return "sich das "
-	case strings.Contains(u, "jdm etw+A"):
-		return "mir das "
-	case strings.Contains(u, "jdm"):
-		return "mir "
-	case strings.Contains(u, "jdn"):
-		return "mich "
-	case strings.Contains(u, "etw+A"):
-		return "es "
+	u := strings.TrimSpace(parenRE.ReplaceAllString(strings.Split(v.Use, "·")[0], ""))
+	if u == "" || strings.HasPrefix(u, "kein Obj") {
+		return ""
 	}
-	if i := strings.IndexByte(u, ' '); i > 0 {
-		if da, ok := prep[u[:i]]; ok {
-			return da + " "
+	tokens := strings.Fields(u)
+	prep := ""
+	for i, tok := range tokens {
+		if !slotRE.MatchString(tok) {
+			// A preposition, sometimes written as alternatives ("an/bei"): keep
+			// the first one the da- table knows, since that is the form used.
+			for _, alt := range strings.Split(strings.TrimRight(tok, "+ADG"), "/") {
+				if _, ok := da[alt]; ok {
+					prep = alt
+					break
+				}
+			}
+			continue
 		}
+		if strings.HasSuffix(tok, "+G") {
+			return "" // a genitive stand-in reads worse than none
+		}
+		// jdm is already dative; everything else says which case it wants.
+		dative := strings.HasSuffix(tok, "+D") ||
+			(strings.Contains(tok, "jdm") && !strings.HasSuffix(tok, "+A"))
+		person := strings.Contains(tok, "jdm") || strings.Contains(tok, "jdn")
+		thing := strings.Contains(tok, "etw")
+		// A dative person or reflexive followed by an accusative thing takes both.
+		also := ""
+		if i+1 < len(tokens) && strings.Contains(tokens[i+1], "etw+A") {
+			also = "das "
+		}
+
+		switch {
+		case strings.Contains(tok, "sich"):
+			if prep != "" {
+				return prep + " sich "
+			}
+			return "sich " + also
+		case prep != "":
+			// The preposition governs its object, so it comes along. For a thing
+			// German will not take "mit es", so the da- compound stands in.
+			if person && !thing {
+				if dative {
+					return prep + " mir "
+				}
+				return prep + " mich "
+			}
+			return da[prep] + " "
+		case person:
+			if dative {
+				return "mir " + also
+			}
+			return "mich " + also
+		case dative:
+			return "dem "
+		}
+		return "es "
 	}
 	return ""
 }

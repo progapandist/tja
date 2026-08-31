@@ -77,6 +77,7 @@ type model struct {
 	count    int             // verbs in the whole file, for the header
 	sepOf    map[string]bool // separability, inferred from the verbs we have
 	pfx      string          // where the prefix reel is resting ("" = bare stem)
+	sense    int             // which verb, when one prefix attaches two ways
 	stem     *Stem           // where the stem reel is resting
 	ptop, st int             // first visible row of each reel
 	focus    int             // 0 = prefix reel, 1 = stem reel
@@ -124,27 +125,44 @@ func newModel() model {
 }
 
 type savedPos struct {
-	pfx  string
-	stem *Stem
+	pfx   string
+	sense int
+	stem  *Stem
 }
 
 func (m model) Init() tea.Cmd { return nil }
 
+// A row on the prefix reel. Filtered, it is one verb, so a prefix that
+// attaches both ways gets two rows: um- and um are two different verbs that
+// happen to be spelled alike, and collapsing them hides one of the pair.
+// Unfiltered, the reel lists every prefix in the file and v is nil, since the
+// combination need not be a word at all.
+type prefixRow struct {
+	p   string
+	sep bool
+	v   *Verb
+}
+
 // prefixList is the prefix reel: the prefixes that make a word with the stem
 // currently showing. stemList is the mirror image.
-func (m model) prefixList() []string {
+func (m model) prefixList() []prefixRow {
 	if !m.filtered {
-		return m.all
-	}
-	seen := map[string]bool{}
-	var out []string
-	for _, v := range m.stem.Verbs {
-		if p := v.Prefix(); !seen[p] {
-			seen[p] = true
-			out = append(out, p)
+		out := make([]prefixRow, 0, len(m.all))
+		for _, p := range m.all {
+			out = append(out, prefixRow{p: p, sep: m.sepOf[p]})
 		}
+		return out
 	}
-	sortFolded(out)
+	var out []prefixRow
+	for i := range m.stem.Verbs {
+		v := &m.stem.Verbs[i]
+		out = append(out, prefixRow{p: v.Prefix(), sep: v.Sep, v: v})
+	}
+	// Stable, so a pair spelled alike keeps its file order and the reel does
+	// not swap the two senses around between redraws.
+	sort.SliceStable(out, func(i, j int) bool {
+		return folds.Replace(out[i].p) < folds.Replace(out[j].p)
+	})
 	return out
 }
 
@@ -177,19 +195,51 @@ func indexOf[T comparable](xs []T, x T) int {
 	return 0
 }
 
-func (m model) pi() int { return indexOf(m.prefixList(), m.pfx) }
+// pi finds the row for the resting prefix, and among rows sharing that prefix
+// the one m.sense picked.
+func (m model) pi() int {
+	rows := m.prefixList()
+	n, first := 0, -1
+	for i, r := range rows {
+		if r.p != m.pfx {
+			continue
+		}
+		if first < 0 {
+			first = i
+		}
+		if n == m.sense {
+			return i
+		}
+		n++
+	}
+	if first >= 0 {
+		return first
+	}
+	return 0
+}
+
 func (m model) si() int { return indexOf(m.stemList(), m.stem) }
 
 // Moving one reel can only land on a combination the other reel already
 // allows, so neither selection ever has to be repaired.
 func (m *model) setPI(i int) {
-	l := m.prefixList()
-	m.pfx = l[min(max(i, 0), len(l)-1)]
+	rows := m.prefixList()
+	i = min(max(i, 0), len(rows)-1)
+	m.pfx, m.sense = rows[i].p, 0
+	for j := 0; j < i; j++ {
+		if rows[j].p == m.pfx {
+			m.sense++
+		}
+	}
 }
 
 func (m *model) setSI(i int) {
 	l := m.stemList()
 	m.stem = l[min(max(i, 0), len(l)-1)]
+	// The new stem may not have the sense the old one was resting on.
+	if m.sense >= len(m.matches()) {
+		m.sense = 0
+	}
 }
 
 // exists reports whether the prefix and stem make a word.
@@ -207,9 +257,19 @@ func (m model) exists(p string, s *Stem) bool {
 // build, marked as not attested.
 func (m model) current() (Verb, bool) {
 	if hits := m.matches(); len(hits) > 0 {
-		return *hits[0], true
+		return *hits[min(max(m.sense, 0), len(hits)-1)], true
 	}
 	return Verb{Name: m.pfx + m.stem.Name, Sep: m.sepOf[m.pfx], Stem: m.stem}, false
+}
+
+// selected is the one verb the reels rest on, as a slice so the caller can
+// range over it and get nothing when the combination is not a word.
+func (m model) selected() []*Verb {
+	hits := m.matches()
+	if len(hits) == 0 {
+		return nil
+	}
+	return hits[min(max(m.sense, 0), len(hits)-1) : min(max(m.sense, 0), len(hits)-1)+1]
 }
 
 // snap pulls the prefix reel back onto a real word, for when filtering is
@@ -219,7 +279,7 @@ func (m *model) snap() {
 		return
 	}
 	for _, v := range m.stem.Verbs {
-		m.pfx = v.Prefix()
+		m.pfx, m.sense = v.Prefix(), 0
 		return
 	}
 }
@@ -308,14 +368,22 @@ func (m *model) show() {
 		return
 	}
 	v := m.hits[m.hit]
-	m.stem, m.pfx = v.Stem, v.Prefix()
+	m.stem, m.pfx, m.sense = v.Stem, v.Prefix(), 0
+	// A hit on one of a pair spelled alike has to land on that one, not on
+	// whichever of the two the reel happens to reach first.
+	for i := range v.Stem.Verbs {
+		if got := &v.Stem.Verbs[i]; got == v {
+			break
+		} else if got.Name == v.Name {
+			m.sense++
+		}
+	}
 	m.rescroll()
 }
 
 func (m *model) spin() {
 	m.stem = m.stems[rand.Intn(len(m.stems))]
-	l := m.prefixList()
-	m.pfx = l[rand.Intn(len(l))]
+	m.setPI(rand.Intn(len(m.prefixList())))
 }
 
 func (m model) reelHeight() int {
@@ -399,7 +467,7 @@ func (m model) press(key string) (tea.Model, tea.Cmd) {
 			m.deal()
 		case "/":
 			m.searching, m.query = true, ""
-			m.saved = savedPos{m.pfx, m.stem}
+			m.saved = savedPos{m.pfx, m.sense, m.stem}
 			m.hits, m.hit = nil, 0
 		}
 		set(&m, cur)
@@ -416,7 +484,7 @@ func (m model) updateSearch(msg tea.KeyMsg) (tea.Model, tea.Cmd) {
 		m.searching = false
 	case "esc":
 		m.searching = false
-		m.pfx, m.stem = m.saved.pfx, m.saved.stem
+		m.pfx, m.sense, m.stem = m.saved.pfx, m.saved.sense, m.saved.stem
 		m.rescroll()
 	case "down", "ctrl+n", "tab":
 		if len(m.hits) > 0 {
@@ -446,7 +514,8 @@ func (m model) updateSearch(msg tea.KeyMsg) (tea.Model, tea.Cmd) {
 // test drops you where the card was.
 func (m *model) deal() {
 	m.spin()
-	m.card = m.matches()[0]
+	v, _ := m.current()
+	m.card = &v
 	m.revealed = false
 }
 
@@ -488,10 +557,21 @@ func (m model) testView() string {
 
 func (m model) testBody() string {
 	v := m.card
-	reel := func(s string) string {
-		return box.Width(18).Align(lipgloss.Center).Render("\n" + wordStyle.Render(s) + "\n")
+	reel := func(s string, style lipgloss.Style) string {
+		return box.Width(18).Align(lipgloss.Center).Render("\n" + style.Render(s) + "\n")
 	}
-	reels := lipgloss.JoinHorizontal(lipgloss.Top, reel(m.prefixLabel(v.Prefix())), reel(v.Stem.Name))
+	// The prefix box carries its separability colour, the same as on the reel.
+	pstyle := wordStyle
+	switch {
+	case v.Prefix() == "":
+	case v.Sep:
+		pstyle = sepStyle.Bold(true)
+	default:
+		pstyle = insepStyle.Bold(true)
+	}
+	reels := lipgloss.JoinHorizontal(lipgloss.Top,
+		reel(m.prefixLabel(prefixRow{p: v.Prefix(), sep: v.Sep}), pstyle),
+		reel(v.Stem.Name, wordStyle))
 
 	var card []string
 	switch {
@@ -558,7 +638,7 @@ func (m model) answer(v *Verb) string {
 	}
 
 	present, past, perfect := v.Forms()
-	head, k := wordStyle.Render(v.Name), kindOf(*v)
+	head, k := stressed(*v), kindOf(*v)
 	if lipgloss.Width(head)+lipgloss.Width(k)+2 <= cw {
 		head = pad(head, cw-lipgloss.Width(k)) + k
 	} else {
@@ -727,8 +807,8 @@ func (m model) View() string {
 		return b.Width(w).Height(h).Render(clamp(s, h))
 	}
 	var prefixes, stems []string
-	for _, p := range m.prefixList() {
-		prefixes = append(prefixes, m.prefixLabel(p))
+	for _, r := range m.prefixList() {
+		prefixes = append(prefixes, m.prefixLabel(r))
 	}
 	for _, s := range m.stemList() {
 		stems = append(stems, s.Name)
@@ -741,12 +821,21 @@ func (m model) View() string {
 		return ok
 	}
 	prefixPane := func(w int) string {
-		live := alive(func(i int) bool { return m.exists(pl[i], m.stem) })
-		return pane(m.focus == 0, w, rh, reel(prefixes, m.pi(), m.ptop, w, rh, m.focus == 0, live))
+		live := alive(func(i int) bool { return m.exists(pl[i].p, m.stem) })
+		tint := func(i int) lipgloss.Style {
+			switch {
+			case pl[i].p == "":
+				return reelStyle
+			case pl[i].sep:
+				return sepStyle
+			}
+			return insepStyle
+		}
+		return pane(m.focus == 0, w, rh, reel(prefixes, m.pi(), m.ptop, w, rh, m.focus == 0, live, tint))
 	}
 	stemPane := func(w int) string {
 		live := alive(func(i int) bool { return m.exists(m.pfx, sl[i]) })
-		return pane(m.focus == 1, w, rh, reel(stems, m.si(), m.st, w, rh, m.focus == 1, live))
+		return pane(m.focus == 1, w, rh, reel(stems, m.si(), m.st, w, rh, m.focus == 1, live, nil))
 	}
 
 	var body string
@@ -786,10 +875,10 @@ func clamp(s string, h int) string {
 }
 
 func (m model) header() string {
-	word := m.pfx + m.stem.Name
-	left := wordStyle.Render(word)
-	if _, real := m.current(); !real {
-		left = ghostStyle.Render(word + "  (kein Wort)")
+	v, real := m.current()
+	left := stressed(v)
+	if !real {
+		left = ghostStyle.Render(v.Name + "  (kein Wort)")
 	}
 	right := kickerStyle.Render(fmt.Sprintf("%d Verben", m.count))
 	if m.w >= mediumWidth {
@@ -927,22 +1016,27 @@ func (m model) filterLabel() string {
 }
 
 // prefixLabel marks separable prefixes with the hyphen dictionaries use.
-func (m model) prefixLabel(p string) string {
+func (m model) prefixLabel(r prefixRow) string {
 	switch {
-	case p == "":
+	case r.p == "":
 		return "—"
-	case m.sepOf[p]:
-		return p + "-"
+	case r.sep:
+		return r.p + "-"
 	}
-	return p
+	return r.p
 }
 
 // reel renders one column of the slot machine plus its scrollbar.
-func reel(items []string, cur, top, w, h int, focused bool, alive func(int) bool) string {
+// tint colours a row by what it is rather than where it is; nil leaves the
+// reel in its plain colour.
+func reel(items []string, cur, top, w, h int, focused bool, alive func(int) bool, tint func(int) lipgloss.Style) string {
 	lw := max(1, w-padding-2) // the bar takes a gap column and the bar itself
 	var b strings.Builder
 	for i := top; i < len(items) && i < top+h; i++ {
 		style := reelStyle
+		if tint != nil {
+			style = tint(i)
+		}
 		if alive != nil && !alive(i) {
 			style = deadStyle
 		}
@@ -971,6 +1065,20 @@ func scrollbarRow(i, h, total, top int) string {
 		return " " + thumbStyle.Render("┃")
 	}
 	return " " + trackStyle.Render("│")
+}
+
+// stressed writes the verb with its stressed half picked out: a separable
+// prefix carries the stress, an inseparable one never does, and that is the
+// whole difference between the two verbs spelled "umfahren".
+func stressed(v Verb) string {
+	p := v.Prefix()
+	switch {
+	case p == "":
+		return wordStyle.Render(v.Name)
+	case v.Sep:
+		return sepStyle.Bold(true).Render(p) + bodyStyle.Render(v.Stem.Name)
+	}
+	return bodyStyle.Render(p) + insepStyle.Bold(true).Render(v.Stem.Name)
 }
 
 // separability spells out in words what the trennbar/untrennbar badge shows.
@@ -1011,13 +1119,16 @@ func (m model) forms(w int) string {
 			"",
 		)
 	}
-	for _, v := range m.matches() {
+	// One block, for the verb the reel is resting on. A pair spelled alike has
+	// a row each now, so stacking both here would leave the reel with nothing
+	// to change and repeat the forms the other row already shows.
+	for _, v := range m.selected() {
 		present, past, perfect := v.Forms()
 		line := func(label, val string) string {
 			return metaStyle.Render(pad(label, 12)) + formStyle.Render(val)
 		}
 		rows = append(rows,
-			wordStyle.Render(v.Name),
+			stressed(*v),
 			kindOf(*v)+metaStyle.Render("   "+dash(v.Prefix())+" + "+s.Name),
 			"",
 			headingStyle.Render("wo der stamm sich ändert"),
@@ -1047,7 +1158,7 @@ func (m model) forms(w int) string {
 func (m model) compact(w int) string {
 	v, real := m.current()
 	present, past, perfect := v.Forms()
-	head := wordStyle.Render(v.Name) + "   " + kindOf(v)
+	head := stressed(v) + "   " + kindOf(v)
 	if !real {
 		head = ghostStyle.Render(v.Name) + "   " + metaStyle.Render("kein belegtes Wort")
 	}
@@ -1076,7 +1187,7 @@ func (m model) meanings(w int) string {
 	var rows []string
 	for _, v := range hits {
 		if len(hits) > 1 {
-			rows = append(rows, wordStyle.Render(v.Name)+"  "+kindOf(*v))
+			rows = append(rows, stressed(*v)+"  "+kindOf(*v))
 		}
 		rows = append(rows,
 			headingStyle.Render("offiziell"),
