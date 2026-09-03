@@ -81,7 +81,7 @@ Everything lives in `verbs.txt`, one verb per line, pipe-delimited:
 verb|separable t/f|official|colloquial|example|use|example in English|aux override
 ```
 
-90 stems, ~790 verbs, chosen from the high-frequency verbs where a prefix
+95 stems, 827 verbs, chosen from the high-frequency verbs where a prefix
 genuinely shifts the meaning. Adding more needs no code: append lines.
 
 Conjugated forms are derived, not stored — separable prefixes detach and swallow

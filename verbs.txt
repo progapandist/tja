@@ -49,6 +49,7 @@ zugehen|t|to approach (auf +A); to close; to go on (of events)|"es geht dort lau
 losgehen|t|to set off; to start, to kick off|"jetzt geht's los!" = here we go!|Wann geht der Film los?|kein Obj.|When does the film start?
 untergehen|t|to sink; to set (sun); to be drowned out|"die Welt geht nicht unter" = it's not the end of the world|Die Sonne geht unter.|kein Obj.|The sun is setting.
 durchgehen|t|to go through, to review; to bolt (horse)|"jemandem etwas durchgehen lassen" = to let someone get away with it|Gehen wir die Liste noch mal durch.|etw+A · jdm etw+A durchgehen lassen|Let's go through the list again.
+hinterhergehen|t|to walk behind, to follow along behind|"der Hund geht ihm überall hinterher" – of a person or animal trailing you|Das Kind geht der Mutter hinterher.|jdm+D|The child walks along behind its mother.
 
 =stehen|to stand|steht|stand|gestanden|hat
 stehen|f|to stand; to be located; to suit someone|"das steht dir gut" = that looks good on you|Das Buch steht im Regal.|kein Obj. · jdm+D (kleiden)|The book is on the shelf.
@@ -485,6 +486,7 @@ absteigen|t|to descend; to be relegated; to stay (at a hotel)|"im Hotel absteige
 besteigen|f|to climb (a mountain); to board (a ship)|formal, mountaineering register|Sie bestiegen den Gipfel.|etw+A|They climbed the summit.|hat
 übersteigen|f|to exceed, to surpass|"die Kosten übersteigen das Budget" = the costs exceed the budget|Das übersteigt meine Vorstellungskraft.|etw+A|That's beyond my imagination.|hat
 zusteigen|t|to board later, to get on along the way|"noch jemand zugestiegen?" – the conductor's question|Noch jemand zugestiegen?|kein Obj.|Anyone else just boarded?
+nachsteigen|t|to chase after, to pursue (romantically)|"einem Mädchen nachsteigen" – a bit dated, half-teasing|Er steigt ihr seit Wochen nach.|jdm+D|He's been chasing her for weeks.
 
 =stoßen|to push, to bump|stößt|stieß|gestoßen|hat
 stoßen|f|to push, to shove; to bump into (auf +A: to come across)|"auf ein Problem stoßen" = to run into a problem|Ich bin auf einen Fehler gestoßen.|jdn/etw+A · auf etw+A (finden) · an etw+A|I came across a mistake.
@@ -500,6 +502,7 @@ vorstoßen|t|to advance, to push forward|"in neue Bereiche vorstoßen" = to push
 stecken|f|to put, to stick (into); to be stuck|"da steckt mehr dahinter" = there's more to it|Der Schlüssel steckt.|etw+A in etw+A · kein Obj. (feststecken)|The key is in the lock.
 anstecken|t|to infect; to pin on; to light|"das steckt an" = it's catching, of laughter too|Er hat mich angesteckt.|jdn+A mit etw+D · sich+A|He gave me his bug.
 einstecken|t|to pocket; to plug in; to take (criticism)|"einstecken können" = to be able to take it|Steck das Ladegerät ein.|etw+A|Plug the charger in.
+feststecken|t|to be stuck|"im Stau feststecken" = to be stuck in traffic|Die Autos stecken auf der Straße fest.|kein Obj. · in/auf etw+D|The cars are stuck on the road.
 abstecken|t|to mark out, to stake out (limits)|"den Rahmen abstecken" – planning meetings|Wir stecken die Ziele ab.|etw+A|We're marking out the goals.
 verstecken|f|to hide|"Versteck spielen" = to play hide and seek|Er versteckt sich hinter Ausreden.|etw+A · sich+A vor jdm+D|He hides behind excuses.
 zustecken|t|to slip someone something|"er hat mir zwanzig Euro zugesteckt" = he slipped me twenty euros|Oma steckt den Kindern Geld zu.|jdm etw+A|Grandma slips the children money.

@@ -399,7 +399,19 @@ func (m *model) show() {
 
 func (m *model) spin() {
 	m.stem = m.stems[rand.Intn(len(m.stems))]
-	m.setPI(rand.Intn(len(m.prefixList())))
+	// A real word, not a reel row: unfiltered the prefix reel carries every
+	// prefix, greyed where it does not pair, so picking a row at random dealt
+	// flash cards for ghosts — a card with forms but no meaning or example.
+	i := rand.Intn(len(m.stem.Verbs))
+	v := m.stem.Verbs[i]
+	m.pfx, m.sense = v.Prefix(), 0
+	// Two verbs spelled alike differ only by separability; sense is the
+	// position among them, counted the way matches() ranges over the stem.
+	for _, o := range m.stem.Verbs[:i] {
+		if o.Name == v.Name {
+			m.sense++
+		}
+	}
 }
 
 func (m model) reelHeight() int {

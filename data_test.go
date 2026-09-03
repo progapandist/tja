@@ -282,3 +282,23 @@ func TestPickingStemKeepsPrefix(t *testing.T) {
 		t.Errorf("only %d moves checked", moves)
 	}
 }
+
+// Every card the test mode deals has to be a word someone can be asked about.
+// Unfiltered, the prefix reel carries every prefix, greyed where it does not
+// pair, and spinning to a random row landed on combinations like
+// "herausschicken": forms and a Nebensatz, but nothing under offiziell,
+// umgangssprachlich or beispiel.
+func TestSpinLandsOnARealWord(t *testing.T) {
+	m := newModel()
+	m.filtered = false
+	for i := 0; i < 2000; i++ {
+		m.spin()
+		v, real := m.current()
+		if !real {
+			t.Fatalf("spin dealt a ghost: %s", v.Name)
+		}
+		if v.Official == "" || v.Example == "" {
+			t.Fatalf("%s has no meaning to reveal", v.Name)
+		}
+	}
+}
