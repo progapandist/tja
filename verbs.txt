@@ -1017,3 +1017,13 @@ abkochen|t|to boil (water) to purify it|survival and camping talk: "Wasser abkoc
 verkochen|f|to overcook, to boil down until it falls apart|kitchen-mishap word: "die Kartoffeln sind verkocht"|Die Suppe ist völlig verkocht.|kein Obj.|The soup has completely boiled down.|ist
 auskochen|t|to sterilise by boiling; to scheme, to hatch a plan (colloquial)|"was hast du da wieder ausgekocht?" = what have you cooked up now?|Die beiden haben einen Plan ausgekocht.|etw+A|The two of them hatched a plan.
 einkochen|t|to preserve, to can (fruit or vegetables)|traditional kitchen word: "Marmelade einkochen"|Meine Oma kocht jeden Sommer Marmelade ein.|etw+A|My grandma preserves jam every summer.
+
+=fügen|to join, to add|fügt|fügte|gefügt|hat
+fügen|f|to join, to fit together; to comply, to submit (sich)|almost always reflexive: "sich fügen" = to fall into line|Er fügt sich der Entscheidung.|sich+A · sich+D (Entscheidung)|He accepts the decision.
+einfügen|t|to insert, to add in; to fit in (sich)|IT: "kopieren und einfügen" = copy and paste|Füge hier ein Bild ein.|etw+A in etw+A · sich+A in etw+A|Insert a picture here.
+hinzufügen|t|to add, to append (a remark, an ingredient)|"dem ist nichts hinzuzufügen" = there's nothing to add to that|Sie fügte noch eine Bemerkung hinzu.|etw+A|She added one more remark.
+anfügen|t|to append, to attach at the end|written register: a note appended to a document|Ich füge die Zahlen unten an.|etw+A an etw+A|I'll append the figures below.
+beifügen|t|to enclose, to attach (to a letter)|formal correspondence: "beigefügt finden Sie…"|Die Rechnung ist beigefügt.|etw+A|The invoice is enclosed.
+zufügen|t|to inflict (harm, pain, damage)|almost only with Schaden, Leid or Schmerzen|Er hat ihr großes Leid zugefügt.|jdm etw+A|He caused her great suffering.
+zusammenfügen|t|to join together, to assemble|of pieces: furniture, evidence, a puzzle|Wir fügen die Teile zusammen.|etw+A|We're putting the parts together.
+verfügen|f|to have at one's disposal (über +A); to decree, to order|"über etwas verfügen" is the everyday sense; the decree sense is legal|Sie verfügt über viel Erfahrung.|über etw+A · etw+A (anordnen)|She has a lot of experience.
